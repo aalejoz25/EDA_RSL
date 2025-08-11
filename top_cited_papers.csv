@@ -1,0 +1,21 @@
+title,authors,year,source_title,cited_by,DOI
+survey on software defect prediction techniques,Thota M.K.; Shajin F.H.; Rajesh P.,2020,International Journal of Applied Science and Engineering,286,10.6703/IJASE.202012_17(4).331
+testing machine learning based systems: a systematic mapping,Riccio V.; Jahangirova G.; Stocco A.; Humbatova N.; Weiss M.; Tonella P.,2020,Empirical Software Engineering,182,10.1007/s10664-020-09881-0
+software engineering for ai-based systems: a survey,Martínez-Fernández S.; Bogner J.; Franch X.; Oriol M.; Siebert J.; Trendowicz A.; Vollmer A.M.; Wagner S.,2022,ACM Transactions on Software Engineering and Methodology,171,10.1145/3487043
+"software testing with large language models: survey, landscape, and vision",Wang J.; Huang Y.; Chen C.; Liu Z.; Wang S.; Wang Q.,2024,IEEE Transactions on Software Engineering,161,10.1109/TSE.2024.3368208
+chatgpt and software testing education: promises & perils,Jalil S.; Rafi S.; Latoza T.D.; Moran K.; Lam W.,2023,"Proceedings - 2023 IEEE 16th International Conference on Software Testing, Verification and Validation Workshops, ICSTW 2023",159,10.1109/ICSTW58534.2023.00078
+on testing machine learning programs,Braiek H.B.; Khomh F.,2020,Journal of Systems and Software,134,10.1016/j.jss.2020.110542
+fuzzguard: filtering out unreachable inputs in directed grey-box fuzzing through deep learning,Zong P.; Lv T.; Wang D.; Deng Z.; Liang R.; Chen K.,2020,Proceedings of the 29th USENIX Security Symposium,130,
+human-ai interactions in public sector decision making: “automation bias” and “selective adherence” to algorithmic advice,Alon-Barkat S.; Busuioc M.,2023,Journal of Public Administration Research and Theory,122,10.1093/jopart/muac007
+audee: automated testing for deep learning frameworks,Guo Q.; Xie X.; Li Y.; Zhang X.; Liu Y.; Li X.; Shen C.,2020,"Proceedings - 2020 35th IEEE/ACM International Conference on Automated Software Engineering, ASE 2020",83,10.1145/3324884.3416571
+defect prediction with semantics and context features of codes based on graph representation learning,Xu J.; Wang F.; Ai J.,2021,IEEE Transactions on Reliability,69,10.1109/TR.2020.3040191
+improved prediction of software defects using ensemble machine learning techniques,Mehta S.; Patnaik K.S.,2021,Neural Computing and Applications,64,10.1007/s00521-021-05811-3
+metamorphic testing and certified mitigation of fairness violations in nlp models,Ma P.; Wang S.; Liu J.,2020,IJCAI International Joint Conference on Artificial Intelligence,63,
+cross-project software defect prediction based on domain adaptation learning and optimization,Jin C.,2021,Expert Systems with Applications,62,10.1016/j.eswa.2021.114637
+nlp-assisted software testing: a systematic mapping of the literature,Garousi V.; Bauer S.; Felderer M.,2020,Information and Software Technology,58,10.1016/j.infsof.2020.106321
+towards characterizing adversarial defects of deep learning software from the lens of uncertainty,Zhang X.; Xie X.; Ma L.; Du X.; Hu Q.; Liu Y.; Zhao J.; Sun M.,2020,Proceedings - International Conference on Software Engineering,57,10.1145/3377811.3380368
+automated essay scoring and the deep learning black box: how are rubric scores determined?,Kumar V.S.; Boulanger D.,2021,International Journal of Artificial Intelligence in Education,54,10.1007/s40593-020-00211-5
+npc: neuron path coverage via characterizing decision logic of deep neural networks,Xie X.; Li T.; Wang J.; Ma L.; Guo Q.; Juefei-Xu F.; Liu Y.,2022,ACM Transactions on Software Engineering and Methodology,54,10.1145/3490489
+digital twins: a systematic literature review based on data analysis and topic modeling,Kukushkin K.; Ryabov Y.; Borovkov A.,2022,Data,54,10.3390/data7120173
+"hyper-parameter optimization of classifiers, using an artificial immune network and its application to software bug prediction",Khan F.; Kanwal S.; Alamri S.; Mumtaz B.,2020,IEEE Access,53,10.1109/ACCESS.2020.2968362
+software defects prediction by metaheuristics tuned extreme gradient boosting and analysis based on shapley additive explanations,Zivkovic T.; Nikolic B.; Simic V.; Pamucar D.; Bacanin N.,2023,Applied Soft Computing,52,10.1016/j.asoc.2023.110659
