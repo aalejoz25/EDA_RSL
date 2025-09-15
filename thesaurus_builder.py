@@ -44,34 +44,39 @@ class ThesaurusTerm:
             self.use_term = term
             term.used_for_terms.add(self)
 
-    def build_query(self, include_related: bool = False) -> str:
-        """Construye la parte de la consulta para este término y sus relaciones"""
-        terms = set()
-        
+    def _get_all_terms(self, terms_set: Set[str], include_related: bool):
+        """Método recursivo para recolectar todos los términos en una jerarquía."""
         # Añadir el término principal si es preferido o no tiene USE
         if self.is_preferred or not self.use_term:
-            terms.add(f'"{self.term}"')
+            terms_set.add(f'"{self.term}"')
         
         # Añadir término USE si existe
         if self.use_term:
-            terms.add(f'"{self.use_term.term}"')
+            terms_set.add(f'"{self.use_term.term}"')
         
-        # Añadir términos UF
-        terms.update(f'"{t.term}"' for t in self.used_for_terms)
-        
-        # Añadir términos NT recursivamente
-        for nt in self.narrower_terms:
-            terms.update(nt.build_query(include_related=False).split(" OR "))
+        # Añadir términos UF (sinónimos)
+        for t in self.used_for_terms:
+            terms_set.add(f'"{t.term}"')
         
         # Opcionalmente añadir términos RT
         if include_related:
-            terms.update(f'"{t.term}"' for t in self.related_terms)
+            for t in self.related_terms:
+                terms_set.add(f'"{t.term}"')
+        
+        # Recursión para términos NT
+        for nt in self.narrower_terms:
+            nt._get_all_terms(terms_set, include_related)
+
+    def build_query(self, include_related: bool = False) -> str:
+        """Construye la parte de la consulta para este término y sus relaciones"""
+        terms = set()
+        self._get_all_terms(terms, include_related)
         
         # Construir la consulta
         if not terms:
             return f'"{self.term}"'
         
-        terms_str = " OR ".join(sorted(terms))
+        terms_str = " OR ".join(sorted(list(terms)))
         return f"({terms_str})" if len(terms) > 1 else terms_str
 
 class ThesaurusBuilder:
@@ -96,13 +101,21 @@ class ThesaurusBuilder:
         """Añade una faceta principal a la ecuación de búsqueda"""
         self.facets.append(term)
     
-    def build_search_equation(self, include_related: bool = False) -> str:
+    def build_search_equation(self, include_related: bool = False, scopus_format: bool = True) -> str:
         """Construye la ecuación de búsqueda completa"""
         if not self.facets:
             return ""
         
-        facet_queries = [facet.build_query(include_related) for facet in self.facets]
-        return " AND ".join(f"({query})" for query in facet_queries)
+        facet_queries = [f"({facet.build_query(include_related)})" for facet in self.facets]
+        
+        # Une las facetas con AND
+        query_body = " AND ".join(facet_queries)
+        
+        # Si se requiere el formato Scopus, envuelve la consulta
+        if scopus_format:
+            return f"TITLE-ABS-KEY({query_body})"
+        
+        return query_body
 
 # Ejemplo de uso
 if __name__ == "__main__":
