@@ -18,9 +18,19 @@ SD_QUERYS =  [
 
 # Búsqueda en Google Scholar
 SCHOLAR_QUERY = (
-    '"computer vision" AND "nutritional quality" AND "crop yield"'
-    ' OR '
-    '"deep learning" AND "fruit quality" AND "yield prediction"'
-    ' OR '
-    '"image analysis" AND "micronutrients" AND "plant disease"'
+    '("artificial intelligence" OR "computer vision" OR "convolutional neural networks" OR "deep learning" OR '
+    '"feature extraction" OR "image processing" OR "image segmentation" OR "machine learning" OR '
+    '"recurrent neural networks" OR "transformers")'
+    ' AND '
+    '("fungal diseases" OR "iron chlorosis" OR "leaf spots" OR "macronutrient deficiencies" OR '
+    '"micronutrient deficiencies" OR "nitrogen deficiency" OR "nutrient deficiencies" OR '
+    '"phosphorus deficiency" OR "physiological disorders" OR "plant diseases" OR "plant health" OR '
+    '"root rots" OR "zinc deficiency")'
+    ' AND '
+    '("disease detection" OR "early detection" OR "prediction" OR "real-time monitoring" OR "stress detection")'
+    ' AND '
+    '("amino acids" OR "carbohydrates" OR "complex carbohydrates" OR "fat-soluble vitamins" OR '
+    '"functional properties" OR "macronutrients" OR "major minerals" OR "micronutrients" OR "minerals" OR '
+    '"nutritional quality" OR "organoleptic properties" OR "protein content" OR "proteins" OR '
+    '"simple carbohydrates" OR "trace elements" OR "vitamins" OR "water-soluble vitamins")'
 )
