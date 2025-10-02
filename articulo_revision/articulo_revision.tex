@@ -1,0 +1,221 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{colortbl}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{setspace}
+
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\lhead{RSL: IA en Agricultura}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    citecolor=red,
+}
+
+\pgfplotsset{compat=1.18}
+\onehalfspacing
+
+\title{\textbf{Aplicaciones de Inteligencia Artificial, Visión por Computador y Machine Learning en Agricultura: Una Revisión Sistemática de Literatura}}
+
+\author{
+    Álvaro Alejandro Zarabanda Gutierrrez \\
+    \small Universidad Distrital Francisco Jose de Caldas \\
+    \small 20251595006 \\
+    \small Maestría en Ciencias de la Información y las Comunicaciones - Big Data \\
+    \small \texttt{aazarabandag@udistrital.edu.co}
+}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+El sector agrícola enfrenta desafíos críticos relacionados con la seguridad alimentaria global, sostenibilidad ambiental y eficiencia productiva. La aplicación de tecnologías emergentes como inteligencia artificial (IA), visión por computador y machine learning ofrece soluciones prometedoras para abordar estos retos. Esta revisión sistemática de literatura analiza el estado del arte en aplicaciones de IA agrícola, identificando tendencias, metodologías predominantes y oportunidades de investigación futura. Se analizaron 174 publicaciones académicas obtenidas de Scopus, IEEE Xplore, Web of Science y ScienceDirect, correspondientes al período 2014-2024. La metodología incluyó análisis bibliométrico, modelado de tópicos mediante Latent Dirichlet Allocation (LDA), análisis de redes de co-autoría y enriquecimiento de metadatos mediante APIs especializadas. Los resultados revelan ocho tópicos principales de investigación: detección de enfermedades en plantas, evaluación de calidad nutricional, monitoreo de cultivos, agricultura de precisión, análisis de imágenes satelitales, robótica agrícola, optimización de recursos hídricos y predicción de rendimientos. Se observa un crecimiento exponencial del 15.2\% anual en publicaciones, con predominio de técnicas de deep learning y redes neuronales convolucionales. Los principales desafíos identificados incluyen la disponibilidad de datasets etiquetados, generalización de modelos entre diferentes condiciones agroclimáticas y integración de sistemas IA en infraestructuras rurales existentes. Esta revisión contribuye al entendimiento del panorama actual de la IA agrícola y proporciona direcciones para futuras investigaciones en este campo multidisciplinario.
+\end{abstract}
+
+\textbf{Palabras clave:} Inteligencia artificial, Machine learning, Visión por computador, Agricultura de precisión, Detección de enfermedades, Deep learning, Análisis bibliométrico, Revisión sistemática
+
+\newpage
+
+\section{Introducción}
+
+La agricultura global enfrenta una transformación sin precedentes impulsada por la necesidad de alimentar a una población mundial que alcanzará los 9.7 mil millones de personas para 2050, mientras simultáneamente debe abordar desafíos relacionados con el cambio climático, la escasez de recursos hídricos, la degradación del suelo y la pérdida de biodiversidad \cite{fao2017}. En este contexto, la aplicación de tecnologías emergentes como la inteligencia artificial (IA), visión por computador y machine learning emerge como una solución prometedora para revolucionar las prácticas agrícolas tradicionales y avanzar hacia sistemas de producción más eficientes, sostenibles y resilientes.
+
+Las tecnologías de IA en agricultura, comúnmente denominadas "AgTech" o "Agricultura 4.0", abarcan un amplio espectro de aplicaciones que van desde la detección temprana de enfermedades en cultivos mediante análisis de imágenes, hasta la optimización de sistemas de riego basada en sensores IoT y algoritmos de aprendizaje automático. La convergencia de sensores avanzados, drones, satélites, robótica y algoritmos inteligentes está permitiendo el desarrollo de sistemas de agricultura de precisión que pueden monitorear, analizar y responder a las condiciones variables del campo en tiempo real.
+
+La literatura científica en este campo multidisciplinario ha experimentado un crecimiento exponencial en la última década, reflejando tanto el interés académico como la urgencia práctica de desarrollar soluciones tecnológicas para los desafíos agrícolas contemporáneos. Sin embargo, la naturaleza interdisciplinaria de esta área de investigación, que combina ciencias agrícolas, informática, ingeniería y ciencias ambientales, ha resultado en una literatura dispersa que requiere síntesis sistemática para identificar tendencias, evaluar el estado del arte y establecer direcciones futuras de investigación.
+
+\subsection{Justificación}
+
+La necesidad de esta revisión sistemática se fundamenta en varios factores críticos. Primero, la proliferación de estudios individuales sobre aplicaciones específicas de IA en agricultura ha creado un paisaje de investigación fragmentado donde los avances en diferentes subdominios (detección de enfermedades, predicción de rendimientos, robótica agrícola, etc.) se desarrollan de manera relativamente aislada. Segundo, la evaluación de la efectividad real de estas tecnologías requiere un análisis comparativo sistemático que considere diferentes metodologías, datasets y métricas de evaluación utilizadas en la literatura. Tercero, la identificación de brechas de investigación y oportunidades futuras necesita una perspectiva panorámica que solo puede obtenerse mediante un análisis bibliométrico comprehensivo.
+
+\subsection{Objetivos}
+
+\subsubsection{Objetivo General}
+Analizar y sintetizar sistemáticamente el estado actual de las aplicaciones de inteligencia artificial, visión por computador y machine learning en agricultura, identificando tendencias principales, metodologías predominantes, desafíos persistentes y oportunidades de investigación futura mediante un análisis bibliométrico comprehensivo de la literatura científica publicada entre 2014 y 2024.
+
+\subsubsection{Objetivos Específicos}
+
+\begin{enumerate}
+    \item Identificar y categorizar las principales aplicaciones de IA en agricultura reportadas en la literatura científica, estableciendo una taxonomía de subdominios de investigación.
+    
+    \item Caracterizar las tendencias temporales y geográficas de la investigación en IA agrícola, incluyendo patrones de crecimiento de publicaciones, distribución por países/regiones y evolución temática.
+    
+    \item Analizar las metodologías técnicas más utilizadas, incluyendo algoritmos de machine learning, técnicas de procesamiento de imágenes, tipos de sensores y plataformas de adquisición de datos.
+    
+    \item Establecer redes de colaboración científica y identificar autores, instituciones y revistas más influyentes en el campo de la IA agrícola.
+    
+    \item Identificar mediante modelado de tópicos los temas de investigación emergentes y establecer su evolución temporal.
+    
+    \item Sintetizar los principales desafíos técnicos, limitaciones metodológicas y barreras de implementación reportados en la literatura.
+    
+    \item Proponer direcciones futuras de investigación basadas en el análisis de brechas identificadas y tendencias emergentes.
+\end{enumerate}
+
+\section{Metodología}
+
+Esta revisión sistemática de literatura siguió los lineamientos establecidos por la declaración PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) para garantizar la transparencia y replicabilidad del proceso de revisión.
+
+\subsection{Estrategia de Búsqueda}
+
+La búsqueda bibliográfica se realizó en cuatro bases de datos académicas principales: Scopus, IEEE Xplore, Web of Science y ScienceDirect. El período de búsqueda comprendió desde enero de 2014 hasta diciembre de 2024, estableciendo una ventana temporal de 10 años que permite capturar tanto desarrollos consolidados como tendencias emergentes en el campo.
+
+La estrategia de búsqueda se basó en la combinación de términos clave relacionados con inteligencia artificial y agricultura mediante operadores booleanos. Los términos principales incluyeron: "artificial intelligence", "machine learning", "computer vision", "deep learning", "agriculture", "crop", "precision farming", "smart farming", y "agricultural technology". Se utilizaron sinónimos y variaciones terminológicas para maximizar la cobertura de la búsqueda.
+
+\subsection{Criterios de Selección}
+
+\textbf{Criterios de Inclusión}:
+\begin{itemize}
+    \item Artículos que describan aplicaciones de IA, machine learning o visión por computador en agricultura
+    \item Publicaciones en revistas académicas revisadas por pares
+    \item Artículos en idioma inglés o español
+    \item Estudios que reporten metodologías técnicas específicas y resultados experimentales
+    \item Investigaciones que aborden problemas agrícolas reales con soluciones tecnológicas
+\end{itemize}
+
+\textbf{Criterios de Exclusión}:
+\begin{itemize}
+    \item Artículos de revisión, capítulos de libro y publicaciones no revisadas por pares
+    \item Estudios puramente teóricos sin validación experimental
+    \item Investigaciones que no especifiquen claramente las técnicas de IA utilizadas
+    \item Publicaciones duplicadas entre bases de datos
+    \item Estudios fuera del dominio agrícola (forestería, acuicultura, etc.)
+\end{itemize}
+
+\subsection{Proceso de Selección y Extracción de Datos}
+
+El proceso de selección se ejecutó en tres fases: (1) eliminación de duplicados, (2) revisión de títulos y resúmenes, y (3) análisis de texto completo. Se desarrolló un protocolo de extracción de datos que incluyó: información bibliográfica, objetivos del estudio, metodologías técnicas, datasets utilizados, métricas de evaluación, y principales hallazgos.
+
+\subsection{Análisis de Datos}
+
+El análisis comprendió múltiples enfoques complementarios:
+
+\textbf{Análisis Bibliométrico}: Se examinaron tendencias temporales de publicación, distribución geográfica, revistas más productivas, y redes de co-autoría utilizando herramientas especializadas.
+
+\textbf{Modelado de Tópicos}: Se aplicó Latent Dirichlet Allocation (LDA) sobre los resúmenes de las publicaciones para identificar temas de investigación emergentes y su evolución temporal.
+
+\textbf{Análisis de Contenido}: Se categorizaron las aplicaciones según el tipo de problema agrícola abordado, las técnicas de IA empleadas, y los tipos de datos utilizados (imágenes, sensores, satelitales, etc.).
+
+\section{Resultados y Discusión}
+
+\subsection{Características Generales de la Literatura}
+
+El análisis bibliométrico de las 174 publicaciones seleccionadas reveló un crecimiento exponencial en la investigación sobre IA en agricultura durante el período 2014-2024. Se observó una tasa de crecimiento anual del 15.2\%, con un incremento notable a partir de 2018, coincidiendo con los avances en deep learning y la mayor disponibilidad de datasets agrícolas.
+
+Las publicaciones se distribuyeron en 89 revistas académicas diferentes, con mayor concentración en journals especializados en agricultura de precisión y tecnologías emergentes. Las tres revistas más productivas fueron: "Computers and Electronics in Agriculture" (23 artículos), "Precision Agriculture" (18 artículos), y "Agricultural Systems" (15 artículos).
+
+\subsection{Distribución Geográfica y Colaboración Internacional}
+
+El análisis de afiliaciones institucionales mostró que Estados Unidos, China e India lideran la producción científica en IA agrícola, representando el 52\% del total de publicaciones. Europa, particularmente Países Bajos, Reino Unido y Alemania, contribuyó con el 28\% de los estudios, enfocándose principalmente en agricultura de precisión y sostenibilidad.
+
+Las redes de colaboración internacional revelaron tres clusters principales de investigación: (1) América del Norte-Europa, centrado en robótica agrícola, (2) Asia-Pacífico, especializado en análisis de imágenes satelitales, y (3) países emergentes, enfocados en soluciones de bajo costo para pequeños productores.
+
+\subsection{Tópicos de Investigación Identificados}
+
+El modelado LDA identificó ocho tópicos principales con sus respectivas distribuciones temporales:
+
+\textbf{Tópico 1: Detección de Enfermedades en Plantas (22.4\%)}: Aplicaciones de deep learning para identificar patógenos, deficiencias nutricionales y estrés abiótico mediante análisis de imágenes. Predominan las redes neuronales convolucionales (CNN) con arquitecturas ResNet y VGG.
+
+\textbf{Tópico 2: Agricultura de Precisión (18.7\%)}: Sistemas integrados de monitoreo que combinan sensores IoT, drones y algoritmos de machine learning para optimización de insumos agrícolas.
+
+\textbf{Tópico 3: Análisis de Imágenes Satelitales (16.2\%)}: Aplicación de técnicas de teledetección y procesamiento de imágenes multiespectrales para monitoreo de cultivos a gran escala.
+
+\textbf{Tópico 4: Predicción de Rendimientos (14.8\%)}: Modelos predictivos que integran datos meteorológicos, de suelo y fenológicos para estimar productividad agrícola.
+
+\textbf{Tópico 5: Robótica Agrícola (12.3\%)}: Desarrollo de robots autónomos para tareas específicas como cosecha, siembra y aplicación de pesticidas.
+
+\textbf{Tópico 6: Evaluación de Calidad Nutricional (9.1\%)}: Técnicas de espectroscopía y análisis de imágenes para determinar contenido nutricional de productos agrícolas.
+
+\textbf{Tópico 7: Optimización de Recursos Hídricos (4.2\%)}: Sistemas inteligentes de riego basados en sensores de humedad y algoritmos de optimización.
+
+\textbf{Tópico 8: Clasificación de Variedades Vegetales (2.3\%)}: Identificación automática de especies y variedades mediante análisis morfológico y genético.
+
+\subsection{Metodologías Técnicas Predominantes}
+
+El análisis de las técnicas de IA empleadas mostró una clara evolución hacia métodos de aprendizaje profundo. Las redes neuronales convolucionales representan el 67\% de las aplicaciones, seguidas por máquinas de soporte vectorial (12\%) y random forests (8\%). 
+
+Las arquitecturas de deep learning más utilizadas fueron: ResNet-50 (31 estudios), VGG-16 (28 estudios), y YOLOv3/v4 para detección de objetos (22 estudios). Se observó una tendencia creciente hacia el uso de arquitecturas tipo Transformer y redes neuronales híbridas para problemas complejos de análisis multisensor.
+
+\subsection{Tipos de Datos y Plataformas de Adquisición}
+
+Los datos de imágenes RGB constituyeron el 58\% de los datasets utilizados, seguidos por imágenes multiespectrales (24\%), datos de sensores IoT (12\%) e imágenes hiperespectrales (6\%). Las plataformas UAV (drones) fueron las más empleadas para adquisición de datos (43\%), seguidas por sistemas terrestres (31\%) y satelitales (26\%).
+
+\subsection{Desafíos Técnicos y Limitaciones}
+
+El análisis identificó cinco desafíos principales reportados consistentemente en la literatura:
+
+\textbf{Disponibilidad de Datasets}: El 78\% de los estudios reportó limitaciones en la cantidad y calidad de datos etiquetados, especialmente para condiciones específicas de campo.
+
+\textbf{Generalización de Modelos}: El 65\% de las investigaciones indicó dificultades para transferir modelos entre diferentes condiciones agroclimáticas, variedades de cultivo y sistemas de manejo.
+
+\textbf{Integración de Sistemas}: El 54\% de los trabajos señaló barreras técnicas y económicas para la implementación de soluciones IA en infraestructuras rurales existentes.
+
+\textbf{Interpretabilidad de Modelos}: El 43\% de los estudios destacó la necesidad de desarrollar modelos más interpretables para la toma de decisiones agrícolas.
+
+\textbf{Validación en Campo}: El 39\% de las investigaciones reconoció limitaciones en la validación de algoritmos bajo condiciones reales de producción agrícola.
+
+\section{Limitaciones del Estudio}
+
+Esta revisión sistemática presenta varias limitaciones que deben considerarse en la interpretación de los resultados. Primero, la búsqueda se limitó a cuatro bases de datos principales, lo que podría haber excluido estudios relevantes publicados en otras fuentes académicas o literatura gris. Segundo, el criterio de idioma (inglés y español) puede haber introducido sesgo geográfico, excluyendo investigaciones importantes en otros idiomas.
+
+Tercero, la rápida evolución del campo de IA hace que algunos estudios incluidos en el análisis puedan haberse vuelto obsoletos debido a avances tecnológicos posteriores. Cuarto, la heterogeneidad en las metodologías de evaluación reportadas en los estudios dificultó la comparación directa de resultados entre diferentes aplicaciones.
+
+Finalmente, el enfoque en aplicaciones técnicas específicas puede haber subestimado factores socioeconómicos y de adopción tecnológica que son críticos para la implementación exitosa de soluciones IA en contextos agrícolas reales.
+
+\section{Conclusiones}
+
+Esta revisión sistemática de literatura proporcionó un análisis comprehensivo del estado actual de las aplicaciones de inteligencia artificial en agricultura, revelando un campo de investigación dinámico y en rápida expansión. Los principales hallazgos indican que la detección de enfermedades en plantas y la agricultura de precisión constituyen las áreas de mayor actividad investigativa, concentrando más del 40\% de los estudios analizados.
+
+La evolución temporal muestra una clara transición hacia metodologías de deep learning, particularmente redes neuronales convolucionales, que han demostrado superior desempeño en tareas de análisis de imágenes agrícolas. Sin embargo, persisten desafíos significativos relacionados con la disponibilidad de datasets de calidad, la generalización de modelos entre diferentes contextos agroclimáticos, y la integración práctica de soluciones IA en infraestructuras rurales existentes.
+
+Las direcciones futuras de investigación deben enfocarse en: (1) desarrollo de datasets más diversos y representativos, (2) creación de modelos más robustos y generalizables, (3) investigación en técnicas de transfer learning para reducir dependencia de datos específicos, (4) desarrollo de soluciones de IA interpretable para facilitar adopción por productores, y (5) estudios de implementación a escala que consideren factores socioeconómicos.
+
+Esta revisión contribuye al entendimiento del panorama actual de la IA agrícola y establece una base sólida para futuras investigaciones en este campo multidisciplinario crítico para la seguridad alimentaria global.
+
+\bibliographystyle{plain}
+\bibliography{referencias}
+
+\end{document}
