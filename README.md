@@ -36,3 +36,10 @@ Este repositorio incluye herramientas automatizadas para:
 - Análisis de redes de co-autoría y co-ocurrencia de palabras clave
 - Enriquecimiento de datos mediante APIs (CrossRef, OpenAlex, Scimago)
 - Visualización de tendencias y patrones de investigación
+
+
+## Instalacion de dependencias
+
+```shell
+pip install -r requirements.txt
+```
