@@ -1,0 +1,57 @@
+# Requirements for EDA_RSL Notebook
+# Generated from notebook environment on 2025-11-14
+
+# Core data science libraries
+pandas==2.3.3
+numpy==2.3.4
+scipy==1.16.3
+scikit-learn==1.7.2
+
+# Visualization libraries
+matplotlib==3.10.7
+seaborn==0.13.2
+wordcloud==1.9.4
+
+# Natural Language Processing
+nltk==3.9.2
+spacy==3.8.9
+gensim==4.4.0
+
+# Topic modeling and LDA visualization
+pyLDAvis==3.4.1
+
+# Network analysis
+networkx==3.5
+
+# Web scraping and data collection
+requests==2.32.5
+beautifulsoup4==4.14.2
+scholarly==1.7.11
+selenium==4.38.0
+
+# Bibliography parsing
+bibtexparser==1.4.3
+
+# Progress bars and utilities
+tqdm==4.67.1
+ipywidgets==8.1.8
+
+# Additional utility libraries (built-in modules - no installation needed)
+# re, time, glob, collections, itertools, datetime, difflib
+
+# Optional: Dependencies for complete functionality
+fake-useragent==2.2.0
+free_proxy==1.1.3
+lxml==6.0.2
+xlrd==2.0.2
+python-dotenv==1.2.1
+
+# Jupyter notebook support
+jupyterlab_widgets==3.0.16
+widgetsnbextension==4.0.15
+ipython==9.7.0
+ipykernel==7.1.0
+jupyter_client==8.6.3
+jupyter_core==5.9.1
+
+# Note: 'static' appears to be a local module - ensure it's available in your project
