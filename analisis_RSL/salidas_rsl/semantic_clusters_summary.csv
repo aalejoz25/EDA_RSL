@@ -1,0 +1,9 @@
+Cluster,N_Documentos,Porcentaje,Top_Keywords,Etiqueta_Sugerida
+1,9,8.4%,"diseases, citrus, mango, fruit, detection, learning",DISEASES / CITRUS / MANGO
+2,16,15.0%,"plant, technologies, sensors, farming, management, systems",PLANT / TECHNOLOGIES / SENSORS
+3,18,16.8%,"disease, diseases, plant, leaf, detection, image",DISEASE / DISEASES / PLANT
+4,8,7.5%,"spectral, imaging, multispectral, crop, hyperspectral, traits",SPECTRAL / IMAGING / MULTISPECTRAL
+5,21,19.6%,"diseases, tomato, model, cnn, disease, accuracy",DISEASES / TOMATO / MODEL
+6,5,4.7%,"anthracnose, mango, potato, fruit, disease, diseases",ANTHRACNOSE / MANGO / POTATO
+7,19,17.8%,"model, disease, fruit, apple, learning, diseases",MODEL / DISEASE / FRUIT
+8,11,10.3%,"soil, data, crop, agriculture, disease, learning",SOIL / DATA / CROP

@@ -1,0 +1,6 @@
+ID,Etiqueta_Sugerida,Palabras_Clave,Num_Documentos,Porcentaje,Prob_Media
+1,Tópico 1: POTATO / FOOD / CONSIDER,"potato, food, consider, fusarium, rot, review, development, yield",1,0.9%,0.996
+2,Tópico 2: PLANT / MODEL / IMAGE,"plant, model, image, fruit, leaf, classification, detection, method",78,72.9%,0.743
+3,Tópico 3: SOIL / DATA / MANAGEMENT,"soil, data, management, technology, enhance, agriculture, yield, sustainable",13,12.1%,0.650
+4,Tópico 4: LEAF / DISEASES / LEAVE,"leaf, diseases, leave, trait, grape, classifier, citrus, infection",13,12.1%,0.573
+5,Tópico 5: PRODUCTION / PLANT / APPLICATION,"production, plant, application, demand, quality, fruit, automate, predict",2,1.9%,0.690

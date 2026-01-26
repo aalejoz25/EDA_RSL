@@ -1,0 +1,9 @@
+Cluster_Semantic,Total_Entities,Top_ML,Top_Testing,Top_Tools,Top_Domain
+1,95,"classification, cnn, neural network",,,"classification, accuracy, cnn, neural network, supervised learning"
+2,68,deep learning,,,"precision, deep learning, accuracy, yolo, volume"
+3,159,"classification, svm, knn",,,"classification, accuracy, svm, knn, texture"
+4,108,"classification, deep learning, feature extraction",,,"tomato, accuracy, multispectral imaging, color, remote sensing"
+5,310,"cnn, deep learning, classification",,"keras, opencv","tomato, accuracy, cnn, deep learning, classification"
+6,42,"deep learning, classification, feature extraction",,,"anthracnose, potato, deep learning, classification, feature extraction"
+7,251,"classification, deep learning, cnn",,pytorch,"classification, accuracy, deep learning, cnn, resnet"
+8,122,"classification, deep learning, random forest",,keras,"precision, classification, accuracy, deep learning, remote sensing"
