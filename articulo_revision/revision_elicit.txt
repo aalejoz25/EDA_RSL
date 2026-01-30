@@ -1,0 +1,2587 @@
+Main Research Question To what extent are advanced Artificial Intelligence
+models and multimodal data fusion (RGB / hyperspectral / IoT) overcoming
+the limitations of traditional visual detection methods for quantifying disease
+severity and predicting their impact on internal quality and yield in horticultural crops? Secondary Research Questions What are the most effective
+AI techniques for different agricultural tasks (disease detection, yield estimation, quality monitoring), and how have they evolved over time? What are the
+most appropriate evaluation metrics for assessing these models in this context?
+Which spectral analysis techniques combined with AI show the strongest correlation with real nutritional parameters in fruits and vegetables, and what is
+their feasibility for field implementation versus laboratory settings? What are
+the main methodological limitations reported in agricultural AI studies (e.g.,
+dataset size, cross-validation strategies, reproducibility), and which standards
+are emerging for robust evaluation?
+Advanced AI models, primarily transfer learning-based CNNs, effectively overcome traditional visual detection limitations for binary disease classification with accuracies of 90-99%, but multimodal data fusion remains underutilized
+and the critical objectives of quantifying disease severity progression and predicting impact on internal quality and
+yield are largely unaddressed, with fewer than 15% of studies implementing severity staging and only three examining correlations with internal quality parameters.
+
+Abstract
+Advanced AI models, predominantly convolutional neural networks employing transfer learning with architectures
+such as VGG, ResNet, and YOLO variants, demonstrate substantial improvements over traditional visual inspection
+methods for disease detection in horticultural crops, with reported accuracies ranging from 90-99% under controlled
+conditions. These approaches effectively address limitations of manual assessment including inconsistency, labor
+intensity, and delayed detection. However, the transition from binary disease classification to quantitative severity
+assessment remains underdeveloped, with only 12 of 80 reviewed studies implementing multi-level severity classification, and the correlation between detected disease severity and internal quality or yield impact was examined
+in only three studies. Hyperspectral imaging combined with machine learning shows strong potential for early detection and nutritional parameter prediction, achieving R²=0.7 for physiological indicators and detecting pathogen
+stress before visible symptoms appear, yet hardware costs, miniaturization challenges, and environmental sensitivity
+limit field implementation.
+True multimodal data fusion integrating RGB imaging, hyperspectral data, and IoT sensors was implemented in
+only eight studies, representing a critical gap between theoretical potential and practical application. Significant
+methodological limitations persist across the literature: dataset sizes frequently fall below 3,000 images, external
+validation on independent datasets appears in only eight studies, code availability is reported in fewer than 10%
+of publications, and models trained under controlled laboratory conditions show performance degradation when
+
+1
+
+deployed in field environments with variable lighting and complex backgrounds. Emerging best practices include
+k-fold cross-validation, expert-supervised ground truth establishment, and lightweight architectures optimized for
+edge deployment, though standardized evaluation protocols remain absent. The evidence indicates that while AI
+substantially advances disease detection capabilities, the critical objectives of quantifying disease impact on internal
+quality and predicting yield losses remain largely unaddressed by current research.
+
+Paper search
+To answer your research question ”Main Research Question
+To what extent are advanced Artificial Intelligence models and multimodal data fusion (RGB / hyperspectral / IoT)
+overcoming the limitations of traditional visual detection methods for quantifying disease severity and predicting
+their impact on internal quality and yield in horticultural crops?
+Secondary Research Questions
+What are the most effective AI techniques for different agricultural tasks (disease detection, yield estimation, quality
+monitoring), and how have they evolved over time?
+What are the most appropriate evaluation metrics for assessing these models in this context?
+Which spectral analysis techniques combined with AI show the strongest correlation with real nutritional parameters
+in fruits and vegetables, and what is their feasibility for field implementation versus laboratory settings?
+What are the main methodological limitations reported in agricultural AI studies (e.g., dataset size, cross-validation
+strategies, reproducibility), and which standards are emerging for robust evaluation?”, we looked over only the
+sources you uploaded.
+113 sources were uploaded to Elicit for screening.
+
+Screening
+We screened in sources based on their abstracts that met these criteria:
+• Horticultural Crop Focus: Does this study focus on horticultural crops (fruits, vegetables, or ornamental
+plants) as the primary subject matter?
+• AI/ML Implementation: Does this study employ advanced AI/ML techniques (machine learning, deep learning,
+computer vision, or other AI methodologies beyond simple statistical analysis)?
+• Multimodal Data Integration: Does this research incorporate at least two different data modalities (e.g., RGB
+imaging, hyperspectral imaging, multispectral imaging, IoT sensor data, thermal imaging, or other sensing
+technologies)?
+• Relevant Agricultural Outcomes: Does this study address at least one of the following outcomes: plant disease
+identification/severity assessment, internal/external quality evaluation, or crop yield estimation?
+• Publication Quality and Empirical Nature: Is this study published in a peer-reviewed journal or conference
+proceedings AND does it include practical implementation or testing of proposed methods (not purely theoretical work)?
+• Quantitative Performance Evaluation: Does this research provide measurable results using appropriate performance metrics (e.g., accuracy, precision, recall, F1-score, RMSE, correlation coefficients)?
+• Agricultural Domain Relevance: Is this study NOT focused solely on field crops (wheat, corn, soybeans),
+forestry, or non-agricultural applications?
+
+2
+
+• Advanced Methodological Approach: Does this research go beyond traditional visual inspection or single
+sensing modality approaches by incorporating AI enhancement or multimodal fusion?
+We considered all screening questions together and made a holistic judgement about whether to screen in each paper.
+
+Data extraction
+We asked a large language model to extract each data column below from each paper. We gave the model the
+extraction instructions shown below for each column.
+• AI Methods & Data Fusion:
+Extract details about the artificial intelligence methods and multimodal data fusion approaches used for agricultural monitoring, including:
+• Specific AI/ML techniques (e.g., CNN, ensemble methods, deep learning architectures)
+• Data types integrated (RGB imaging, hyperspectral, IoT sensors, thermal, etc.)
+• How multimodal data was fused or combined
+• Any preprocessing or feature extraction methods
+• Model architectures and training approaches
+• Agricultural Application:
+Extract the specific agricultural application and context, including:
+• Primary task (disease detection, severity quantification, quality assessment, yield prediction)
+• Crop type and variety studied
+• Specific diseases, pests, or quality parameters targeted
+• Growth stage or timing of assessment (early detection, harvest time, etc.)
+• Scale of application (leaf-level, plant-level, field-level, orchard-level)
+• Traditional Method Comparison:
+Extract information about comparisons with traditional visual detection methods, including:
+• What traditional methods were used as baseline/comparison (expert visual inspection, manual assessment,
+conventional imaging, etc.)
+• Direct performance comparisons between AI and traditional methods
+• Specific limitations of traditional methods that the AI approach addressed
+• Whether traditional and AI methods were combined or used independently
+• Performance Results:
+Extract quantitative performance outcomes and evaluation metrics, including:
+• Accuracy, precision, recall, F1-score, sensitivity, specificity percentages
+• Correlation coefficients with ground truth measurements
+• Error rates or detection thresholds
+• Speed/processing time comparisons
+• Performance across different conditions or datasets
+• Statistical significance of results
+
+3
+
+• Disease Severity & Quality Quantification:
+Extract specific information about disease severity assessment and internal quality prediction capabilities, including:
+• How disease severity was measured or classified (scales, stages, percentage affected area)
+• Internal quality parameters predicted (nutritional content, ripeness, shelf life, etc.)
+• Correlation between external detection and internal quality measures
+• Ability to quantify progression or predict future impact
+• Validation against laboratory or destructive testing methods
+• Implementation Context:
+Extract details about practical implementation and feasibility, including:
+• Field implementation vs laboratory/controlled environment testing
+• Real-time processing capabilities and computational requirements
+• Equipment needs and costs for deployment
+• Environmental conditions tested (lighting, weather, seasonal variations)
+• Scalability considerations and practical constraints
+• Integration with existing agricultural management systems
+• Methodological Approach:
+Extract information about study methodology and data quality, including:
+• Dataset characteristics (size, diversity, source, collection period)
+• Cross-validation strategies and train/test splitting approaches
+• Ground truth establishment methods
+• Reproducibility considerations and code/data availability
+• Sample size and statistical power
+• Bias mitigation strategies employed
+• Limitations & Challenges:
+Extract identified limitations, challenges, and future research needs, including:
+• Technical limitations of the AI approach still present
+• Data quality or availability constraints
+• Generalizability issues across crops, regions, or conditions
+• Computational or cost barriers to implementation
+• Areas where traditional methods still outperform AI
+• Specific improvements needed for practical adoption
+
+Report
+Due to the limitations of the AI model, we are only able to process 80 sources while writing a report. This report
+was written using the 80 sources that had the highest screening scores out of the 101 sources that we screened in
+and extracted data from.
+
+4
+
+Characteristics of Included Studies
+The systematic review encompassed 80 sources examining AI applications for disease detection, quality assessment,
+and yield prediction in horticultural crops. Studies varied substantially in their primary focus, methodological rigor,
+and data availability.
+
+Study
+
+Full text
+retrieved?
+
+Primary Task
+
+Crop Type
+
+AI Technique
+
+Data Type
+
+Rajashree
+Krishna et al.,
+2023
+Yohannes
+Agegnehu
+Bezabh et al.,
+2024
+Young K Chang
+et al., 2019
+Zhaopeng Cai et
+al., 2025
+Ezekiel Ahn et
+al. (n.d.)
+
+Yes
+
+Disease
+prediction
+
+Areca nut
+
+GRU, LSTM
+variants
+
+Meteorological
+data
+
+Yes
+
+Disease
+detection
+
+Mango
+
+Ensemble CNN
+(GoogLeNet +
+VGG16)
+
+RGB imaging
+
+Yes
+
+Disease
+detection
+Disease
+detection
+Yield prediction
+
+Strawberry
+
+RGB imaging
+
+Dengjie Chen et
+al., 2024
+Vinay Gautam
+Chitkara et al.,
+2024
+Md Eshmam et
+al., 2023
+
+Yes
+
+ANN, SVM,
+kNN
+ResNet, DCN,
+PPN
+Ensemble
+methods, SVM,
+KNN
+YOLOv8-MDNTiny
+FFIR (InceptionResNet)
+
+RGB imaging
+
+Ayesha
+Khannum et al.,
+2024
+Priyanka Rawat
+et al. (n.d.)
+Qin Liu et al.
+(n.d.)
+Kamaldeep Joshi
+et al., 2025
+Aishwarya
+Deepak et al.,
+2025
+Akbar
+Hidayatuloh et
+al., 2018
+
+Vision
+Transformer
+(ViT)
+VGG-16 CNN
+
+Yes
+Yes
+
+Pepper
+Cacao
+
+Disease
+detection
+Disease
+detection
+
+Passion fruit
+
+Yes
+
+Disease
+detection
+
+Mango
+
+Yes
+
+Disease
+detection
+
+Watermelon
+
+Yes
+
+Disease
+detection
+Object detection
+
+Okra
+
+Yes
+
+Yes
+Yes
+Yes
+Yes
+
+Strawberry
+
+Eggplant
+
+Deficiency
+detection
+Disease
+detection
+
+Eggplant
+
+Disease
+detection
+
+Tomato
+
+Tomato
+
+5
+
+RGB imaging
+Phenotypic data
+RGB imaging
+RGB imaging
+
+RGB imaging
+
+Custom CNN
+with U-Net
+YOLO-RDM
+
+RGB imaging
+
+YOLOv9 with
+GA
+InceptionV3
+
+RGB imaging
+
+SqueezeNet
+CNN
+
+RGB imaging
+
+RGB imaging
+
+RGB imaging
+
+Study
+
+Full text
+retrieved?
+
+Primary Task
+
+Crop Type
+
+AI Technique
+
+Data Type
+
+Deepthy
+Mathew et al.
+(n.d.)
+H D Phaneendra
+et al., 2022
+P Sajitha et al.,
+2025
+
+Yes
+
+Disease
+detection
+
+Banana
+
+DOST, LBP,
+ANN
+
+RGB imaging
+
+Yes
+
+Disease
+detection
+Disease
+detection
+
+Tomato
+
+CNN
+
+RGB imaging
+
+Pomegranate
+
+RGB imaging
+
+Anitha Julian et al., 2024
+
+Yes
+
+Disease
+detection
+
+Bell pepper
+
+Khalid M Hosny
+et al., 2023
+Omkar
+Chougule et al.,
+2022
+Ita Mubarokah
+et al. (n.d.)
+Getachew
+Tadesse et al.,
+2025
+Dasari Varshith
+Narayana et al.,
+2025
+Manohar Kumar
+et al., 2023
+Yashu Chitkara
+et al., 2024
+Meenakshi
+Vishnoi et al.,
+2025
+Abhishek Bajpai
+et al., 2023
+Jie Feng et al.
+(n.d.)
+Muzafar Rasool
+Bhat et al., 2023
+Sumithra K Devi
+et al. (n.d.)
+Oliver S Gladson
+et al. (n.d.)
+Dhivya R Praba
+et al., 2021
+
+Yes
+
+Disease
+detection
+Disease
+detection
+
+Apple, Tomato,
+Grape
+Tomato
+
+YOLOv5,
+ResNet-152,
+DC_CAENet
+CNN with
+hyperparameter
+tuning
+CNN + LBP
+EfficientNetV2B0
+
+RGB imaging
+
+Disease
+detection
+Disease
+detection
+
+Tomato
+
+SSD,
+EfficientDet
+MobileNetV3XGBoost
+
+RGB imaging
+
+Yes
+
+Disease
+detection
+
+Pomegranate
+
+SVM, KNN,
+CNN
+
+RGB imaging
+
+Yes
+
+Disease
+detection
+Quality
+assessment
+Disease
+detection
+
+Tomato
+
+LDA, XGBoost,
+SVM
+CNN + Random
+Forest
+ResNet50 + SVM
+
+Hyperspectral
+
+Disease
+detection
+Disease
+detection
+Disease
+detection
+Disease
+detection
+Disease
+detection
+Disease
+detection
+
+Tomato
+
+Yes
+
+Yes
+Yes
+Yes
+
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+
+Mango
+
+Banana
+Citrus
+
+Cucumber
+Apple
+Apple, Tomato,
+Potato
+Mango
+Apple
+
+6
+
+RGB imaging
+RGB imaging
+
+RGB imaging
+
+RGB imaging
+RGB imaging
+
+ES-CNN,
+ResNet-50
+BP Neural
+Network
+ResNet50
+(AppleNet)
+YOLO + RAG
+
+RGB imaging
+
+RGB imaging
+
+YOLOv8
+
+RGB imaging
+
+VGG16,
+DenseNet121,
+ResNet18
+
+RGB imaging
+
+Multispectral
+RGB imaging
+
+Study
+Ismail El Massi
+et al. (n.d.)
+Arshleen Kaur
+Chitkara et al.
+(n.d.)
+Vijayanandh
+Rajamanickam
+et al., 2025
+Veeraswamy
+Parisae et al.
+(n.d.)
+K S Tamilselvan
+et al., 2025
+Rishabh Sharma
+et al., 2024
+Jinmeng Zhang
+et al., 2025
+Magdalena
+Szechy
+Ńska-Hebda et
+al., 2025
+Zakirah Zaludin
+et al., 2025
+Prashant
+Wakhare et al.,
+2023
+Yashu Chitkara
+et al. (n.d.)
+Kai-Ting Zhang
+et al., 2025
+Martin ValtierraRodriguez et al.,
+2025
+K Gurunathan
+et al., 2023
+Intelligent
+Recognition…
+(n.d.)
+Shankey Garg et
+al., 2023
+Sandip Chavan
+et al., 2024
+Pranjali B Padol
+et al., 2016
+
+Full text
+retrieved?
+
+Primary Task
+
+Crop Type
+
+AI Technique
+
+Data Type
+
+Disease
+detection
+Disease
+detection
+
+Vegetable crops
+
+NN + SVM
+
+RGB imaging
+
+Mango
+
+CNN + SVM
+
+RGB imaging
+
+Yes
+
+Disease
+detection
+
+Sweet pepper
+
+Decision trees,
+Bayes models
+
+RGB imaging
+
+Yes
+
+Disease
+detection
+
+Apple
+
+CNN, YOLO
+
+RGB imaging
+
+Yes
+
+Disease
+detection
+Disease
+detection
+Quality
+assessment
+Disease
+detection
+
+Potato
+
+AttDenseNet
+
+RGB imaging
+
+Magnolia
+
+CNN + Decision
+Tree
+CNNs,
+Transformers
+ML + Spectral
+imaging
+
+RGB imaging
+
+Disease
+detection
+Disease
+detection
+
+Pineapple
+
+CNN, KNN
+
+RGB imaging
+
+Pomegranate
+
+CNN + SVM
+
+RGB imaging
+
+Disease
+detection
+Pest detection
+
+Pear
+
+RGB imaging
+
+Rose
+
+CNN + Random
+Forest
+AlexNet, VGG16
+
+RGB imaging
+
+Yes
+Yes
+
+Yes
+Yes
+Yes
+
+Yes
+Yes
+Yes
+Yes
+
+Tomato
+Cabbage
+
+Hyperspectral +
+IoT
+Hyperspectral
+
+Yes
+
+Disease
+detection
+
+Citrus
+
+EfficientNetB0
+
+RGB imaging
+
+Yes
+
+Quality
+assessment
+Disease
+detection
+
+Various fruits
+
+AlexNet
+
+RGB imaging
+
+Pepper, Potato
+
+DNN
+
+RGB imaging
+
+Disease
+detection
+Yield prediction
+
+Various crops
+
+MobileNetV2
+
+RGB imaging
+
+Vegetables
+
+CNN, Random
+Forest
+SVM + ANN
+
+Multimodal (soil,
+weather, images)
+RGB imaging
+
+Yes
+Yes
+Yes
+Yes
+
+Disease
+detection
+
+Grape
+
+7
+
+Study
+
+Full text
+retrieved?
+
+Primary Task
+
+Crop Type
+
+AI Technique
+
+Data Type
+
+Disease
+detection
+Disease
+detection
+Disease
+detection
+Disease
+management
+
+Tomato
+
+VGG16 CNN
+
+RGB imaging
+
+Tomato
+
+CNN
+
+RGB imaging
+
+Mango
+
+ANN
+
+RGB imaging
+
+Orchid
+
+YOLOv5, ANN
+
+IoT sensors +
+imaging
+
+Disease
+detection
+Disease
+detection
+
+Grape
+
+CNN, hybrid
+methods
+CNN, R-CNN,
+hybrid models
+
+RGB imaging
+
+Yes
+
+Disease
+detection
+
+Tomato
+
+Nearestneighbor
+
+RGB imaging
+
+Yes
+
+Disease
+detection
+
+Tomato
+
+KNN, PNN, SVM
+
+RGB imaging
+
+Yes
+
+Pest prediction
+
+Vegetables
+
+Historical data
+
+Yes
+
+Disease
+detection
+Disease
+detection
+Disease
+detection
+Disease
+detection
+Disease
+detection
+
+Mango
+
+Semi-supervised
+learning
+CNN, SVM
+
+Strawberry
+
+Fuzzy logic
+
+RGB + IoT
+sensors
+RGB imaging
+
+Grape
+
+SVM
+
+RGB imaging
+
+Citrus
+
+CNNs, SVMs,
+ensemble
+ANN
+
+RGB +
+hyperspectral
+RGB + IoT
+sensors
+RGB imaging
+
+A Seetharam et
+al., 2022
+P Pushpa et al.,
+2024
+Jatinder Kaur et
+al. (n.d.)
+Dinuka
+Wijendra et al.
+(n.d.)
+Prachi Goraksha
+et al. (n.d.)
+Elizabeth
+Hepzibah et al.,
+2021
+Douglas
+Baquero et al.
+(n.d.)
+Fusion
+Approach…
+(2020)
+Ting Li et al.,
+2008
+A Packialatha et
+al., 2024
+Ehsan Kiani et
+al. (n.d.)
+Pranjali B Padol
+et al., 2016a
+Shantilata Palei
+et al., 2023
+Kowshik
+Kolvekar et al.
+(n.d.)
+Akanksha Joshi
+et al. (n.d.)
+
+Yes
+
+Yes
+
+Disease
+detection
+
+Apple, Grape
+
+Jitali Patel et al.,
+2021
+Siventhirarajah
+Sangeevan et al.,
+2021
+Savita C Raut et
+al., 2024
+
+Yes
+
+Disease
+detection
+Disease
+detection
+
+Grape
+
+VGG,
+EfficientNet,
+MobileNet
+GLCM + KNN
+
+Bell pepper,
+Potato, Tomato
+
+CNN with
+AlexNet
+
+RGB imaging
+
+Disease
+detection
+
+Citrus
+
+Various CNNs
+
+RGB +
+hyperspectral
+
+Yes
+Yes
+Yes
+Yes
+Yes
+
+Yes
+Yes
+Yes
+Yes
+
+Yes
+Yes
+
+Tomato
+
+Tomato
+
+8
+
+Not specified
+
+RGB imaging
+
+Study
+Falguni Suthar
+et al., 2023
+Vikas Verma et
+al., 2022
+Lalit R
+Chaudhari et al.
+(n.d.)
+PlantMed (2024)
+
+Full text
+retrieved?
+
+Primary Task
+
+Crop Type
+
+AI Technique
+
+Data Type
+
+Disease
+detection
+Disease
+detection
+Disease
+detection
+
+Various plants
+
+CNNs, SVMs,
+KNNs
+KNN, Decision
+tree
+DenseNet121
+
+RGB imaging
+
+Disease
+detection
+Quality
+assessment
+
+Tomato, Bell
+pepper
+Apple, Potato
+
+CNN
+
+RGB + weather
+data
+RGB imaging
+
+Yes
+
+Health
+monitoring
+
+Grapevine
+
+PLSR
+
+Hyperspectral
+
+Yes
+
+Disease
+detection
+Disease
+detection
+Disease
+detection
+
+Pomegranate
+
+BP Neural
+Networks
+CNN
+
+RGB imaging
+
+Pomegranate,
+Orange, Papaya,
+Grape
+Banana
+
+CNN
+
+RGB imaging
+
+Pre-trained
+CNNs
+
+RGB imaging
+
+Horticultural
+crops
+Tomato
+
+Texture-based
+analysis
+CNN, DRL
+
+RGB imaging
+
+Yes
+Yes
+Yes
+Yes
+
+Muhammad
+Hakimi et al.,
+2024
+Matthew
+Maimaitiyiming
+et al., 2020
+Rashmi Pawar
+et al. (n.d.)
+Sanjana Prasad
+et al. (n.d.)
+K V Suresh et al.,
+2020
+
+Yes
+
+Deepthy
+Mathew et al.,
+2023
+K R Aravind et
+al., 2016
+A Padma et al.
+(n.d.)
+
+Yes
+
+Disease
+detection
+
+Yes
+
+Disease
+detection
+Disease
+detection
+
+Yes
+Yes
+
+Yes
+
+Wheat
+Rose
+
+Multiple crops
+
+K-means, CNN
+
+RGB + IoT
+sensors
+RGB imaging
+
+RGB imaging
+
+RGB + IoT
+sensors
+
+The studies predominantly focused on disease detection (n=68), with fewer addressing quality assessment (n=5), yield
+prediction (n=3), and pest detection (n=2). Tomato emerged as the most frequently studied crop (n=15), followed by
+mango (n=8), apple (n=6), and grape (n=6). RGB imaging dominated as the primary data source (n=72), with only
+six studies employing hyperspectral imaging and eight integrating IoT sensor data.
+
+AI Techniques and Architectural Evolution
+Deep Learning Dominance
+Convolutional Neural Networks (CNNs) represented the predominant AI architecture across studies, with implementations ranging from foundational architectures to sophisticated ensemble methods. Transfer learning with
+pre-trained models showed particular prominence, with VGG variants employed in 12 studies, ResNet architectures
+in 8 studies, and the YOLO family in 9 studies.
+9
+
+AI Architecture Category
+
+Frequency
+
+Representative Models
+
+Typical Accuracy Range
+
+Standard CNNs
+
+28
+
+86-98%
+
+Pre-trained CNN
+(Transfer Learning)
+YOLO-based
+
+35
+9
+
+Ensemble/Hybrid
+Traditional ML
+Transformers
+Recurrent Networks
+
+15
+12
+2
+1
+
+Custom architectures,
+SqueezeNet
+VGG16/19, ResNet50,
+MobileNet
+YOLOv5, YOLOv8,
+YOLOv9
+CNN+SVM, CNN+RF
+SVM, KNN, ANN
+ViT, Transformer-based
+GRU, LSTM
+
+90-99%
+93-99%
+77-99%
+76-93%
+100%
+R²=0.99
+
+Emerging architectures demonstrated notable performance improvements. The Vision Transformer (ViT) achieved
+100% classification accuracy on the MangoLeafBD dataset, attributed to its parameter efficiency compared to deep
+CNN models. Attention mechanisms integrated with DenseNet architectures yielded 98.7% accuracy for potato
+disease detection, while the IMNM model combining improved ResNet with dynamic convolution networks achieved
+98.55% accuracy with cross-species generalization to 99.81%.
+
+Hybrid and Ensemble Approaches
+Feature fusion strategies demonstrated promising results. The FFIR model combining Inception-ResNet with canonical correlation analysis achieved 99.34% accuracy for strawberry disease detection. Hybrid CNN-SVM architectures
+achieved 95.93% accuracy for mango scab severity classification, while CNN-Random Forest combinations yielded
+86.97% accuracy for banana ripeness detection and 77.2% for pear disease recognition.
+
+Performance Outcomes
+Classification Accuracy by Task and Crop
+Crop
+
+Task
+
+Best Model
+
+Accuracy
+
+Precision
+
+Recall
+
+F1-Score
+
+Tomato
+
+Disease
+detection
+Disease
+detection
+Disease
+severity
+Stage-wise
+detection
+Disease
+detection
+Disease
+detection
+
+CNN
+
+98.49%
+
+-
+
+-
+
+-
+
+EfficientNetV2B097.58%
+
+-
+
+-
+
+-
+
+EfficientDet
+D1
+InceptionV3
+
+mAP 66.03%
+
+-
+
+-
+
+-
+
+95.56%
+
+-
+
+-
+
+-
+
+ViT
+
+100%
+
+100%
+
+100%
+
+100%
+
+Ensemble
+CNN
+
+99.21%
+
+97%
+
+97%
+
+97%
+
+Tomato
+Tomato
+Tomato
+Mango
+Mango
+
+10
+
+Crop
+
+Task
+
+Best Model
+
+Accuracy
+
+Precision
+
+Recall
+
+F1-Score
+
+Mango
+
+Disease
+detection
+Fruit disease
+
+YOLOv8
+
+99.29%
+
+-
+
+-
+
+-
+
+MobileNetV3XGBoost
+AppleNet
+(ResNet50)
+DenseNet121
+
+98.95%
+
+99%
+
+98-100%
+
+98-99%
+
+96.99%
+
+-
+
+-
+
+97%
+
+94%
+
+-
+
+-
+
+-
+
+CNN+LBP
+
+98.8%
+
+-
+
+-
+
+-
+
+SVM+ANN
+Fusion
+GLCM+KNN
+
+100%
+
+-
+
+-
+
+-
+
+82%
+
+-
+
+-
+
+-
+
+ANN
+
+93.81%
+
+-
+
+-
+
+-
+
+FFIR
+
+99.34%
+
+99.69%
+
+99.05%
+
+99.03%
+
+IMNM
+
+98.55%
+
+>98%
+
+>98%
+
+-
+
+CNN tuned
+
+97.87%
+
+-
+
+-
+
+-
+
+EfficientNetB0 99.88%
+
+99.88%
+
+99.89%
+
+99.88%
+
+Hybrid
+>95%
+ResNet50+SVM
+CNN
+98%
+
+-
+
+-
+
+-
+
+-
+
+-
+
+0.99-1.00
+
+DC_CAENet
+
+99.21%
+
+98.9%
+
+98.85%
+
+98.9%
+
+DenseNet121
+
+91.7%
+
+-
+
+-
+
+-
+
+ELBP+ANN
+
+95.9%
+
+93.9%
+
+93.9%
+
+93.8%
+
+AttDenseNet
+
+98.7%
+
+85%
+
+83%
+
+84%
+
+BP NN +
+Multispectral
+VGG16
+
+90-100%
+
+-
+
+-
+
+-
+
+90.11%
+
+-
+
+-
+
+-
+
+VGG-16
+
+100%
+
+-
+
+-
+
+-
+
+CNN
+
+100%
+
+-
+
+-
+
+-
+
+Mango
+Apple
+Apple
+Apple
+Grape
+Grape
+Strawberry
+Strawberry
+Pepper
+Pepper
+Citrus
+Citrus
+Pomegranate
+Pomegranate
+Banana
+Banana
+Potato
+Cucumber
+Rose
+Watermelon
+Pineapple
+
+Disease
+detection
+Disease
+detection
+Disease
+detection
+Disease
+detection
+Disease
+detection
+Disease
+detection
+Disease
+detection
+Disease
+detection
+Disease
+detection
+Disease
+detection
+Disease
+detection
+Disease
+detection
+Disease
+detection
+Disease
+detection
+Disease
+detection
+Disease
+detection
+Disease
+detection
+Pest
+detection
+Disease
+detection
+Disease
+detection
+
+11
+
+Crop
+
+Task
+
+Best Model
+
+Accuracy
+
+Precision
+
+Recall
+
+F1-Score
+
+Eggplant
+
+Deficiency
+detection
+Disease
+detection
+Health
+monitoring
+Disease
+detection
+Yield
+prediction
+
+YOLOv9+GA
+
+94.52%
+
+95.9%
+
+92.8%
+
+94.32%
+
+YOLOv8MDN-Tiny
+PLSR
+
+mAP 94.8%
+
+91.5%
+
+91.6%
+
+-
+
+R²=0.7
+
+-
+
+-
+
+-
+
+Spectral+ML
+
+-
+
+-
+
+-
+
+-
+
+Neural
+Boosted
+
+R²=0.9985
+
+-
+
+-
+
+-
+
+Passion fruit
+Grapevine
+Cabbage
+Cacao
+
+Performance varied substantially across studies, with reported accuracies ranging from 77.2% to 100%. The highestperforming models typically employed transfer learning with pre-trained architectures on well-curated datasets
+under controlled conditions. Studies reporting perfect or near-perfect accuracy often used relatively small, homogeneous datasets, raising concerns about generalizability.
+
+Spectral Analysis Performance
+Studies employing hyperspectral and multispectral imaging demonstrated distinct advantages for early detection
+and physiological parameter estimation:
+Study
+
+Imaging Type
+
+Target
+
+Performance Metric
+
+Result
+
+Manohar Kumar et
+al., 2023
+Manohar Kumar et
+al., 2023
+Jie Feng et al. (n.d.)
+
+Hyperspectral
+
+Fusarium wilt
+severity
+Fusarium wilt
+severity
+Cucumber diseases
+
+Accuracy (SVM)
+
+98%
+
+Accuracy (LDA)
+
+86%
+
+Classification
+accuracy
+R² for stomatal
+conductance
+
+90-100%
+
+Matthew
+Maimaitiyiming et
+al., 2020
+Magdalena Szechy
+Ńska-Hebda et al.,
+2025
+
+Hyperspectral
+Multispectral (16
+bands)
+Hyperspectral
+Hyperspectral
+
+Grapevine
+physiology
+Cabbage pathogen
+stress
+
+Significance level
+
+0.70
+p≤0.001
+
+Hyperspectral imaging enabled detection of physiological changes before visible symptoms appeared, with significant spectral alterations observed in the 400-520 nm range for grey mould and 700-722 nm for alternaria infections.
+The PLSR models achieved R² values of 0.6-0.7 for predicting vine physiological parameters including stomatal conductance, photosynthetic rate, and transpiration. However, the review by Jinmeng Zhang et al. (2025) noted that
+current HSI systems face challenges with hardware miniaturization, environmental resilience, and model generalizability.
+
+12
+
+Comparison with Traditional Methods
+Performance Advantages of AI Approaches
+The majority of studies reported AI methods outperforming traditional visual inspection approaches:
+Study
+Md Eshmam et al., 2023
+Ayesha Khannum et al.,
+2024
+Muzafar Rasool Bhat et al.,
+2023
+
+Traditional Method
+Limitation
+Manual inspection lacks
+reliability
+Labor-intensive,
+time-consuming
+Time-consuming,
+expensive, error-prone
+
+Zhaopeng Cai et al., 2025
+
+Low efficiency,
+labor-intensive
+
+Young K Chang et al., 2019
+
+Labor-intensive manual
+monitoring
+Human visual inspection
+benchmark
+Prone to personal opinion
+
+Ehsan Kiani et al. (n.d.)
+Rishabh Sharma et al.,
+2024
+Vijayanandh
+Rajamanickam et al., 2025
+
+AI Improvement
+
+Specific Metric
+
+100% accuracy surpasses
+human observation
+100% training and
+validation accuracy
+21.54% mean
+improvement over
+baseline
+98.55% accuracy,
+cross-species
+generalization
+Early detection capability
+
+100% accuracy
+
+96% iron deficiency, 93%
+fungal detection
+Consistent 96% accuracy
+
+Prone to human bias and
+error
+
+98% accuracy with
+decision trees
+
+100% accuracy
+96.99% accuracy
+98.55% accuracy
+93.81% accuracy
+1.2s processing time
+96.4% overall accuracy
+Fast and accurate results
+
+Traditional methods were consistently characterized as time-consuming, expensive, and prone to human error. AI
+approaches addressed these limitations by providing automated, consistent, and rapid detection capabilities.
+
+Specific Quantitative Comparisons
+Several studies provided direct performance comparisons:
+• The YOLO-RDM model improved detection accuracy by 3.4% over baseline YOLOv8n, with specific improvements of 1.1% for eggplant detection and 5.8% for stem detection
+• The proposed mango disease detection model advanced overall accuracy by 4.72-13.18% compared to SVM,
+ANN, and CNN-HOG methods
+• Semi-supervised learning achieved 76.42% accuracy for flea beetle prediction, outperforming SVM (67.56%),
+k-means clustering (51.90%), and RBF Neural Network (60.28%)
+• Transfer learning with AlexNet achieved 88.64% accuracy compared to 69.75% for CNN trained from scratch
+and 73.13% for SVM
+
+Areas Where Traditional Methods Remain Relevant
+Despite AI advantages, several studies acknowledged persistent limitations. Manual inspection remains necessary
+when AI models face overlapping symptoms or when computational resources are limited. Traditional methods may
+13
+
+still outperform AI for detecting diseases in early stages where visual symptoms are subtle, and expert knowledge
+remains essential for ground truth establishment.
+
+Disease Severity Assessment and Quality Quantification
+Severity Classification Approaches
+Only 12 studies addressed disease severity quantification beyond binary classification:
+Study
+
+Severity Measurement
+
+Classification Approach
+
+Performance
+
+Aishwarya Deepak et al.,
+2025
+Ita Mubarokah et al. (n.d.)
+Manohar Kumar et al.,
+2023
+Arshleen Kaur Chitkara et
+al. (n.d.)
+Zakirah Zaludin et al.,
+2025
+Priyanka Rawat et al.
+(n.d.)
+Vijayanandh
+Rajamanickam et al., 2025
+
+Three stages based on leaf
+damage
+Four severity levels
+Five disease severity levels
+
+Stage-wise classification
+
+95.56% testing accuracy
+
+Multi-class detection
+Hyperspectral
+discrimination
+CNN+SVM hybrid
+
+mAP 66.03%
+80-86% accuracy
+95.93% accuracy
+
+Five-level scale (no scab to
+extremely severe)
+Four stages (early to
+severe)
+Affected area highlighting
+
+CNN classification
+
+100% accuracy
+
+U-Net segmentation
+
+AUC 0.99
+
+Percentage diseased area
+
+Pixel-based calculation
+
+98% accuracy
+
+The stage-wise detection approach for late blight in tomatoes, analogous to cancer staging, represented a novel contribution to precision agriculture. However, the EfficientDet D1 model achieved only 66.03% mAP for Begomovirus
+severity classification, attributed to symptom similarity across severity levels.
+
+Internal Quality Prediction
+Studies predicting internal quality parameters were notably scarce:
+Study
+
+Quality Parameter
+
+Method
+
+Correlation/Accuracy
+
+Yashu Chitkara et al., 2024
+Jinmeng Zhang et al., 2025
+Matthew Maimaitiyiming
+et al., 2020
+
+Ripeness stages
+SSC, lycopene content
+Stomatal conductance,
+photosynthetic rate
+
+CNN+Random Forest
+HSI+ML
+PLSR
+
+86.97% accuracy
+R²=0.9652 for lycopene
+R²=0.7 for conductance
+
+The review by Jinmeng Zhang et al. (2025) highlighted HSI's potential for quantitative nutritional component prediction, with lycopene content prediction achieving R²=0.9652. However, the correlation between external detection
+and internal quality measures remained largely unexplored across the reviewed studies.
+
+14
+
+Multimodal Data Fusion
+Integration Approaches
+True multimodal fusion combining multiple data types was implemented in a limited subset of studies:
+Study
+
+Data Types Integrated
+
+Fusion Approach
+
+Application
+
+Sandip Chavan et al., 2024
+
+Soil, weather, crop images
+
+Yield prediction
+
+Dinuka Wijendra et al.
+(n.d.)
+A Packialatha et al., 2024
+Vikas Verma et al., 2022
+
+IoT sensors, imaging
+
+Predictive modeling
+integration
+Real-time data integration
+
+RGB imaging, IoT sensors
+RGB, soil sensors
+
+Image+sensor fusion
+Sensor data integration
+
+Kowshik Kolvekar et al.
+(n.d.)
+PlantMed (2024)
+Jinmeng Zhang et al., 2025
+
+RGB, temperature,
+humidity sensors
+RGB, weather data
+HSI, IoT, RGB, LiDAR
+
+Cloud-based integration
+App-based integration
+Feature-level and
+decision-level fusion
+
+Orchid disease
+management
+Mango disease detection
+Disease detection,
+fertilizer prediction
+Tomato disease
+monitoring
+Disease detection and care
+Quality assessment
+
+The OrchiZen system achieved 91.8% disease detection accuracy by integrating IoT sensors with imaging data, demonstrating 72% reduction in fungal symptoms and 68% improvement in plant health compared to traditional methods.
+However, feature-level fusion strategies remained underdeveloped, with most studies employing simple concatenation rather than sophisticated integration architectures.
+
+Hyperspectral-AI Integration
+The combination of hyperspectral imaging with machine learning showed strong potential:
+• HSI captured signatures of key attributes like lycopene and soluble solids in the biochemically critical 400-2500
+nm range
+• Spectral changes in cabbage leaves enabled early-stage pathogen detection through alterations in flavonoids
+(400-450 nm), chlorophyll (680-700 nm), and phenolic compounds (700-750 nm)
+• PLSR models identified significant spectral regions overlapping with established remote sensing stress indicators
+
+Implementation Context and Feasibility
+Field vs. Laboratory Testing
+Implementation Context
+
+Number of Studies
+
+Representative Examples
+
+Laboratory/Controlled
+
+45
+
+Akbar Hidayatuloh et al., 2018;
+Yashu Chitkara et al., 2024
+
+15
+
+Implementation Context
+
+Number of Studies
+
+Representative Examples
+
+Field implementation
+
+18
+
+Mixed/Intended field
+
+17
+
+Manohar Kumar et al., 2023;
+Vijayanandh Rajamanickam et al.,
+2025
+Dengjie Chen et al., 2024; Zhaopeng
+Cai et al., 2025
+
+The majority of studies operated in controlled environments, with datasets often collected under standardized lighting and background conditions. Field implementation studies faced challenges including environmental variability,
+lighting conditions, and background noise.
+
+Computational Requirements and Real-Time Processing
+Model Type
+
+Model Size
+
+Processing Speed
+
+Hardware Requirements
+
+YOLOv8-MDN-Tiny
+
+90.1% reduction vs
+YOLOv8s
+6.29 MB (from 21.8 MB)
+8.844 KB
+Lightweight
+
+85.3 FPS
+
+GPU acceleration
+
+Real-time capable
+Mobile/embedded suitable
+Field-portable
+
+Mobile devices
+Smartphones
+Drones/portables
+
+MobileNetV3-Large
+SqueezeNet
+EfficientNetB0
+
+Lightweight architectures specifically designed for edge deployment demonstrated promising results. The YOLOv8MDN-Tiny model reduced parameters by 90.1% and memory usage by 88.9% while maintaining 94.8% mAP. The
+customized MobileNetV3-Large reduced trainable parameters from 5,507,432 to 566,325, enabling deployment on
+resource-constrained devices.
+
+Equipment and Cost Considerations
+Hyperspectral imaging systems faced significant cost barriers. Current HSI systems were characterized as large and
+expensive, hindering field applications. The Jinmeng Zhang et al. (2025) review emphasized the need for portable
+snapshot HSI systems and miniaturized sensors to overcome these barriers. In contrast, smartphone-based RGB
+imaging systems offered cost-effective alternatives, with several studies demonstrating effective disease detection
+using consumer-grade cameras.
+
+Methodological Quality Assessment
+Dataset Characteristics
+Dataset Metric
+
+Range
+
+Median
+
+Studies Reporting
+
+Dataset size (images)
+Training split
+Validation split
+
+210-61,486
+70-85%
+10-20%
+
+~3,000
+80%
+15-20%
+
+62/80
+58/80
+48/80
+
+16
+
+Dataset Metric
+
+Range
+
+Median
+
+Studies Reporting
+
+Classes
+
+2-39
+
+4-8
+
+72/80
+
+Dataset sizes varied substantially, from 210 multispectral samples to 61,486 images. Small dataset sizes (n<1,000)
+were common, raising concerns about model generalizability. Data augmentation was employed in 38 studies to
+address limited dataset sizes.
+
+Validation Strategies
+Validation Approach
+
+Frequency
+
+Example Studies
+
+Hold-out (train/test split)
+K-fold cross-validation
+
+52
+18
+
+External validation
+
+8
+
+Stratified k-fold
+
+4
+
+Omkar Chougule et al., 2022
+Rajashree Krishna et al., 2023;
+Young K Chang et al., 2019
+Young K Chang et al., 2019; Zakirah
+Zaludin et al., 2025
+Martin Valtierra-Rodriguez et al.,
+2025
+
+Five-fold cross-validation was employed in eight studies, while ten-fold validation appeared in three studies. External validation using independent datasets was reported in only eight studies, limiting confidence in reported
+generalizability claims.
+
+Ground Truth Establishment
+Ground Truth Method
+
+Frequency
+
+Examples
+
+Expert annotation
+
+24
+
+Pre-existing labeled datasets
+Controlled inoculation
+
+31
+3
+
+Not specified
+
+22
+
+Yohannes Agegnehu Bezabh et al.,
+2024; Deepthy Mathew et al. (n.d.)
+PlantVillage-based
+Magdalena Szechy Ńska-Hebda et
+al., 2025
+Multiple studies
+
+Ground truth establishment predominantly relied on expert annotation or pre-existing labeled datasets. Only three
+studies employed controlled pathogen inoculation, while 22 studies failed to specify their ground truth methodology,
+representing a significant methodological gap.
+
+Reproducibility Considerations
+
+17
+
+Reproducibility Element
+
+Studies Addressing
+
+Studies Not Addressing
+
+Code availability
+Data availability
+Detailed hyperparameters
+Hardware specifications
+
+8
+18
+45
+38
+
+72
+62
+35
+42
+
+Reproducibility remained a significant concern. Only eight studies mentioned code availability, while 18 provided
+access to datasets. The use of publicly available datasets (PlantVillage, Kaggle) enhanced reproducibility in approximately 35 studies.
+
+Synthesis of Heterogeneous Findings
+Explaining Performance Variability
+The wide range of reported accuracies (77.2%-100%) reflects systematic methodological differences rather than contradictory findings:
+Dataset Complexity and Size Effects: Studies achieving perfect or near-perfect accuracy (100%) typically employed
+smaller, homogeneous datasets under controlled conditions. The ViT model's 100% accuracy on MangoLeafBD was
+achieved on a well-balanced dataset of 4,000 images with 500 samples per class. In contrast, studies addressing
+severity classification with symptom similarity achieved lower performance—the EfficientDet D1 model's 66.03%
+mAP for Begomovirus severity reflected the inherent challenge of distinguishing similar symptom presentations.
+Architecture-Task Matching: Higher performance correlated with appropriate architecture selection for specific
+tasks:
+• Object detection tasks (fruit localization, harvesting support) achieved optimal results with YOLO-family models
+• Multi-class classification benefited from transfer learning with VGG/ResNet architectures
+• Severity quantification requiring fine-grained discrimination showed improved results with attention mechanisms and hybrid approaches
+Environmental Conditions: Field-collected datasets introduced performance variability. The AppleNet model
+trained on real-world orchard images with background noise achieved 96.99% accuracy, while models trained on
+controlled-condition datasets reported higher accuracies that may not generalize to field settings.
+
+Contextual Validity of Findings
+The apparent contradiction between studies reporting AI superiority over traditional methods and those acknowledging persistent limitations reflects different operational contexts:
+Early-stage vs. Established Disease Detection: AI approaches demonstrated clear advantages for established disease
+symptoms with distinctive visual patterns. However, early-stage detection before visible symptoms requires spectral
+imaging capabilities, where hyperspectral approaches showed promise but faced practical implementation barriers.
+Controlled vs. Field Environments: Laboratory-tested models achieved higher reported accuracies but faced degradation in field conditions due to lighting variability, background complexity, and environmental factors. The Martin
+
+18
+
+Valtierra-Rodriguez et al. (2025) study explicitly acknowledged that results obtained under controlled conditions
+”may not perform well in real field scenarios”.
+Single Disease vs. Multi-Disease Classification: Models targeting single disease types consistently outperformed
+multi-disease classifiers. The EfficientNetB0 model achieved 99.88% accuracy for citrus canker and HLB, with the
+authors noting ”high accuracy obtained is mainly because only two diseases were considered”.
+
+Emerging Standards and Best Practices
+Several methodological standards emerged across higher-quality studies:
+• Cross-validation requirements: Studies employing k-fold cross-validation or external validation provided
+more reliable performance estimates
+• Data augmentation protocols: Systematic augmentation addressing class imbalance improved model robustness
+• Expert ground truth: Studies with plant pathologist supervision or controlled inoculation provided more
+reliable training labels
+• Lightweight model development: Architectures optimized for edge deployment enabled practical field implementation
+
+Critical Gaps Requiring Resolution
+Multimodal Fusion: Despite theoretical advantages, true multimodal fusion combining imaging modalities with
+IoT sensor data remained underdeveloped. Only eight studies implemented substantive data integration, with most
+employing simple concatenation rather than learned fusion strategies.
+Internal Quality Prediction: The correlation between external disease detection and internal quality parameters was
+rarely examined. Only three studies addressed internal quality prediction, representing a significant gap between
+disease detection capabilities and yield/quality impact assessment.
+Severity Quantification: Progression from binary classification to quantitative severity assessment remained limited,
+with only 12 studies implementing multi-level severity classification. The relationship between detected severity and
+subsequent yield impact was not established in any reviewed study.
+Generalizability Validation: Cross-species, cross-region, and cross-season validation was reported in only four studies, limiting confidence in model transferability. The IMNM model's cross-species validation achieving 99.81% average accuracy for apple, wheat, and rice represented an exception requiring broader replication.
+
+References
+A Packialatha. “A Mango Disease Prediction for Smart Agiculture Using Machine Learning Algorithms.” 2024 8th
+International Conference on I-SMAC (IoT in Social, Mobile, Analytics and Cloud) (I-SMAC), 2024.
+A Padma, P Suresh, G Narsimlu, Mr M Amarnath, and B R Sreedhar. “Artificial Intelligence-Powered Internet of
+Things for Farming and Plant Research,” n.d.
+A Seetharam, and G N Balaji. “Deep Learning Approach for Recognition and Classification of Tomato Fruit Diseases.”
+2022 International Conference on Data Science, Agents & Artificial Intelligence (ICDSAAI), 2022.
+Abhishek Bajpai, Titiksha Tyagi, Reinhard Klette, Brendan Mccane, Gabriella Sanniti Di Baja, Palaiahnakote Shivakumara, and Liang Wang. “An Efficient Approach to Detect and Predict the Tomato Leaf Disease Using Enhance
+
+19
+
+Segmentation Neural Network.” SN Computer Science, 2023.
+Aishwarya Deepak, Ravi Kumar, Sharath Kumar, L Vijay Kumar, and Girigowda Manjunath. “Stage-Wise Late Blight
+Disease Detection in Tomato Plants Using Deep Learning Models Along with Treatment Recommendation.” 2025
+Annual International Conference on Data Science, Machine Learning and Blockchain Technology (AICDMB), 2025.
+Akanksha Joshi, Arjun Badola, and Rashmi Saini. “Deep Learning Based Fruit Crop Disease Classification Using
+Plants Leaf Imagery,” n.d.
+Akbar Hidayatuloh, M Nursalman, and Eki Nugraha. “Identification of Tomato Plant Diseases by Leaf Image Using
+Squeezenet Model.” International Conference on Information Technology Systems and Innovation, 2018.
+Anitha Julian -, Jaiganesh V Thirumurugan, and O T Isreal. “PepperShield: Disease Detection with Hyper Tuned
+Precision.” International Conference on Computational Intelligence and Communication Networks, 2024.
+Arshleen Kaur Chitkara, Vinay Kukreja, Deepak Singh Rana, Ashish Garg, and Rishabh Sharma. “Deep Insights into
+Mango Scab: An AI-Powered Approach for Detection and Classification,” n.d.
+Ayesha Khannum. “Classification of Downy Mildew Disease in Watermelon Plant Leaf Using VGG-16 Convolutional
+Neural Network.” 2024 4th International Conference on Mobile Networks and Wireless Communications (ICMNWC),
+2024.
+Dasari Varshith Narayana, B Pakruddin, Y Vikranth Reddy, Anant Chikmurge, R Mayur, and T Lokesh. “Performance
+Analysis of Machine and Deep Learning Techniques for Pomegranate Fruit Disease Detection and Classification.”
+2025 International Conference on Next Generation Communication & Information Processing (INCIP), 2025.
+Deepthy Mathew, C Sathish Kumar, and K Anita Cherian. “Classification of Leaf Spot Diseases in Banana Using
+Pre-Trained Convolutional Neural Networks.” International Conference on Innovative Computing and Cloud Computing, 2023.
+Deepthy Mathew, C Sathish, and K Anita Cherian. “Application of Discrete Orthonormal Stockwell Transform and
+Local Neighborhood Patterns for Leaf Disease Classification in Banana,” n.d.
+Dengjie Chen, Fan Lin, Caihua Lu, Junwei Zhuang, Hongjie Su, Dehui Zhang, and Jincheng He. “YOLOv8-MDN-Tiny:
+A Lightweight Model for Multi-Scale Disease Detection of Postharvest Golden Passion Fruit,” 2024.
+Dhivya R Praba, and K Kavitha. “Foliar Disease Classification in Apple Trees.” 2021 International Conference on
+Advancements in Electrical, Electronics, Communication, Computing and Automation (ICAECA), 2021.
+Dinuka Wijendra, H M K C B Herath, Vishan Jayasinghearachchi, Y M T N S Yapa, O A P Dilshan, and K D M M
+Rathnasiri, n.d.
+Douglas Baquero, Juan Molina, Rodrigo Gil, Carlos Bojacá, Hugo Franco, and Francisco Gómez. “An Image Retrieval
+System for Tomato Disease Assessment,” n.d.
+Ehsan Kiani, and Tofik Mamedov. “Identification of Plant Disease Infection Using Soft-Computing: Application to
+Modern Botany,” n.d.
+Elizabeth Hepzibah, David, K Ramalakshmi, Hemalatha Gunasekaran, and R Venkatesan. “Literature Review of Disease Detection in Tomato Leaf Using Deep Learning Techniques.” 2021 7th International Conference on Advanced
+Computing and Communication Systems (ICACCS), 2021.
+Ezekiel Ahn, Insuck Baek, Minhyeok Cha, Seunghyun Lim, Brian M Irish, Sookyung Oh, Jishnu Bhatt, et al. “Integrated,” n.d.
+Falguni Suthar, Kuldeep Padhya, Ritesh Joshi, Satyen Parikh, Alavikunhu Panthakkan, Wathiq Mansoor, and A M
+Patel. “An Extensive Evaluation of Plant Disease Detection Using Diverse Machine Learning Approaches.” 2023
+6th International Conference on Signal Processing and Information Security (ICSPIS), 2023.
+“Fusion Approach-Based Horticulture Plant Diseases Identification Using Image Processing,” 2020.
+Getachew Tadesse, Yelkal Mulualem Walle, Melaku Bitew, Haile Surafel, Tsegaye Yohannes, Andargie Geteneh
+Tegegne, Destaw Gizaw Tesfaye, Getachew Alemu, and Baye. “Mango Fruit Disease Detection and Classification Using MobileNetV3_large Model.” Scientific African, 2025.
+H D Phaneendra, Shri Gandha, Sai Niranjan, and Chitrala Badrinat. “Disease Detection in Tomato Plants Using
+
+20
+
+CNN.” 2022 IEEE 3rd Global Conference for Advancement in Technology (GCAT), 2022.
+“Intelligent Recognition of Leaf Abnormalities Using Deep Learning Method,” n.d.
+Ismail El Massi, Youssef Es-Saady, Mostafa El Yassa, Driss Mammass, and Abdeslam Benazoun. “Automatic Recognition of the Damages and Symptoms on Plant Leaves Using Parallel Combination of Two Classifiers,” n.d.
+Ita Mubarokah, Pujo Laksono, Ramadhani Safitri, and Irman Idris. “Detection of Begomovirus Disease for Identification of Disease Severity Level in Tomato Leaves Using Convolutional Neural Network (CNN),” n.d.
+Jatinder Kaur, Arti Badhoutiya, Ashwani K Sharma, Nirmala Reddy, Manudeep Kaushal, and Ahmed Alkhayyat. “An
+Overall Disease Analysis of Mango Using Neural Network with Hybrid Feature Model,” n.d.
+Jie Feng, Hongning Li, Junsheng Shi, Weiping Yang, and Ningfang Liao. “Cucumber Diseases Diagnosis Using Multispectral Images,” n.d.
+Jinmeng Zhang, Qian Zhang, Yarong Tan, Ming Wang, Xining Zhang, Hao Li, Ruifang Zhao, and Jinying Yu. “Advances in Hyperspectral Imaging-Based Non-Destructive Assessment of Tomato Quality Attributes.” Smart Agricultural Technology, 2025.
+Jitali Patel, Ruhi Patel, Saumya Shah, and Jigna Patel. “BIG DATA ANALYTICS FOR ADVANCED VITICULTURE.”
+Scalable Computing : Practice and Experience, 2021.
+K Gurunathan, K Hariprasath, V Bharathkumar, M Kumarasamy, R Jidendiran, M Haji, and Ali Meeran. “CLASSIFICATION OF CULTIVARS EMPLOYING THE ALEXNET TECHNIQUE USING DEEP LEARNING.” 2023 International Conference on Bio Signals, Images, and Instrumentation (ICBSII), 2023.
+K R Aravind, and P Raja. “Design and Simulation of Crop Monitoring Robot for Green House.” 2016 International
+Conference on Robotics: Current Trends and Future Challenges (RCTFC), 2016.
+K S Tamilselvan, Dhivya Priya, and N Gomathi. “A Novel Attention Mechanism for Disease Detection in Potatoes.”
+2025 6th International Conference on Inventive Research in Computing Applications (ICIRCA), 2025.
+K V Suresh, and S Arun Kumar. “Disease Detection in Plants Using Convolutional Neural Network.” 2020 Third
+International Conference on Smart Systems and Inventive Technology (ICSSIT), 2020.
+Kai-Ting Zhang, Chien-Hsing Su, and Jih-Hsin Tang. “Application of Deep Learning-Based Visual Recognition for
+the Prevention of Rose Leaf Mite Damage.” IEEE International Conference on Consumer Electronics, 2025.
+Kamaldeep Joshi, Sahil Hooda, Yashasvi Yadav, Gurdiyal Singh, Ashima Nehra, Narendra Tuteja, Ritu Gill, and Sarvajeet Singh Gill. “Genetic Algorithm Enhanced Deep Learning with Data Augmentation for Nitrogen and Potassium Deficiency Detection in Eggplant,” 2025.
+Khalid M Hosny, Wala M El-Hady, Farid M Samy, Eleni Vrochidou, and George A Papakostas. “Multi-Class Classification of Plant Leaf Diseases Using Feature Fusion of Deep Convolutional Neural Network and Local Binary
+Pattern.” IEEE Access, 2023.
+Kowshik Kolvekar, Ashwin Faldesai, Sahil Lotlikar, Muttu Yeshudas, Mohit Naik, and Mathilda Colaco. “Cayenne
+Based Plant Monitoring Control System,” n.d.
+Lalit R Chaudhari, Abhishek V Tidke, Pooja S Gupta, Prashant Patel, Shipla Hudnurkar, and D Y Patil. “Roses Plant
+Disease Detection Using DenseNet121 Model,” n.d.
+Magdalena Szechy Ńska-Hebda, Ryszard Hołownicki, Grzegorz Doruchowski, Konrad Sas, Joanna Puławska, Anna
+Jarecka-Boncela, Magdalena Ptaszek, and Agnieszka Włodarek. “Application of Hyperspectral Imaging for Early
+Detection of Pathogen-Induced Stress in Cabbage as Case Study.” Agronomy, 2025.
+Manohar Kumar, Manoj Kaushik, R G Sharathchandra, and Rama Rao Nidamanuri. “HYPERSPECTRAL DETECTION OF FUSARIUM WILT IN TOMATO PLANTS USING MACHINE LEARNING-BASED APPROACHES.” IEEE
+International Geoscience and Remote Sensing Symposium, 2023.
+Martin Valtierra-Rodriguez, Maryjose Devora-Guadarrama, Benjamín Luna-Benoso, Antonio Alarcón-Paredes, Jose
+Cruz Martínez-Perales, Samantha Úrsula, and Morales-Rodríguez. “Deep Learning-Based Citrus Canker and
+Huanglongbing Disease Detection Using Leaf Images.” De Computis, 2025.
+Matthew Maimaitiyiming, Maitiniyazi Maimaitijiang, Paheding Sidike, Vasit Sagan, Zoë Migicovsky, Daniel H Chit-
+
+21
+
+wood, Peter Cousins, Nick Dokoozlian, Allison J Miller, and Misha Kwasniewski. “MODELING EARLY INDICATORS OF GRAPEVINE PHYSIOLOGY USING HYPERSPECTRAL IMAGING AND PARTIAL LEAST SQUARES
+REGRESSION (PLSR).” IEEE International Geoscience and Remote Sensing Symposium, 2020.
+Md Eshmam, Abdullah-Al -Akib, Nazia Alfaz, Sadia Islam, Niha, and S M Sajibul Islam. “A Vision Transformer-Based
+Approach for Recognizing Seven Prevalent Mango Leaf Diseases.” 2023 26th International Conference on Computer
+and Information Technology (ICCIT), 2023.
+Meenakshi Vishnoi, Vasudha Vashisht, Ashwani Kumar Dubey, and Anil Kumar Dubey. “A Hybrid Deep LearningMachine Learning Pipeline for Precision Monitoring of Citrus Diseases.” 2025 12th International Conference on
+Reliability, Infocom Technologies and Optimization (Trends and Future Directions) (ICRITO), 2025.
+Muhammad Hakimi, Zamzuri Ariffin, Rozeha A Rashid, Mokhtar Harun, and Hafiz Haziq Amizi. “Effect of Hyperparameter Tuning to Fruit Quality Detection Using Convolutional Neural Network.” 2024 IEEE International
+Conference on Advanced Telecommunication and Networking Technologies (ATNT), 2024.
+Muzafar Rasool Bhat, Assif Assad, B N Dar, Ab Naffi Ahanger, Majid Kundroo, Rayees Ahmad Dar, Abdul Basit
+Ahanger, and Z A Bhat. “Apple Diseases: Detection and Classification Using Transfer Learning,” 2023.
+Oliver S Gladson, Prathusha Perugu, Rashima Mahajan, Jasmine Gnana, and Raghavan Sheeja. “Deep Learning-Based
+Mango Leaf Disease Detection Using Yolov8,” n.d.
+Omkar Chougule, Kshitiz Jain, Devansh Katheria, and Shraddha Shinde. “Tomato Blight Classification Using Transfer
+Learning and Fine Tuning.” 2022 2nd Asian Conference on Innovation in Technology (ASIANCON), 2022.
+P Pushpa. “Deep Learning Based Classification and Prediction on Vegetable Crop Leaf.” 2024 4th International Conference on Mobile Networks and Wireless Communications (ICMNWC), 2024.
+P Sajitha, A Diana Andrushia, N Anand, and Eva Lubloy. “Channel-Attentive YOLOv5 and Capsule Auto-Encoder
+for Pomegranate Disease Detection.” Egyptian Informatics Journal, 2025.
+“PlantMed -An Automated App for Monitoring the Tasks of Farmers.” 2024 International Conference on Smart Technologies for Sustainable Development Goals (ICSTSDG), 2024.
+Prachi Goraksha, Tejaswini S Deshmukh, M V P S's, Tejaswi G Mangave, and Pooja P Kajale. “A Review on Deep
+Learning and Transfer Learning Models: Grape Leaf Disease Detection,” n.d.
+Pranjali B Padol. “Fusion Classification Technique Used to Detect Downy and Powdery Mildew Grape Leaf Diseases.”
+International Conference on Global Trends in Signal Processing, Information Computing and Communication, 2016.
+Pranjali B Padol, and Anjali A Yadav. “SVM Classifier Based Grape Leaf Disease Detection.” 2016 Conference on
+Advances in Signal Processing (CASP), 2016.
+Prashant Wakhare, S Neduncheliyan, and Pradeep B Mane. “Machine Learning for Accurate and Efficient
+Pomegranate Fruit Disease Detection: A Novel Approach to Improve Crop Yield and Quality.” International
+Conference on Computing Communication Control and Automation, 2023.
+Priyanka Rawat, and Kiran Gupta. “Image Processing in Crop Quality Assessment and Disease Detection of Okra
+Using CNN with U-NET,” n.d.
+Qin Liu, Zhibin Zhou, L U Xiong, Meilian Lu, and Jingwen Ouyang. “YOLO-RDM: Innovative Detection Methods for
+Eggplants and Stems in Complex Natural Environment,” n.d.
+Rajashree Krishna, and K V Prema. “Constructing and Optimizing RNN Models to Predict Fruit Rot Disease Incidence
+in Areca Nut Crop Based on Weather Parameters.” IEEE Access, 2023.
+Rashmi Pawar, B L D E's, and Ambaji Jadhav, n.d.
+Rishabh Sharma, and Manish Nagpal. “Branching Out: A Simple 5-Level Classification of Magnolia Scale Diseases
+Using a Combination of CNN and DT Models.” 2024 5th IEEE Global Conference for Advancement in Technology
+(GCAT), 2024.
+Sandip Chavan, and D R Ingle. “Optimizing Vegetable Yield Forecasting with Machine Learning Using Soil and
+Weather Data.” 2024 International Conference on Artificial Intelligence and Quantum Computation-Based Sensor
+Application (ICAIQSA), 2024.
+
+22
+
+Sanjana Prasad, Mohammed Tahir, Umme Haniya, Mohammed Sulaiman, and Syeda Zeenathunnisa. “Deep Learning
+Based Automatic Indoor Plant Management System Using Arduino,” n.d.
+Savita C Raut, K J Somaiya, and Nilesh N Kasat. “A Review : Citrus Disease Detection Using Machine Learning Approach.” 2024 2nd DMIHER International Conference on Artificial Intelligence in Healthcare, Education and Industry
+(IDICAIEI), 2024.
+Shankey Garg, and Pradeep Singh. “An Aggregated Loss Function Based Lightweight Few Shot Model for Plant Leaf
+Disease Classification,” 2023.
+Shantilata Palei, Santi Kumari Behera, and Prabira Kumar Sethy. “A Systematic Review of Citrus Disease Perceptions
+and Fruit Grading Using Machine Vision.” Procedia Computer Science, 2023.
+Siventhirarajah Sangeevan. “Deep Learning-Based Pesticides Prescription System for Leaf Diseases of Home Garden
+Crops in Sri Lanka.” International Conference on Soft Computing and Software Engineering, 2021.
+Sumithra K Devi. “AI-Driven Gardening Assistant: Intelligent Plant Care and Disease Detection Using AI,” n.d.
+Ting Li, Jingfeng Yang, Xiaoqin Peng, Zhimin Chen, and Chengyang Luo. “Prediction and Early Warning Method
+for Flea Beetle Based on Semi-Supervised Learning Algorithm.” 2008 Fourth International Conference on Natural
+Computation, 2008.
+Veeraswamy Parisae, Divi Yushmanth, Nallaparaju Mounya Sree, Gokarakonda Manyasri, Chaitanya Jannu,
+Gudipudi Siva, and Sankara Rao. “Classification and Detection of Apple Leaf Disease Using DenseNet201 and
+YOLOV8,” n.d.
+Vijayanandh Rajamanickam, Adesh Ramsubhag, Jayaraj Jayaraman, and Piotr Iwaniuk. “Sweet Pepper Foliar Diseases Quantification and Identification Using an Image Analysis Tool,” 2025.
+Vikas Verma, Hemant Ramakant, Neha Mathur, and Agarwal. “IOT Assisted Smart Farming Using Data Science
+Techniques.” International Workshop on Artificial Intelligence and Cognition, 2022.
+Vinay Gautam Chitkara, Ambuj Kumar Agarwal, Himani Maheshwari, Naresh Kumar Trivedi, Raj Gaurang Tiwari,
+and Naveen Garg. “Feature Fusion Approach with Inception-RestNet and Canonical Correlation Analysis for
+Strawberry Leaf Disease Detection.” 2024 2nd International Conference on Advancement in Computation & Computer Technologies (InCACCT), 2024.
+Yashu Chitkara, Ashish Garg, Vinay Kukreja, and Prateek Srivastava. “Fruitful Fusion: CNN-Random Forest Synergy
+in Banana Ripeness Detection.” 2024 IEEE International Conference on Information Technology, Electronics and
+Intelligent Communication Systems (ICITEICS), 2024.
+Yashu Chitkara, Vinay Kukreja, Karun Madan, Amitoj Singh, Jagat Guru, and Deepak Kumar. “Advancing Pear
+Disease Recognition: A Hybrid CNN-Random Forest Approach,” n.d.
+Yohannes Agegnehu Bezabh, Aleka Melese, Biniyam Mulugeta, Tensay Nigussie, Eshete Ayenew Awoke, Taye Endeshaw Mengistu, Classific… Yohannes, and Agegnehu Bezabih. “Classification of Mango Disease Using Ensemble
+Convolutional Neural Network,” 2024.
+Young K Chang, Sultan Mahmud, Jaemyung Shin, Tri Nguyen-Quang, Gordon W Price, and Balakrishnan Prithiviraj.
+“Comparison of Image Texture Based Supervised Learning Classifiers for Strawberry Powdery Mildew Detection.”
+AgriEngineering, 2019.
+Zakirah Zaludin, Mohd Nasir Ayob, Nurul Syahirah Khalid, Mohd Zamri Hasan, Dalila Binti, Nor Danial, and Ismail
+Ishaq Ibrahim. “Machine Learning (ML) and Deep Learning (DL) Based Detection of Bacterial Heart Rot (BHR)
+in Pineapple Leaves.” International Conference on System Engineering and Technology, 2025.
+Zhaopeng Cai, Nadia Farhana, Asif Mahbub Karim, Fengyan Zhai, Wenwen Huang, Meng Guo, Lei Shu, Suresh
+Gawande, and Salil Bharany. “IMNM: Integrated Multi-Network Model for Identifying Pepper Leaf Diseases,”
+2025.
+
+23
+
+
