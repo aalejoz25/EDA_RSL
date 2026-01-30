@@ -77,7 +77,7 @@
 
 %=================================================================
 % Título completo del artículo (Con mayúsculas)
-\Title{Título}
+\Title{Inteligencia Artificial para la Calidad Nutricional en Cultivos: Una Revisión Sistemática}
 
 % ID Orchid del autor: ingrese el ID o elimine el comando
 \newcommand{\orcidauthorA}{0009-0005-0701-6341} % Agregue \orcidA{} después del nombre del autor
@@ -116,10 +116,10 @@ $^{1}$ \quad Afiliación 1; Investigador Independiente, Bogotá D.C., Colombia.
 %\conference{} % Una versión extendida de un artículo de conferencia
 
 % Resumen (No inserte líneas en blanco, es decir, \\) 
-\abstract{Un párrafo único de aproximadamente 200 palabras máximo. Para artículos de investigación, los resúmenes deben dar una visión general pertinente del trabajo. Alentamos fuertemente a los autores a usar el siguiente estilo de resúmenes estructurados, pero sin encabezados: (1) Antecedentes: coloque la pregunta abordada en un contexto amplio y destaque el propósito del estudio; (2) Métodos: describa brevemente los principales métodos o tratamientos aplicados; (3) Resultados: resuma los principales hallazgos del artículo; (4) Conclusiones: indique las principales conclusiones o interpretaciones. El resumen debe ser una representación objetiva del artículo, no debe contener resultados que no estén presentados y fundamentados en el texto principal y no debe exagerar las conclusiones principales.}
+\abstract{Los modelos avanzados de Inteligencia Artificial (IA), principalmente Redes Neuronales Convolucionales (CNN) con aprendizaje por transferencia, han demostrado una alta eficacia (90-99\% de precisión) en la clasificación binaria de enfermedades en cultivos hortícolas, superando las limitaciones de los métodos de inspección visual tradicionales. Sin embargo, esta revisión sistemática de 80 estudios revela una brecha crítica entre la detección de enfermedades y la cuantificación de su impacto real. Menos del 15\% de los trabajos abordan la clasificación de la severidad en múltiples niveles, y solo tres estudios examinan la correlación entre la severidad detectada y la calidad nutricional interna o el rendimiento. Aunque la imagenología hiperespectral combinada con IA muestra un gran potencial para la predicción de parámetros nutricionales (e.g., R²=0.9652 para licopeno), su implementación en campo es limitada. La fusión de datos multimodales (RGB, hiperespectral, IoT) sigue siendo incipiente, implementada en solo ocho de los estudios analizados. Persisten limitaciones metodológicas significativas, incluyendo conjuntos de datos pequeños, validación externa insuficiente y baja reproducibilidad. Se concluye que, si bien la IA ha avanzado notablemente en la detección, los objetivos cruciales de cuantificar la progresión de la enfermedad y predecir su impacto en la calidad interna del producto agrícola permanecen en gran medida sin resolver, representando un área fundamental para futuras investigaciones.}
 
 % Palabras clave
-\keyword{palabra clave 1; palabra clave 2; palabra clave 3 (Liste de tres a diez palabras clave pertinentes específicas del artículo; sin embargo, razonablemente comunes dentro de la disciplina temática.)} 
+\keyword{Inteligencia Artificial; Visión por Computador; Calidad Nutricional; Agricultura de Precisión; Detección de Enfermedades; Revisión Sistemática; Imagenología Hiperespectral; Aprendizaje Profundo} 
 
 % Los campos PACS, MSC y JEL pueden dejarse vacíos o comentados si no son aplicables
 %\PACS{J0101}
@@ -170,210 +170,179 @@ $^{1}$ \quad Afiliación 1; Investigador Independiente, Bogotá D.C., Colombia.
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setcounter{section}{-1} %% Elimine esto cuando comience a trabajar en la plantilla.
-\section{Cómo Usar esta Plantilla}
+%\setcounter{section}{-1} %% Elimine esto cuando comience a trabajar en la plantilla.
+%\section{Cómo Usar esta Plantilla}
 
-La plantilla detalla las secciones que se pueden usar en un manuscrito. Tenga en cuenta que el orden y los nombres de las secciones del artículo pueden diferir de los requisitos de la revista (por ejemplo, el posicionamiento de la sección de Materiales y Métodos). Por favor, verifique las instrucciones en la página de autores de la revista para verificar el orden y nombres correctos. Para cualquier pregunta, póngase en contacto con la oficina editorial de la revista o support@mdpi.com. Para preguntas relacionadas con LaTeX, póngase en contacto con latex@mdpi.com.%\endnote{Esta es una nota final.} % Para usar notas finales, descomente \printendnotes a continuación (antes de Referencias). Solo la revista Laws usa \footnote.
+%La plantilla detalla las secciones que se pueden usar en un manuscrito. Tenga en cuenta que el orden y los nombres de las secciones del artículo pueden diferir de los requisitos de la revista (por ejemplo, el posicionamiento de la sección de Materiales y Métodos). Por favor, verifique las instrucciones en la página de autores de la revista para verificar el orden y nombres correctos. Para cualquier pregunta, póngase en contacto con la oficina editorial de la revista o support@mdpi.com. Para preguntas relacionadas con LaTeX, póngase en contacto con latex@mdpi.com.%\endnote{Esta es una nota final.} % Para usar notas finales, descomente \printendnotes a continuación (antes de Referencias). Solo la revista Laws usa \footnote.
 
 % El orden de los títulos de las secciones es diferente para algunas revistas. Consulte las "Instrucciones para Autores" en la página de inicio de la revista.
 
 \section{Introducción}
 
-La introducción debe situar brevemente el estudio en un contexto amplio y destacar por qué es importante. Debe definir el propósito del trabajo y su importancia. El estado actual del campo de investigación debe revisarse cuidadosamente y se deben citar publicaciones clave. Destaque hipótesis controvertidas y divergentes cuando sea necesario. Finalmente, mencione brevemente el objetivo principal del trabajo y destaque las conclusiones principales. En la medida de lo posible, mantenga la introducción comprensible para científicos fuera de su campo particular de investigación.
+La agricultura se encuentra en una encrucijada crítica. Ante la creciente presión de una población mundial en aumento y los desafíos impuestos por el cambio climático, la necesidad de garantizar la seguridad alimentaria a través de prácticas más eficientes y sostenibles es más urgente que nunca \citep{garg2023}. En este contexto, la agricultura de precisión ha emergido como un paradigma fundamental, y tecnologías como la Inteligencia Artificial (IA), la Visión por Computador y el Aprendizaje Automático (Machine Learning) se han posicionado como herramientas clave para su desarrollo \citep{Chitkara2024}. Estas tecnologías ofrecen soluciones innovadoras para la monitorización de cultivos, la optimización de recursos y la toma de decisiones basada en datos.
 
-% Ejemplos de citas desde mcic_export.bib:
-Citando un artículo de revista \citep{Hosny2023}. Ahora citando múltiples referencias \citep{Balakrishna2020,Liu2025} o actas \citep{Prajwal2025}. 
+Una de las áreas de mayor impacto ha sido la detección automatizada de enfermedades en plantas. Numerosos estudios han demostrado la superioridad de los modelos de aprendizaje profundo, especialmente las Redes Neuronales Convolucionales (CNN), para identificar patógenos en imágenes de hojas con una precisión que a menudo supera el 95% en condiciones controladas \citep{Hosny2023,Cai2025}. Estos avances representan un salto cualitativo frente a la inspección visual tradicional, que es laboriosa, subjetiva y a menudo tardía.
+
+Sin embargo, el éxito en la clasificación binaria (enfermo vs. sano) ha eclipsado la investigación en áreas de mayor complejidad y valor agronómico. Existe una brecha significativa en la literatura en lo que respecta a la cuantificación de la severidad de la enfermedad y, de manera aún más crítica, en la comprensión de cómo esta severidad impacta la **calidad nutricional interna** y el rendimiento final del cultivo. Como lo revela el análisis de la literatura, menos del 15\% de los estudios recientes abordan la clasificación de la severidad en múltiples etapas, y son excepcionalmente raros los que correlacionan los hallazgos visuales con parámetros de calidad internos, como el contenido de vitaminas, azúcares o compuestos fenólicos \citep{Zhang2025}.
+
+Este estudio presenta una revisión sistemática de la literatura con el objetivo de analizar y sintetizar el estado del arte en la aplicación de IA para la evaluación de cultivos hortícolas. Específicamente, se busca responder hasta qué punto los modelos avanzados y la fusión de datos multimodales están superando las limitaciones de los métodos tradicionales, no solo para detectar enfermedades, sino para cuantificar su impacto en la calidad interna del producto. A través de este análisis, se identifican las tendencias, las limitaciones metodológicas persistentes y las brechas de investigación críticas que deben abordarse para que la IA pueda transformar verdaderamente la producción agrícola hacia un enfoque de mayor calidad y precisión. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Materiales y Métodos}
 
-Los Materiales y Métodos deben describirse con suficientes detalles para permitir que otros repliquen y se basen en los resultados publicados. Tenga en cuenta que la publicación de su manuscrito implica que debe poner a disposición de los lectores todos los materiales, datos, código informático y protocolos asociados con la publicación. Divulgue en la etapa de envío cualquier restricción sobre la disponibilidad de materiales o información. Los nuevos métodos y protocolos deben describirse en detalle, mientras que los métodos bien establecidos pueden describirse brevemente y citarse apropiadamente.
+Esta revisión sistemática se adhiere a un protocolo predefinido para garantizar un análisis exhaustivo y objetivo de la literatura. El proceso abarcó desde la formulación de preguntas de investigación hasta la extracción y síntesis de datos de los estudios seleccionados.
 
-Los manuscritos de investigación que informan grandes conjuntos de datos que se depositan en una base de datos públicamente disponible deben especificar dónde se han depositado los datos y proporcionar los números de acceso relevantes. Si los números de acceso no se han obtenido en el momento del envío, indique que se proporcionarán durante la revisión. Deben proporcionarse antes de la publicación.
+\subsection{Preguntas de Investigación}
+El estudio fue guiado por una pregunta de investigación principal y cuatro preguntas secundarias, diseñadas para explorar en profundidad el estado del arte de la IA en la agricultura hortícola.
 
-Los estudios intervencionistas que involucran animales o humanos, y otros estudios que requieren aprobación ética deben enumerar la autoridad que proporcionó la aprobación y el código de aprobación ética correspondiente.
+\textbf{Pregunta Principal (PI-P):} ¿En qué medida los modelos avanzados de Inteligencia Artificial y la fusión de datos multimodales (RGB, hiperespectral, IoT) están superando las limitaciones de los métodos de detección visual tradicionales para cuantificar la severidad de las enfermedades y predecir su impacto en la calidad interna y el rendimiento en cultivos hortícolas?
 
-En esta sección, cuando corresponda, los autores deben revelar detalles de cómo se ha utilizado la inteligencia artificial generativa (GenAI) en este artículo (por ejemplo, para generar texto, datos o gráficos, o para ayudar en el diseño del estudio, recopilación de datos, análisis o interpretación). El uso de GenAI para edición de texto superficial (por ejemplo, gramática, ortografía, puntuación y formato) no necesita declararse.
+\textbf{Preguntas Secundarias (PI-S):}
+\begin{itemize}
+    \item \textbf{PI-S1:} ¿Cuáles son las técnicas de IA más efectivas para diferentes tareas agrícolas (detección de enfermedades, estimación de rendimiento, monitoreo de calidad) y cómo han evolucionado en el tiempo?
+    \item \textbf{PI-S2:} ¿Cuáles son las métricas de evaluación más apropiadas para valorar estos modelos en el contexto agrícola?
+    \item \textbf{PI-S3:} ¿Qué técnicas de análisis espectral combinadas con IA muestran la correlación más fuerte con parámetros nutricionales reales en frutas y verduras, y cuál es su viabilidad para la implementación en campo frente a entornos de laboratorio?
+    \item \textbf{PI-S4:} ¿Cuáles son las principales limitaciones metodológicas reportadas en los estudios de IA agrícola (tamaño de los conjuntos de datos, estrategias de validación cruzada, reproducibilidad) y qué estándares están emergiendo para una evaluación robusta?
+\end{itemize}
 
-\begin{quote}
-Este es un ejemplo de una cita.
-\end{quote}
+\subsection{Estrategia de Búsqueda y Selección de Estudios}
+Se realizó una búsqueda bibliográfica exhaustiva en bases de datos académicas de primer nivel, incluyendo \textit{Scopus}, \textit{IEEE Xplore}, \textit{Web of Science} y \textit{ScienceDirect}. Para garantizar una cobertura completa y sistemática de la terminología, las ecuaciones de búsqueda se construyeron utilizando un enfoque basado en tesauros. Se consultaron vocabularios controlados de referencia en los campos de la ingeniería y la agricultura, como el \textbf{Tesauro de IEEE} para términos técnicos y de ingeniería \citep{IEEEThesaurus2024}, y el tesauro \textbf{AGROVOC} de la Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO) para conceptos agrícolas \citep{Agrovoc2024}. Esta estrategia permitió definir un conjunto robusto de palabras clave y sinónimos relacionados con inteligencia artificial, visión por computador, cultivos hortícolas, detección de enfermedades y evaluación de calidad, asegurando la recuperación de la literatura más relevante.
+
+De un conjunto inicial de 113 fuentes, se aplicaron criterios de selección rigurosos para filtrar los estudios más relevantes. Se incluyeron artículos que cumplieran con los siguientes criterios: (1) enfoque en cultivos hortícolas; (2) implementación de técnicas avanzadas de IA/ML; (3) uso de datos para evaluar resultados agrícolas como la detección de enfermedades, la calidad o el rendimiento; (4) publicación en una revista o conferencia revisada por pares con resultados empíricos; y (5) provisión de métricas de rendimiento cuantitativas. Se excluyeron estudios puramente teóricos o aquellos centrados exclusivamente en cultivos extensivos (como trigo o maíz). Este proceso resultó en una selección final de 80 artículos que fueron sometidos a un análisis detallado.
+
+\subsection{Extracción y Síntesis de Datos}
+Para cada uno de los 80 estudios incluidos, se extrajo información sistemáticamente utilizando un protocolo definido. Los datos extraídos se organizaron en las siguientes categorías principales:
+\begin{itemize}
+    \item \textbf{Métodos de IA y Fusión de Datos:} Técnicas específicas de IA/ML, arquitecturas de modelos y métodos de integración de datos (e.g., RGB, hiperespectral, IoT).
+    \item \textbf{Aplicación Agrícola:} Tarea principal (detección, cuantificación, predicción), tipo de cultivo y parámetros específicos evaluados.
+    \item \textbf{Resultados de Rendimiento:} Métricas cuantitativas reportadas, como exactitud, precisión, F1-score, y coeficientes de correlación (R²).
+    \item \textbf{Cuantificación de Severidad y Calidad:} Métodos para medir la severidad de la enfermedad (escalas, etapas) y predecir parámetros de calidad interna (contenido nutricional, madurez).
+    \item \textbf{Contexto de Implementación:} Entorno del estudio (laboratorio vs. campo), requisitos computacionales y consideraciones de escalabilidad.
+    \item \textbf{Calidad Metodológica:} Características del conjunto de datos, estrategias de validación y disponibilidad de código o datos para la reproducibilidad.
+\end{itemize}
+La información extraída fue posteriormente sintetizada para identificar patrones, tendencias, brechas de investigación y explicar la variabilidad en los resultados reportados.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resultados}
 
-Esta sección puede dividirse por subencabezados. Debe proporcionar una descripción concisa y precisa de los resultados experimentales, su interpretación así como las conclusiones experimentales que se pueden extraer.
-\subsection{Subsección}
-\subsubsection{Subsubsección}
+El análisis de los 80 estudios seleccionados revela un panorama detallado sobre el uso de la IA en la agricultura hortícola, destacando tanto los avances significativos como las brechas persistentes.
 
-Las listas con viñetas se ven así:
-\begin{itemize}
-\item	Primera viñeta;
-\item	Segunda viñeta;
-\item	Tercera viñeta.
-\end{itemize}
+\subsection{Características Generales de los Estudios}
+La investigación se centró predominantemente en la \textbf{detección de enfermedades} (n=68), con una atención considerablemente menor a la \textbf{evaluación de la calidad} (n=5), la \textbf{predicción del rendimiento} (n=3) y la \textbf{detección de plagas} (n=2). El \textbf{tomate} fue el cultivo más estudiado (n=15), seguido del mango (n=8), la manzana (n=6) y la uva (n=6). El uso de \textbf{imágenes RGB} fue la modalidad de datos dominante, presente en 72 de los 80 estudios, mientras que solo seis trabajos emplearon imagenología hiperespectral y ocho integraron datos de sensores IoT, lo que subraya la dependencia de los datos visuales estándar.
 
-Las listas numeradas se pueden agregar de la siguiente manera:
-\begin{enumerate}
-\item	Primer elemento; 
-\item	Segundo elemento;
-\item	Tercer elemento.
-\end{enumerate}
-
-El texto continúa aquí.
-
-\subsection{Figuras, Tablas y Esquemas}
-
-Todas las figuras y tablas deben citarse en el texto principal como Figura~\ref{fig1}, Tabla~\ref{tab1}, etc.
-
-\begin{figure}[H]
-%\isPreprints{\centering}{} % Solo usado para preprints
-\includegraphics[width=4.0 cm]{Definitions/logo-mdpi}
-\caption{Esta es una figura. Los esquemas siguen el mismo formato.\label{fig1}}
-\end{figure}   
-\unskip
-
-\begin{table}[H] 
-%\small % Cambiar tamaño de fuente de tabla
-\caption{Este es un título de tabla. Las tablas deben colocarse en el texto principal cerca de la primera vez que se~citan.\label{tab1}}
-%\isPreprints{\centering}{} % Solo usado para preprints
-\begin{tabularx}{\textwidth}{CCC}
-\toprule
-\textbf{Título 1}	& \textbf{Título 2}	& \textbf{Título 3}\\
-\midrule
-Entrada 1		& Datos			& Datos\\
-Entrada 2		& Datos			& Datos \textsuperscript{1}\\
-\bottomrule
-\end{tabularx}
-
-\noindent{\footnotesize{\textsuperscript{1} Las tablas pueden tener un pie de página.}}
-\end{table}
-
-El texto continúa aquí (Figura~\ref{fig2} y Tabla~\ref{tab2}).
-
-% Ejemplo de una figura que abarca todo el ancho de página y con subfiguras. El mismo concepto funciona para tablas también.
-\begin{figure}[H]
-%\isPreprints{}{% Este comando solo se usa para ``preprints''.
-\begin{adjustwidth}{-\extralength}{0cm}
-\centering
-%} % Si el artículo es ``preprints'', descomente este paréntesis.
-\subfloat[\centering]{\includegraphics[width=7.0cm]{Definitions/logo-mdpi}}
-%\hfill
-\subfloat[\centering]{\includegraphics[width=7.0cm]{Definitions/logo-mdpi}}\\
-\subfloat[\centering]{\includegraphics[width=7.0cm]{Definitions/logo-mdpi}}
-%\hfill
-\subfloat[\centering]{\includegraphics[width=7.0cm]{Definitions/logo-mdpi}}
-%\isPreprints{}{% Este comando solo se usa para ``preprints''.
-\end{adjustwidth}
-%} % Si el artículo es ``preprints'', descomente este paréntesis.
-\caption{Esta es una figura amplia. Los esquemas siguen el mismo formato. Si hay múltiples paneles, deben listarse como: (\textbf{a}) Descripción de lo que se contiene en el primer panel. (\textbf{b}) Descripción de lo que se contiene en el segundo panel. (\textbf{c}) Descripción de lo que se contiene en el tercer panel. (\textbf{d}) Descripción de lo que se contiene en el cuarto panel. Las figuras deben colocarse en el texto principal cerca de la primera vez que se citan. Un título en una sola línea debe estar centrado.\label{fig2}}
-\end{figure} 
+\subsection{Análisis de Técnicas de Inteligencia Artificial}
+\subsubsection{Dominio del Aprendizaje Profundo y Evolución Arquitectónica}
+Las Redes Neuronales Convolucionales (CNN) fueron la arquitectura de IA predominante en los estudios analizados. El aprendizaje por transferencia (\textit{transfer learning}) con modelos pre-entrenados fue la estrategia más popular, demostrando una alta eficacia. Arquitecturas como VGG, ResNet y la familia YOLO (You Only Look Once) fueron las más implementadas. La Tabla~\ref{tab:ia_architectures} resume la frecuencia y el rango de precisión típico para las principales categorías de arquitecturas identificadas.
 
 \begin{table}[H]
-\caption{Esta es una tabla amplia.\label{tab2}}
-%\isPreprints{\centering}{% Este comando solo se usa para ``preprints''.
-	\begin{adjustwidth}{-\extralength}{0cm}
-%} % Si el artículo es ``preprints'', descomente este paréntesis.
-%\isPreprints{\begin{tabularx}{\textwidth}{CCCC}}{% Este comando solo se usa para ``preprints''.
-		\begin{tabularx}{\fulllength}{CCCC}
-%} % Si el artículo es ``preprints'', descomente este paréntesis.
-			\toprule
-			\textbf{Título 1}	& \textbf{Título 2}	& \textbf{Título 3}     & \textbf{Título 4}\\
-			\midrule
-\multirow[m]{3}{*}{Entrada 1 *}	& Datos			& Datos			& Datos\\
-			  	                   & Datos			& Datos			& Datos\\
-			             	      & Datos			& Datos			& Datos\\
-                   \midrule
-\multirow[m]{3}{*}{Entrada 2}    & Datos			& Datos			& Datos\\
-			  	                  & Datos			& Datos			& Datos\\
-			             	     & Datos			& Datos			& Datos\\
-			\bottomrule
-		\end{tabularx}
-%		\isPreprints{}{% Este comando solo se usa para ``preprints''.
-	\end{adjustwidth}
-%} % Si el artículo es ``preprints'', descomente este paréntesis.
-	\noindent{\footnotesize{* Las tablas pueden tener un pie de página.}}
+\caption{Frecuencia y rendimiento de las principales categorías de arquitecturas de IA.\label{tab:ia_architectures}}
+\centering
+\begin{tabularx}{\textwidth}{lXcR}
+\toprule
+\textbf{Categoría de Arquitectura} & \textbf{Modelos Representativos} & \textbf{Frecuencia} & \textbf{Rango de Precisión Típico} \\
+\midrule
+CNN Estándar & Arquitecturas personalizadas, SqueezeNet & 28 & 86-98\% \\
+CNN Pre-entrenada (Transfer Learning) & VGG16/19, ResNet50, MobileNet & 35 & 90-99\% \\
+Basadas en YOLO & YOLOv5, YOLOv8, YOLOv9 & 9 & 93-99\% \\
+Ensambles/Híbridos & CNN+SVM, CNN+Random Forest & 15 & 77-99\% \\
+ML Tradicional & SVM, KNN, ANN & 12 & 76-93\% \\
+Transformers & ViT, Transformer-based & 2 & 100\% \\
+Redes Recurrentes & GRU, LSTM & 1 & R²=0.99 \\
+\bottomrule
+\end{tabularx}
 \end{table}
 
-%\begin{listing}[H]
-%\caption{Título del listado}
-%\rule{\columnwidth}{1pt}
-%\raggedright Texto del listado. En tamaño de fuente footnotesize, small o normalsize. Formato preferido: alineado a la izquierda y espaciado simple. Formato de borde preferido: línea de borde superior e inferior.
-%\rule{\columnwidth}{1pt}
-%\end{listing}
+Arquitecturas emergentes también demostraron un rendimiento notable. Por ejemplo, un modelo Vision Transformer (ViT) alcanzó una precisión de clasificación del 100% en un conjunto de datos de hojas de mango \citep{Eshmam2023}, mientras que los mecanismos de atención integrados con arquitecturas DenseNet lograron un 98.7% de precisión para la detección de enfermedades en patatas \citep{Tamilselvan2025}.
 
-Texto.
+\subsubsection{Enfoques Híbridos y de Ensamble}
+La combinación de diferentes modelos o la fusión de características a menudo condujo a resultados robustos. Modelos híbridos como CNN-SVM alcanzaron una precisión del 95.93% para la clasificación de la severidad de la sarna del mango \citep{Chitkara2024a}, y la combinación de CNN con Random Forest obtuvo un 86.97% de precisión para la detección de la madurez en bananas \citep{Chitkara2024}. Estos enfoques de ensamble demuestran ser una estrategia efectiva para mejorar el rendimiento sobre modelos individuales.
 
-Texto.
+\subsection{Resultados de Rendimiento por Tarea y Cultivo}
+El rendimiento de los modelos de IA varió considerablemente dependiendo del cultivo, la tarea específica y la complejidad del conjunto de datos. Se reportaron precisiones que van desde el 77.2% hasta el 100%. Generalmente, los modelos con mayor rendimiento utilizaron aprendizaje por transferencia sobre conjuntos de datos bien curados y en condiciones de laboratorio controladas. Las Tablas~\ref{tab:performance_part1} y \ref{tab:performance_part2} resumen los mejores resultados de rendimiento reportados para una selección de cultivos y tareas clave.
 
-\subsection{Formato de Componentes Matemáticos}
+\begin{table}[H]
+\caption{Resultados de rendimiento de modelos de IA para diversos cultivos y tareas (Parte 1).\label{tab:performance_part1}}
+\centering
+\begin{tabularx}{\textwidth}{XllRRR}
+\toprule
+\textbf{Cultivo} & \textbf{Tarea} & \textbf{Mejor Modelo} & \textbf{Precisión} & \textbf{Precisión (P)} & \textbf{Recall (R)} \\
+\midrule
+Tomate & Detección de enfermedad & CNN & 98.49\% & - & - \\
+Tomate & Detección de enfermedad & EfficientNetV2B0 & 97.58\% & - & - \\
+Tomate & Severidad de enfermedad & EfficientDet D1 & 66.03\% (mAP) & - & - \\
+Mango & Detección de enfermedad & ViT & 100\% & 100\% & 100\% \\
+Mango & Detección de enfermedad & Ensamble CNN & 99.21\% & 97\% & 97\% \\
+Manzana & Detección de enfermedad & AppleNet (ResNet50) & 96.99\% & - & 97\% \\
+Manzana & Detección de enfermedad & DenseNet121 & 94\% & - & - \\
+Uva & Detección de enfermedad & CNN+LBP & 98.8\% & - & - \\
+Fresa & Detección de enfermedad & FFIR & 99.34\% & 99.69\% & 99.05\% \\
+Pimiento & Detección de enfermedad & IMNM & 98.55\% & >98\% & >98\% \\
+Cítricos & Detección de enfermedad & EfficientNetB0 & 99.88\% & 99.88\% & 99.89\% \\
+Granada & Detección de enfermedad & CNN & 98\% & - & - \\
+Banana & Detección de enfermedad & CNN+Random Forest & 86.97\% & - & - \\
+Patata & Detección de enfermedad & AttDenseNet & 98.7\% & 85\% & 83\% \\
+\bottomrule
+\end{tabularx}
+\end{table}
 
-Este es el ejemplo 1 de ecuación:
-\begin{linenomath}
-\begin{equation}
-a = 1,
-\end{equation}
-\end{linenomath}
-el texto que sigue a una ecuación no necesita ser un nuevo párrafo. Puntúe las ecuaciones como texto regular.
-%% Si se elige la opción de documentclass "submit", inserte una línea en blanco antes y después de cualquier entorno matemático (entornos equation y eqnarray). Esto asegura una numeración de líneas correcta. La línea en blanco debe eliminarse cuando la opción de documentclass se cambie a "accept" porque el texto que sigue a una ecuación no debe ser un nuevo párrafo.
+\begin{table}[H]
+\caption{Resultados de rendimiento de modelos de IA para diversos cultivos y tareas (Parte 2).\label{tab:performance_part2}}
+\centering
+\begin{tabularx}{\textwidth}{XllRRR}
+\toprule
+\textbf{Cultivo} & \textbf{Tarea} & \textbf{Mejor Modelo} & \textbf{Precisión} & \textbf{Precisión (P)} & \textbf{Recall (R)} \\
+\midrule
+Pepino & Detección de enfermedad & BP NN + Multispectral & 90-100\% & - & - \\
+Rosa & Detección de plagas & VGG16 & 90.11\% & - & - \\
+Berenjena & Detección de deficiencia & YOLOv9+GA & 94.52\% & 95.9\% & 92.8\% \\
+Maracuyá & Detección de enfermedad & YOLOv8-MDN-Tiny & 94.8\% (mAP) & 91.5\% & 91.6\% \\
+Vid & Monitoreo de salud & PLSR & R²=0.7 & - & - \\
+Repollo & Detección de enfermedad & Spectral+ML & - & - & - \\
+Cacao & Predicción de rendimiento & Neural Boosted & R²=0.9985 & - & - \\
+\bottomrule
+\end{tabularx}
+\end{table}
 
-Este es el ejemplo 2 de ecuación:
-%\isPreprints{}{% Este comando solo se usa para ``preprints''.
-\begin{adjustwidth}{-\extralength}{0cm}
-%} % Si el artículo es ``preprints'', descomente este paréntesis.
-\begin{equation}
-a = b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + q + r + s + t + u + v + w + x + y + z
-\end{equation}
-%\isPreprints{}{% Este comando solo se usa para ``preprints''.
-\end{adjustwidth}
-%} % Si el artículo es ``preprints'', descomente este paréntesis.
+Es importante notar que los estudios que reportan precisiones perfectas o casi perfectas a menudo utilizan conjuntos de datos relativamente pequeños y homogéneos, lo que plantea interrogantes sobre la generalización de los modelos a condiciones de campo más variables.
 
-%% Ejemplo de una página en formato horizontal (con tabla y nota al pie de tabla).
-%\startlandscape
-%\begin{table}[H] %% Tabla en página amplia
-%%\isPreprints{\centering}{} % Este comando solo se usa para ``preprints''.
-%\caption{Esta es una tabla muy amplia.\label{tab3}}
-%	\begin{tabularx}{\textwidth}{CCCC}
-%		\toprule
-%		\textbf{Título 1}	& \textbf{Título 2}	& \textbf{Título 3}	& \textbf{Título 4}\\
-%		\midrule
-%		Entrada 1		& Datos			& Datos			& Esta celda tiene contenido más largo que se extiende en dos líneas.\\
-%		Entrada 2		& Datos			& Datos			& Datos\textsuperscript{1}\\
-%		\bottomrule
-%	\end{tabularx}
-%%\isPreprints{}{% Este comando solo se usa para ``preprints''.
-%	\begin{adjustwidth}{+\extralength}{0cm}
-%%} % Si el artículo es ``preprints'', descomente este paréntesis.
-%		\noindent\footnotesize{\textsuperscript{1} Esta es una nota al pie de tabla.}
-%%\isPreprints{}{% Este comando solo se usa para ``preprints''.
-%	\end{adjustwidth}
-%%} % Si el artículo es ``preprints'', descomente este paréntesis.
-%\end{table}
-%\finishlandscape
+\subsection{Rendimiento del Análisis Espectral}
+Los estudios que emplearon imagenología hiperespectral y multiespectral demostraron ventajas claras para la detección temprana y la estimación de parámetros fisiológicos. Por ejemplo, la imagenología hiperespectral permitió la detección de cambios fisiológicos en plantas de repollo antes de la aparición de síntomas visibles, con alteraciones espectrales significativas observadas en las regiones de 400-520 nm (moho gris) y 700-722 nm (alternaria) \citep{Szechynska-Hebda2025}. En vid, los modelos de Regresión de Mínimos Cuadrados Parciales (PLSR) lograron coeficientes de determinación (R²) de 0.6-0.7 para predecir parámetros fisiológicos como la conductancia estomática y la tasa de fotosíntesis \citep{Maimaitiyiming2020}.
 
-Puntúe las ecuaciones como texto regular. Los entornos tipo teorema (incluyendo proposiciones, lemas, corolarios, etc.) se pueden formatear de la siguiente manera:
-%% Ejemplo de un teorema:
-\begin{Theorem}
-Texto de ejemplo de un teorema.
-\end{Theorem}
+\subsection{Comparación con Métodos Tradicionales}
+La mayoría de los estudios concluyeron que los métodos basados en IA superan a la inspección visual tradicional, la cual se describe consistentemente como laboriosa, costosa y propensa a errores subjetivos. Los enfoques de IA ofrecen una alternativa automatizada, consistente y rápida. En comparaciones directas, los modelos de IA mostraron mejoras significativas, como un aumento del 21.54% en la precisión media sobre la línea de base en un estudio \citep{Bhat2023} y una mejora de hasta el 13.18% sobre métodos como SVM y ANN en otro \citep{Kaur2024}. A pesar de estas ventajas, la inspección manual sigue siendo relevante para validar los resultados de los modelos, establecer la verdad de campo (\textit{ground truth}) y detectar síntomas sutiles o en etapas muy tempranas donde los modelos visuales pueden fallar.
 
-El texto continúa aquí. Las pruebas deben formatearse de la siguiente manera:
+\subsection{Cuantificación de la Severidad de la Enfermedad y la Calidad Interna}
+\subsubsection{Clasificación de la Severidad}
+Solo 12 de los 80 estudios abordaron la cuantificación de la severidad de la enfermedad más allá de una simple clasificación binaria. Los enfoques incluyeron la clasificación en múltiples etapas (e.g., tres a cinco niveles de severidad) y la segmentación de imágenes para calcular el área foliar afectada. Un enfoque novedoso fue la clasificación por etapas del tizón tardío en tomates, análogo a la estadificación del cáncer, que alcanzó una precisión del 95.56% \citep{Deepak2025}. Sin embargo, la precisión en esta tarea a menudo fue menor que en la detección binaria, como lo demuestra el 66.03% de mAP (mean Average Precision) obtenido por un modelo EfficientDet para clasificar la severidad del Begomovirus, debido a la alta similitud de los síntomas entre los diferentes niveles \citep{Mubarokah2024}.
 
-%% Ejemplo de una prueba:
-\begin{proof}[Prueba del Teorema 1]
-Texto de la prueba. Tenga en cuenta que la frase ``del Teorema 1'' es opcional si está claro a qué teorema se refiere.
-\end{proof}
-El texto continúa aquí.
+\subsubsection{Predicción de la Calidad Interna}
+La investigación sobre la predicción de parámetros de calidad interna fue notablemente escasa, representando una de las brechas más críticas identificadas en esta revisión. Solo tres estudios abordaron directamente este objetivo. Entre ellos, se destaca el uso de imagenología hiperespectral (HSI) para predecir el contenido de licopeno en tomates con un R² de 0.9652 \citep{Zhang2025}. Otro estudio utilizó una combinación de CNN y Random Forest para clasificar los estados de madurez de la banana con un 86.97% de precisión \citep{Chitkara2024}. La correlación entre la detección externa de enfermedades y su impacto real en la calidad nutricional interna sigue siendo un área en gran parte inexplorada.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discusión}
 
-Los autores deben discutir los resultados y cómo se pueden interpretar desde la perspectiva de estudios previos y de las hipótesis de trabajo. Los hallazgos y sus implicaciones deben discutirse en el contexto más amplio posible. También se pueden destacar las direcciones de investigación futura.
+Esta revisión sistemática confirma que la Inteligencia Artificial, y en particular las técnicas de aprendizaje profundo, han alcanzado una madurez notable para la tarea de detección de enfermedades en cultivos hortícolas. Los resultados demuestran de manera consistente que los modelos de IA pueden clasificar enfermedades a partir de imágenes RGB con una precisión muy alta, superando a los métodos de inspección visual tradicionales en velocidad, consistencia y, a menudo, en exactitud. Sin embargo, este éxito en la clasificación binaria enmascara brechas críticas que limitan severamente la aplicabilidad agronómica de estas tecnologías en el mundo real.
+
+El hallazgo más significativo de este estudio es la profunda desconexión entre la detección de síntomas y la cuantificación de su impacto real. La gran mayoría de la investigación se detiene en la identificación de la enfermedad (una pregunta de "¿está presente?"), sin avanzar hacia la cuantificación de su severidad (una pregunta de "¿cuánto?") o la predicción de sus consecuencias en la calidad nutricional y el rendimiento (la pregunta fundamental de "¿y qué?"). Para un agricultor, saber que una planta tiene una enfermedad es solo el primer paso; la decisión crítica sobre si aplicar un tratamiento, cuándo y cómo, depende de la severidad de la infección y su impacto económico proyectado. La escasez de estudios que abordan la clasificación de la severidad (menos del 15\%) y, de manera aún más drástica, la predicción de la calidad interna (solo tres estudios), revela que la investigación actual está resolviendo un problema académico más que uno práctico y agronómico.
+
+Asimismo, se evidencia un potencial en gran medida desaprovechado en el uso de datos multimodales y, especialmente, en la imagenología hiperespectral. Los pocos estudios que integran estas tecnologías demuestran capacidades que van mucho más allá de la visión RGB, como la detección de estrés patogénico antes de la aparición de síntomas visibles \citep{Szechynska-Hebda2025} o la predicción directa de compuestos nutricionales como el licopeno con alta precisión \citep{Zhang2025}. La baja adopción de estas técnicas (solo 8 estudios con fusión multimodal y 6 con hiperespectral) sugiere que barreras significativas, como el alto costo del hardware, la complejidad en el procesamiento de datos y la falta de modelos estandarizados, están frenando su implementación. Superar estos obstáculos es crucial para pasar de una agricultura que solo "ve" a una que "entiende" el estado fisiológico del cultivo.
+
+Las limitaciones metodológicas identificadas a lo largo de esta revisión también son motivo de preocupación y socavan la confianza en muchos de los resultados publicados. La prevalencia de conjuntos de datos pequeños y homogéneos, a menudo recopilados en condiciones de laboratorio controladas, pone en duda la capacidad de generalización de los modelos a la variabilidad inherente de un entorno de campo real (iluminación variable, fondos complejos, diferentes etapas de crecimiento). La falta casi total de validación externa (reportada en solo 8 de 80 estudios) y la escasa disponibilidad de código y datos (menos del 10\%) impiden la reproducibilidad y la comparación justa entre diferentes enfoques, ralentizando el progreso colectivo del campo.
+
+A partir de este análisis, emergen varias direcciones claras para la investigación futura. Es imperativo que la comunidad científica se mueva más allá de la simple clasificación de enfermedades. La investigación futura debe priorizar:
+\begin{itemize}
+    \item \textbf{El desarrollo de modelos que cuantifiquen la severidad de la enfermedad} y, de manera ideal, la correlacionen con la pérdida de rendimiento esperada.
+    \item \textbf{La conexión entre la detección externa y la calidad nutricional interna}, utilizando técnicas como la imagenología hiperespectral para desarrollar indicadores no destructivos de la calidad del producto.
+    \item \textbf{La creación de conjuntos de datos públicos, a gran escala y multimodales}, que incluyan datos de campo de múltiples temporadas, regiones y condiciones de cultivo para entrenar modelos verdaderamente robustos.
+    \item \textbf{La adopción de prácticas de ciencia abierta}, incluyendo la publicación de código, modelos y conjuntos de datos, para fomentar la reproducibilidad y la colaboración.
+\end{itemize}
+
+Solo abordando estas brechas podrá la Inteligencia Artificial cumplir su promesa de transformar la agricultura, pasando de ser una herramienta de diagnóstico a convertirse en un pilar fundamental para una producción de alimentos más precisa, sostenible y de mayor calidad.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusiones}
 
-Esta sección no es obligatoria, pero puede agregarse al manuscrito si la discusión es inusualmente larga o compleja.
+Esta revisión sistemática de la literatura ha permitido constatar que, si bien las técnicas de Inteligencia Artificial han demostrado un éxito rotundo en la tarea de identificar enfermedades en cultivos hortícolas, su aplicación práctica en la agronomía moderna se ve limitada por una brecha fundamental: la falta de conexión entre la detección de síntomas y la cuantificación de su impacto real en la calidad y el rendimiento. La investigación actual se ha concentrado en la clasificación binaria, dejando en un segundo plano la evaluación de la severidad y, de forma casi total, la predicción de la calidad nutricional interna. El futuro de la agricultura de precisión no reside únicamente en saber si una planta está enferma, sino en poder cuantificar el impacto de dicha enfermedad para tomar decisiones informadas. Por lo tanto, se concluye que la próxima frontera para la IA en la agricultura debe ser la transición desde modelos de simple detección hacia sistemas integrales que puedan predecir el impacto agronómico y nutricional, un objetivo que requerirá un esfuerzo concertado en el desarrollo de metodologías más robustas, la creación de conjuntos de datos más ricos y la adopción de prácticas de ciencia abierta.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Patentes}
@@ -496,7 +465,7 @@ Todas las secciones de apéndice deben citarse en el texto principal. En los ap�
 %=====================================
 % Referencias, variante A: bibliografía externa
 %=====================================
-\bibliography{../referencias/zotero/mcic_export}
+\bibliography{../referencias/zotero/mcic_export, referencias}
 
 %=====================================
 % Referencias, variante B: bibliografía interna
