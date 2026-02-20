@@ -2,7 +2,7 @@
 %  Para soporte, adjunte todos los archivos necesarios para compilar así como el archivo de registro, y especifique su sistema operativo, versión de LaTeX y editor de LaTeX.
 
 %=================================================================
-\documentclass[journal,article,submit,pdftex,moreauthors]{Definitions/mdpi} 
+\documentclass[agriculture,article,submit,pdftex,moreauthors]{Definitions/mdpi} 
 %\documentclass[preprints,article,submit,pdftex,moreauthors]{Definitions/mdpi} 
 % Para publicar una versión temprana de este manuscrito como preprint, puede usar "preprints" como revista. Cambiar "submit" a "accept" antes de publicar eliminará los números de línea.
 
@@ -71,13 +71,16 @@
 % Agregue paquetes y comandos aquí. Los siguientes paquetes se cargan en nuestro archivo de clase: fontenc, inputenc, calc, indentfirst, fancyhdr, graphicx, epstopdf, lastpage, ifthen, float, amsmath, amssymb, lineno, setspace, enumitem, mathpazo, booktabs, titlesec, etoolbox, tabto, xcolor, colortbl, soul, multirow, microtype, tikz, totcount, changepage, attrib, upgreek, array, tabularx, pbox, ragged2e, tocloft, marginnote, marginfix, enotez, amsthm, natbib, hyperref, cleveref, scrextend, url, geometry, newfloat, caption, draftwatermark, seqsplit
 % cleveref: cargar definiciones \crefname después de \begin{document}
 
+% Bibliotecas adicionales de TikZ (el paquete tikz ya está cargado por la clase MDPI)
+\usetikzlibrary{positioning, shapes.geometric, arrows.meta}
+
 %=================================================================
 % Use los siguientes entornos matemáticos: Theorem, Lemma, Corollary, Proposition, Characterization, Property, Problem, Example, ExamplesandDefinitions, Hypothesis, Remark, Definition, Notation, Assumption
 %% Para pruebas, use el entorno proof (el paquete amsthm se carga por la clase MDPI).
 
 %=================================================================
 % Título completo del artículo (Con mayúsculas)
-\Title{Inteligencia Artificial para la Calidad Nutricional en Cultivos: Una Revisión Sistemática}
+\Title{Más allá de la Clasificación: Revisión Sistemática de Modelos de IA para la Estimación de Calidad Nutricional y Física en Cultivos de Ciclo Corto Afectados por Enfermedades}
 
 % ID Orchid del autor: ingrese el ID o elimine el comando
 \newcommand{\orcidauthorA}{0009-0005-0701-6341} % Agregue \orcidA{} después del nombre del autor
@@ -97,12 +100,12 @@
 
 % Afiliaciones / Direcciones (Agregue [1] después de \address si solo hay una afiliación.)
 \address{%
-$^{1}$ \quad Afiliación 1; Investigador Independiente, Bogotá D.C., Colombia.
+% $^{1}$ \quad Afiliación 1; Investigador Independiente, Bogotá D.C., Colombia.
 %$^{2}$ \quad Afiliación 2; e-mail@e-mail.com
 }
 
 % Información de contacto del autor correspondiente
-\corres{Correspondencia: aazarabandag@udistrital.edu.co; Tel.: +57-322-391-2541 (COL.)}
+% \corres{Correspondencia: aazarabandag@udistrital.edu.co; Tel.: +57-322-391-2541 (COL.)}
 
 % Dirección actual y/o autoría compartida
 %\firstnote{Dirección actual: Afiliación.}  
@@ -116,7 +119,7 @@ $^{1}$ \quad Afiliación 1; Investigador Independiente, Bogotá D.C., Colombia.
 %\conference{} % Una versión extendida de un artículo de conferencia
 
 % Resumen (No inserte líneas en blanco, es decir, \\) 
-\abstract{Los modelos avanzados de Inteligencia Artificial (IA), principalmente Redes Neuronales Convolucionales (CNN) con aprendizaje por transferencia, han demostrado una alta eficacia (90-99\% de precisión) en la clasificación binaria de enfermedades en cultivos hortícolas, superando las limitaciones de los métodos de inspección visual tradicionales. Sin embargo, esta revisión sistemática de 80 estudios revela una brecha crítica entre la detección de enfermedades y la cuantificación de su impacto real. Menos del 15\% de los trabajos abordan la clasificación de la severidad en múltiples niveles, y solo tres estudios examinan la correlación entre la severidad detectada y la calidad nutricional interna o el rendimiento. Aunque la imagenología hiperespectral combinada con IA muestra un gran potencial para la predicción de parámetros nutricionales (e.g., R²=0.9652 para licopeno), su implementación en campo es limitada. La fusión de datos multimodales (RGB, hiperespectral, IoT) sigue siendo incipiente, implementada en solo ocho de los estudios analizados. Persisten limitaciones metodológicas significativas, incluyendo conjuntos de datos pequeños, validación externa insuficiente y baja reproducibilidad. Se concluye que, si bien la IA ha avanzado notablemente en la detección, los objetivos cruciales de cuantificar la progresión de la enfermedad y predecir su impacto en la calidad interna del producto agrícola permanecen en gran medida sin resolver, representando un área fundamental para futuras investigaciones.}
+\abstract{Los modelos avanzados de Inteligencia Artificial (IA), incluyendo Redes Neuronales Convolucionales (CNN) y arquitecturas emergentes como Vision Transformers (ViT) y YOLO, han demostrado una eficacia sobresaliente (95-100\% de precisión) en la clasificación binaria de enfermedades en cultivos hortícolas, superando las limitaciones de la inspección visual tradicional. Sin embargo, esta revisión sistemática revela una brecha crítica entre la detección visual y la cuantificación del impacto agronómico. Menos del 15\% de los trabajos abordan la clasificación de severidad multinivel, y solo una fracción marginal examina la correlación entre la infección y la degradación de la calidad interna o el rendimiento comercial. Aunque la imagenología hiperespectral combinada con Machine Learning evidencia un alto potencial para predecir metabolitos y parámetros nutricionales (e.g., $R^2=0.96$) para licopeno, su implementación en campo sigue restringida por costos y sensibilidad ambiental. La fusión de datos multimodales (imágenes espectrales + IoT/clima) es incipiente, apareciendo en menos del 10\% de los estudios. Persisten limitaciones metodológicas como datasets pequeños y escasa validación externa. Se concluye que, mientras la IA ha resuelto el problema de identificación, el desafío crucial de cuantificar la pérdida de valor nutricional y comercial permanece abierto, marcando la próxima frontera para la agricultura de precisión.}
 
 % Palabras clave
 \keyword{Inteligencia Artificial; Visión por Computador; Calidad Nutricional; Agricultura de Precisión; Detección de Enfermedades; Revisión Sistemática; Imagenología Hiperespectral; Aprendizaje Profundo} 
@@ -179,178 +182,369 @@ $^{1}$ \quad Afiliación 1; Investigador Independiente, Bogotá D.C., Colombia.
 
 \section{Introducción}
 
-La agricultura se encuentra en una encrucijada crítica. Ante la creciente presión de una población mundial en aumento y los desafíos impuestos por el cambio climático, la necesidad de garantizar la seguridad alimentaria a través de prácticas más eficientes y sostenibles es más urgente que nunca \citep{garg2023}. En este contexto, la agricultura de precisión ha emergido como un paradigma fundamental, y tecnologías como la Inteligencia Artificial (IA), la Visión por Computador y el Aprendizaje Automático (Machine Learning) se han posicionado como herramientas clave para su desarrollo \citep{Chitkara2024}. Estas tecnologías ofrecen soluciones innovadoras para la monitorización de cultivos, la optimización de recursos y la toma de decisiones basada en datos.
+La seguridad alimentaria mundial enfrenta desafíos sin precedentes debido al cambio climático y la creciente incidencia de enfermedades bióticas y estrés abiótico en los cultivos, factores que comprometen significativamente tanto el rendimiento como la calidad del producto final \citep{Mansoor2025a,Mushtaq2025}. En respuesta a esto, la agricultura de precisión ha adoptado rápidamente tecnologías de visión artificial y aprendizaje profundo (Deep Learning) para la monitorización de la salud vegetal \citep{Mushtaq2025, Yang2025}. En la última década, las Redes Neuronales Convolucionales (CNN) y, más recientemente, arquitecturas como Vision Transformers (ViT) y YOLO, se han establecido como estándar para la identificación visual de patologías \citep{Devora-Guadarrama2025,Mansoor2025a,Rayed2023}. Estudios recientes demuestran que estos modelos pueden alcanzar precisiones superiores al 95-99\% en tareas de clasificación binaria (sano vs. enfermo) en cultivos de importancia económica como el tomate, los cítricos y las crucíferas \citep{Devora-Guadarrama2025,Mansoor2025a,Rayed2023}. Además, la integración de técnicas no destructivas, como la imagenología hiperespectral (HSI), ha comenzado a permitir la evaluación de atributos de calidad interna que son invisibles al ojo humano, como el contenido de sólidos solubles y compuestos bioactivos \citep{Zhang2025,Szechynska-Hebda2025}.
 
-Una de las áreas de mayor impacto ha sido la detección automatizada de enfermedades en plantas. Numerosos estudios han demostrado la superioridad de los modelos de aprendizaje profundo, especialmente las Redes Neuronales Convolucionales (CNN), para identificar patógenos en imágenes de hojas con una precisión que a menudo supera el 95% en condiciones controladas \citep{Hosny2023,Cai2025}. Estos avances representan un salto cualitativo frente a la inspección visual tradicional, que es laboriosa, subjetiva y a menudo tardía.
+A pesar de la eficacia comprobada de la IA en la detección visual, existe una desconexión crítica entre la identificación de síntomas y la cuantificación de su impacto agronómico real. La mayoría de la literatura actual se limita a la clasificación categórica de enfermedades o la detección de objetos (bounding boxes), ignorando la progresión de la severidad y su correlación directa con la degradación de la calidad nutricional y comercial \citep{Zaludin2025}. Los métodos tradicionales de evaluación de calidad siguen dependiendo mayoritariamente de inspecciones manuales subjetivas o análisis químicos destructivos, los cuales son laboriosos y no escalables \citep{Yang2025,Zhang2025}.
 
-Sin embargo, el éxito en la clasificación binaria (enfermo vs. sano) ha eclipsado la investigación en áreas de mayor complejidad y valor agronómico. Existe una brecha significativa en la literatura en lo que respecta a la cuantificación de la severidad de la enfermedad y, de manera aún más crítica, en la comprensión de cómo esta severidad impacta la **calidad nutricional interna** y el rendimiento final del cultivo. Como lo revela el análisis de la literatura, menos del 15\% de los estudios recientes abordan la clasificación de la severidad en múltiples etapas, y son excepcionalmente raros los que correlacionan los hallazgos visuales con parámetros de calidad internos, como el contenido de vitaminas, azúcares o compuestos fenólicos \citep{Zhang2025}.
+Más aún, aunque se reconoce teóricamente el valor de la fusión de datos multimodales (RGB, hiperespectral, sensores IoT), la implementación práctica de modelos que integren estas fuentes para predecir parámetros internos (ej. vitaminas, fenoles) bajo condiciones de estrés biótico es escasa.Las revisiones existentes señalan que menos del 15\% de los estudios abordan la clasificación de severidad multinivel, y existe una carencia significativa de modelos que vinculen explícitamente la carga patógena detectada visualmente con la pérdida cuantitativa de valor de mercado o vida útil (shelf-life) \citep{Zhang2025,Safari2024}. La dependencia exclusiva de imágenes RGB restringe la capacidad de predecir cambios metabólicos tempranos que ocurren antes de la manifestación de síntomas visibles \citep{Szechynska-Hebda2025}.
 
-Este estudio presenta una revisión sistemática de la literatura con el objetivo de analizar y sintetizar el estado del arte en la aplicación de IA para la evaluación de cultivos hortícolas. Específicamente, se busca responder hasta qué punto los modelos avanzados y la fusión de datos multimodales están superando las limitaciones de los métodos tradicionales, no solo para detectar enfermedades, sino para cuantificar su impacto en la calidad interna del producto. A través de este análisis, se identifican las tendencias, las limitaciones metodológicas persistentes y las brechas de investigación críticas que deben abordarse para que la IA pueda transformar verdaderamente la producción agrícola hacia un enfoque de mayor calidad y precisión. 
+Para abordar estas limitaciones, esta revisión sistemática evalúa el estado del arte de los modelos predictivos basados en IA, con un enfoque específico en la transición de la detección descriptiva a la predicción cuantitativa de la calidad en cultivos de ciclo corto. A diferencia de revisiones previas centradas únicamente en la precisión de clasificación \citep{Raut2024,Sharma2024}, este estudio analiza: (1) la capacidad de las arquitecturas recientes (CNN, Transformers, Regresión PLS) para modelar la severidad de la enfermedad y su impacto en atributos nutricionales y físicos \citep{Szechynska-Hebda2025, Joshi2025}; (2) la efectividad de la imagenología hiperespectral y la fusión multimodal para revelar parámetros de calidad interna ocultos \citep{Zhang2025}; y (3) los desafíos metodológicos persistentes, como la validación en campo y la disponibilidad de datasets enriquecidos con metadatos de calidad \citep{Yang2025}. El objetivo final es proporcionar un marco de referencia para el desarrollo de sistemas de próxima generación que no solo diagnostiquen la salud del cultivo, sino que pronostiquen su valor calidad o valor nutricional.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Materiales y Métodos}
 
-Esta revisión sistemática se adhiere a un protocolo predefinido para garantizar un análisis exhaustivo y objetivo de la literatura. El proceso abarcó desde la formulación de preguntas de investigación hasta la extracción y síntesis de datos de los estudios seleccionados.
+El presente estudio se desarrolló integrando el marco de trabajo \textbf{SALSA} (Search, AppraisaL, Synthesis, Analysis) para la gestión del flujo de investigación y las directrices de la declaración \textbf{PRISMA 2020} para asegurar la transparencia y replicabilidad de la revisión sistemática de literatura (RSL).
 
-\subsection{Preguntas de Investigación}
-El estudio fue guiado por una pregunta de investigación principal y cuatro preguntas secundarias, diseñadas para explorar en profundidad el estado del arte de la IA en la agricultura hortícola.
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[
+    node distance=1.2cm and 1.5cm,
+    salsa_step/.style={draw, rectangle, fill=gray!20, text width=4cm, font=\bfseries\small, align=center, minimum height=1cm, rounded corners, blur shadow},
+    detail_box/.style={draw, rectangle, fill=gray!5, text width=6cm, font=\scriptsize, align=left, minimum height=1.5cm, dashed},
+    arrow/.style={-Stealth, thick, color=gray!80}
+]
 
-\textbf{Pregunta Principal (PI-P):} ¿En qué medida los modelos avanzados de Inteligencia Artificial y la fusión de datos multimodales (RGB, hiperespectral, IoT) están superando las limitaciones de los métodos de detección visual tradicionales para cuantificar la severidad de las enfermedades y predecir su impacto en la calidad interna y el rendimiento en cultivos hortícolas?
+% --- FASE: SEARCH ---
+\node[salsa_step] (search) {SEARCH (Búsqueda)};
+\node[detail_box, right=of search] (search_desc) {
+    \begin{itemize}
+        \item Bases: Scopus, WoS, IEEE, ScienceDirect.
+        \item Tesauros: AGROVOC (FAO), IEEE, NAL (USDA).
+        \item Estrategia: Matriz bilingüe de 5 facetas (Tecnología $\land$ Enfermedad $\land$ Estimación/Modelado $\land$ Resultado $\land$ Dominio).
+    \end{itemize}
+};
 
-\textbf{Preguntas Secundarias (PI-S):}
+% --- FASE: APPRAISAL ---
+\node[salsa_step, below=of search, yshift=-1cm] (appraisal) {APPRAISAL (Evaluación)};
+\node[detail_box, right=of appraisal] (appraisal_desc) {
+    \begin{itemize}
+        \item \textbf{Nivel I (Python):} Deduplicación por DOI/EID ($n=64$ eliminados).
+        \item \textbf{Nivel II (Elicit AI):} Cribado cualitativo de 113 fuentes bajo criterios de elegibilidad técnica.
+        \item Selección de 80 artículos con mayor puntuación de relevancia.
+    \end{itemize}
+};
+
+% --- FASE: SYNTHESIS ---
+\node[salsa_step, below=of appraisal, yshift=-1cm] (synthesis) {SYNTHESIS (Síntesis)};
+\node[detail_box, right=of synthesis] (synthesis_desc) {
+    \begin{itemize}
+        \item Extracción automatizada vía LLM (Elicit).
+        \item Categorización de arquitecturas (VGG, ResNet, YOLO, ViT).
+        \item Tabulación de métricas ($Accuracy$, $F1$, $R^2$) y cultivos (Tomate, Mango, etc.).
+    \end{itemize}
+};
+
+% --- FASE: ANALYSIS ---
+\node[salsa_step, below=of synthesis, yshift=-1cm] (analysis) {ANALYSIS (Análisis)};
+\node[detail_box, right=of analysis] (analysis_desc) {
+    \begin{itemize}
+        \item Análisis bibliométrico descriptivo (Q1/Citaciones).
+        \item Minería de texto y Modelado de Tópicos (LDA) en Python.
+        \item Identificación de brechas: Fusión multimodal y estimación de calidad interna.
+    \end{itemize}
+};
+
+% --- Flechas ---
+\draw[arrow] (search) -- (appraisal);
+\draw[arrow] (appraisal) -- (synthesis);
+\draw[arrow] (synthesis) -- (analysis);
+
+\draw[arrow, dotted] (search_desc) -- (appraisal_desc);
+\draw[arrow, dotted] (appraisal_desc) -- (synthesis_desc);
+\draw[arrow, dotted] (synthesis_desc) -- (analysis_desc);
+
+\end{tikzpicture}
+\caption{Metodología de revisión sistematizada bajo el marco SALSA, integrando herramientas de Ciencia de Datos e Inteligencia Artificial.}
+\label{fig:salsa_framework}
+\end{figure}
+
+\subsection{Fase 1: Búsqueda (Search)}
+Esta fase se orientó a la identificación exhaustiva de evidencia mediante una estrategia de búsqueda bilingüe (inglés/español) ejecutada en las bases de datos Scopus, Web of Science, IEEE Xplore y ScienceDirect.
+
+\subsubsection{Preguntas de Investigación}
+El alcance se delimitó mediante una pregunta central y cuatro sub-preguntas analíticas:
 \begin{itemize}
-    \item \textbf{PI-S1:} ¿Cuáles son las técnicas de IA más efectivas para diferentes tareas agrícolas (detección de enfermedades, estimación de rendimiento, monitoreo de calidad) y cómo han evolucionado en el tiempo?
-    \item \textbf{PI-S2:} ¿Cuáles son las métricas de evaluación más apropiadas para valorar estos modelos en el contexto agrícola?
-    \item \textbf{PI-S3:} ¿Qué técnicas de análisis espectral combinadas con IA muestran la correlación más fuerte con parámetros nutricionales reales en frutas y verduras, y cuál es su viabilidad para la implementación en campo frente a entornos de laboratorio?
-    \item \textbf{PI-S4:} ¿Cuáles son las principales limitaciones metodológicas reportadas en los estudios de IA agrícola (tamaño de los conjuntos de datos, estrategias de validación cruzada, reproducibilidad) y qué estándares están emergiendo para una evaluación robusta?
+    \item \textbf{PI:} ¿En qué medida los modelos de IA y la fusión de datos multimodales superan las limitaciones tradicionales en la cuantificación de enfermedades y predicción de calidad en cultivos hortícolas? 
+    \item \textbf{SQ1:} ¿Qué técnicas de IA son más efectivas para la detección de enfermedades y estimación de rendimiento? 
+    \item \textbf{SQ2:} ¿Qué métricas de evaluación son predominantes en este contexto? 
+    \item \textbf{SQ3:} ¿Cuál es la correlación entre el análisis espectral y los parámetros nutricionales reales? 
+    \item \textbf{SQ4:} ¿Cuáles son las limitaciones metodológicas actuales en términos de reproducibilidad y datos? 
 \end{itemize}
 
-\subsection{Estrategia de Búsqueda y Selección de Estudios}
-Se realizó una búsqueda bibliográfica exhaustiva en bases de datos académicas de primer nivel, incluyendo \textit{Scopus}, \textit{IEEE Xplore}, \textit{Web of Science} y \textit{ScienceDirect}. Para garantizar una cobertura completa y sistemática de la terminología, las ecuaciones de búsqueda se construyeron utilizando un enfoque basado en tesauros. Se consultaron vocabularios controlados de referencia en los campos de la ingeniería y la agricultura, como el \textbf{Tesauro de IEEE} para términos técnicos y de ingeniería \citep{IEEEThesaurus2024}, y el tesauro \textbf{AGROVOC} de la Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO) para conceptos agrícolas \citep{Agrovoc2024}. Esta estrategia permitió definir un conjunto robusto de palabras clave y sinónimos relacionados con inteligencia artificial, visión por computador, cultivos hortícolas, detección de enfermedades y evaluación de calidad, asegurando la recuperación de la literatura más relevante.
+\subsubsection{Estrategia de Búsqueda y Tesauros}
+Se empleó una matriz de cinco facetas basada en vocabularios controlados de los tesauros AGROVOC (FAO), IEEE y NAL (USDA) \citep{IEEEThesaurus2024, Agrovoc2024, NALT2024}. La estructura base implementada para la ecuación de búsqueda fue:
 
-De un conjunto inicial de 113 fuentes, se aplicaron criterios de selección rigurosos para filtrar los estudios más relevantes. Se incluyeron artículos que cumplieran con los siguientes criterios: (1) enfoque en cultivos hortícolas; (2) implementación de técnicas avanzadas de IA/ML; (3) uso de datos para evaluar resultados agrícolas como la detección de enfermedades, la calidad o el rendimiento; (4) publicación en una revista o conferencia revisada por pares con resultados empíricos; y (5) provisión de métricas de rendimiento cuantitativas. Se excluyeron estudios puramente teóricos o aquellos centrados exclusivamente en cultivos extensivos (como trigo o maíz). Este proceso resultó en una selección final de 80 artículos que fueron sometidos a un análisis detallado.
 
-\subsection{Extracción y Síntesis de Datos}
-Para cada uno de los 80 estudios incluidos, se extrajo información sistemáticamente utilizando un protocolo definido. Los datos extraídos se organizaron en las siguientes categorías principales:
-\begin{itemize}
-    \item \textbf{Métodos de IA y Fusión de Datos:} Técnicas específicas de IA/ML, arquitecturas de modelos y métodos de integración de datos (e.g., RGB, hiperespectral, IoT).
-    \item \textbf{Aplicación Agrícola:} Tarea principal (detección, cuantificación, predicción), tipo de cultivo y parámetros específicos evaluados.
-    \item \textbf{Resultados de Rendimiento:} Métricas cuantitativas reportadas, como exactitud, precisión, F1-score, y coeficientes de correlación (R²).
-    \item \textbf{Cuantificación de Severidad y Calidad:} Métodos para medir la severidad de la enfermedad (escalas, etapas) y predecir parámetros de calidad interna (contenido nutricional, madurez).
-    \item \textbf{Contexto de Implementación:} Entorno del estudio (laboratorio vs. campo), requisitos computacionales y consideraciones de escalabilidad.
-    \item \textbf{Calidad Metodológica:} Características del conjunto de datos, estrategias de validación y disponibilidad de código o datos para la reproducibilidad.
-\end{itemize}
-La información extraída fue posteriormente sintetizada para identificar patrones, tendencias, brechas de investigación y explicar la variabilidad en los resultados reportados.
+\begin{quote}
+    \textit{(F1: Tecnología) AND (F2: Enfermedad) AND (F3: Estimación/Modelado) AND (F4: Resultado) AND (F5: Dominio)}.
+\end{quote}
+
+\subsection{Fase 2: Evaluación (Appraisal)}
+El proceso de valoración de calidad y elegibilidad se ejecutó en un "embudo" de dos niveles para asegurar el rigor científico.
+
+\subsubsection{Deduplicación y Normalización (Nivel I)}
+Se utilizó un script en Python para consolidar los registros de las bases de datos. Se eliminaron 64 registros duplicados mediante el análisis de DOI y EID, resultando en un conjunto unificado de 135 artículos únicos.
+
+\subsubsection{Screening Asistido por IA (Nivel II)}
+Se realizó un refinamiento cualitativo de 113 fuentes mediante la plataforma Elicit. Se aplicaron criterios de inclusión (Horticultural Focus, IA/ML Implementation, Multimodal Integration) y exclusión (estudios puramente teóricos o sin validación empírica). Tras el escrutinio de abstracts y textos completos, se seleccionaron 80 artículos con la mayor puntuación de relevancia para la síntesis.
+
+\subsection{Fase 3: Síntesis (Synthesis)}
+La extracción de datos se automatizó mediante modelos de lenguaje (LLM) integrados en Elicit. Se estructuró una matriz que capturó: 1) Arquitecturas de IA (VGG, ResNet, YOLO, ViT) , 2) Modalidades de datos (RGB, Hiperespectral, IoT) , 3) Cultivos analizados (predominantemente Tomate, Mango y Manzana)  y 4) Métricas de desempeño ($Accuracy$, $F1$-Score, $R^2$).
+
+
+
+\subsection{Fase 4: Análisis (Analysis)}
+Se realizó una síntesis mixta de la evidencia. El análisis bibliométrico reveló una tendencia creciente con 38 estudios proyectados para 2025 y una alta calidad editorial con 33 artículos en cuartil Q1. El análisis de conocimiento se profundizó mediante técnicas de procesamiento de lenguaje natural (NLP) en Python, incluyendo el modelado de tópicos (LDA) para identificar las fronteras tecnológicas en la predicción de calidad nutricional y rendimiento agrícola.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{assets/cantxanio.png}
+\caption{Evolución temporal de las publicaciones sobre IA en agricultura hortícola (2015-2025), mostrando una tendencia creciente sostenida con 38 estudios proyectados para 2025.}
+\label{fig:publicaciones_anio}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{assets/cuartiles.png}
+\caption{Distribución de artículos por cuartiles de calidad editorial. El 41.3\% de los estudios (n=33) se publicó en revistas del cuartil Q1, evidenciando alta calidad académica.}
+\label{fig:cuartiles}
+\end{figure}
+
+
+\begin{figure}[h!]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+    node distance=1.5cm and 1cm,
+    box/.style={draw, rectangle, minimum width=3.5cm, minimum height=1.2cm, align=center, font=\small},
+    arrow/.style={-Stealth, thick}
+]
+
+% --- Nivel 1: Identificación ---
+\node[box, fill=gray!15] (ident) {
+    \textbf{IDENTIFICACIÓN}\\
+    Registros identificados en bases de datos\\
+    (Scopus, WoS, IEEE, ScienceDirect)\\
+    ($n = 199$)
+};
+
+\node[box, right=of ident, xshift=1cm, fill=gray!30] (dedup) {
+    Registros eliminados antes del cribado:\\
+    Duplicados eliminados vía script Python (check DOI/EID)\\
+    ($n = 64$)
+};
+
+% --- Nivel 2: Cribado (Screening) ---
+\node[box, below=of ident, yshift=-0.5cm, fill=gray!15] (screen) {
+    \textbf{CRIBADO}\\
+    Registros únicos cribados\\
+    (procesados en Python)\\
+    ($n = 135$)
+};
+
+\node[box, right=of screen, xshift=1cm, fill=gray!30] (excl1) {
+    Registros excluidos:\\
+    Excluidos previos a carga en IA\\
+    (ej. sin abstract/metadatos)\\
+    ($n = 22$)
+};
+
+% --- Nivel 3: Elegibilidad ---
+\node[box, below=of screen, yshift=-0.5cm, fill=gray!15] (elig) {
+    \textbf{ELEGIBILIDAD}\\
+    Informes evaluados para elegibilidad\\
+    (Cargados en plataforma Elicit AI)\\
+    ($n = 113$)
+};
+
+\node[box, right=of elig, xshift=1cm, fill=gray!30] (excl2) {
+    Informes excluidos vía Elicit:\\
+    No cumplieron criterios o menor puntaje de relevancia\\
+    ($n = 33$)
+};
+
+% --- Nivel 4: Inclusión ---
+\node[box, below=of elig, yshift=-0.5cm, fill=gray!20] (incl) {
+    \textbf{INCLUSIÓN}\\
+    Estudios incluidos en la revisión\\
+    (Top-ranked seleccionados para síntesis)\\
+    ($n = 80$)
+};
+
+% --- Flechas ---
+% Identificación a Deduplicación y Cribado
+\draw[arrow] (ident) -- (dedup);
+\draw[arrow] (ident) -- (screen);
+
+% Cribado a Exclusión 1 y Elegibilidad
+\draw[arrow] (screen) -- (excl1);
+\draw[arrow] (screen) -- (elig);
+
+% Elegibilidad a Exclusión 2 e Inclusión
+\draw[arrow] (elig) -- (excl2);
+\draw[arrow] (elig) -- (incl);
+
+\end{tikzpicture}
+}% fin de resizebox
+\caption{Diagrama de flujo PRISMA detallando el proceso de selección de estudios asistido por herramientas computacionales (Python e IA Elicit).}
+\label{fig:prisma_flow}
+\end{figure}
+
+% Esta revisión sistemática se adhiere a un protocolo predefinido para garantizar un análisis exhaustivo y objetivo de la literatura. El proceso abarcó desde la formulación de preguntas de investigación hasta la extracción y síntesis de datos de los estudios seleccionados.
+
+% \subsection{Preguntas de Investigación}
+% El estudio fue guiado por una pregunta de investigación principal y cuatro preguntas secundarias, diseñadas para explorar en profundidad el estado del arte de la IA en la agricultura hortícola.
+
+% \textbf{Pregunta Principal (PI-P):} ¿En qué medida los modelos avanzados de Inteligencia Artificial y la fusión de datos multimodales (RGB, hiperespectral, IoT) están superando las limitaciones de los métodos de detección visual tradicionales para cuantificar la severidad de las enfermedades y predecir su impacto en la calidad interna y el rendimiento en cultivos hortícolas?
+
+% \textbf{Preguntas Secundarias (PI-S):}
+% \begin{itemize}
+%     \item \textbf{PI-S1:} ¿Cuáles son las técnicas de IA más efectivas para diferentes tareas agrícolas (detección de enfermedades, estimación de rendimiento, monitoreo de calidad) y cómo han evolucionado en el tiempo?
+%     \item \textbf{PI-S2:} ¿Cuáles son las métricas de evaluación más apropiadas para valorar estos modelos en el contexto agrícola?
+%     \item \textbf{PI-S3:} ¿Qué técnicas de análisis espectral combinadas con IA muestran la correlación más fuerte con parámetros nutricionales reales en frutas y verduras, y cuál es su viabilidad para la implementación en campo frente a entornos de laboratorio?
+%     \item \textbf{PI-S4:} ¿Cuáles son las principales limitaciones metodológicas reportadas en los estudios de IA agrícola (tamaño de los conjuntos de datos, estrategias de validación cruzada, reproducibilidad) y qué estándares están emergiendo para una evaluación robusta?
+% \end{itemize}
+
+% \subsection{Estrategia de Búsqueda y Selección de Estudios}
+% Se realizó una búsqueda bibliográfica exhaustiva en bases de datos académicas de primer nivel, incluyendo \textit{Scopus}, \textit{IEEE Xplore}, \textit{Web of Science} y \textit{ScienceDirect}. Para garantizar una cobertura completa y sistemática de la terminología, las ecuaciones de búsqueda se construyeron utilizando un enfoque basado en tesauros. Se consultaron vocabularios controlados de referencia en los campos de la ingeniería y la agricultura, como el \textbf{Tesauro de IEEE} para términos técnicos y de ingeniería \citep{IEEEThesaurus2024}, y el tesauro \textbf{AGROVOC} de la Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO) para conceptos agrícolas \citep{Agrovoc2024}. Esta estrategia permitió definir un conjunto robusto de palabras clave y sinónimos relacionados con inteligencia artificial, visión por computador, cultivos hortícolas, detección de enfermedades y evaluación de calidad, asegurando la recuperación de la literatura más relevante.
+
+% De un conjunto inicial de 113 fuentes, se aplicaron criterios de selección rigurosos para filtrar los estudios más relevantes. Se incluyeron artículos que cumplieran con los siguientes criterios: (1) enfoque en cultivos hortícolas; (2) implementación de técnicas avanzadas de IA/ML; (3) uso de datos para evaluar resultados agrícolas como la detección de enfermedades, la calidad o el rendimiento; (4) publicación en una revista o conferencia revisada por pares con resultados empíricos; y (5) provisión de métricas de rendimiento cuantitativas. Se excluyeron estudios puramente teóricos o aquellos centrados exclusivamente en cultivos extensivos (como trigo o maíz). Este proceso resultó en una selección final de 80 artículos que fueron sometidos a un análisis detallado.
+
+% \subsection{Extracción y Síntesis de Datos}
+% Para cada uno de los 80 estudios incluidos, se extrajo información sistemáticamente utilizando un protocolo definido. Los datos extraídos se organizaron en las siguientes categorías principales:
+% \begin{itemize}
+%     \item \textbf{Métodos de IA y Fusión de Datos:} Técnicas específicas de IA/ML, arquitecturas de modelos y métodos de integración de datos (e.g., RGB, hiperespectral, IoT).
+%     \item \textbf{Aplicación Agrícola:} Tarea principal (detección, cuantificación, predicción), tipo de cultivo y parámetros específicos evaluados.
+%     \item \textbf{Resultados de Rendimiento:} Métricas cuantitativas reportadas, como exactitud, precisión, F1-score, y coeficientes de correlación ($R^2$).
+%     \item \textbf{Cuantificación de Severidad y Calidad:} Métodos para medir la severidad de la enfermedad (escalas, etapas) y predecir parámetros de calidad interna (contenido nutricional, madurez).
+%     \item \textbf{Contexto de Implementación:} Entorno del estudio (laboratorio vs. campo), requisitos computacionales y consideraciones de escalabilidad.
+%     \item \textbf{Calidad Metodológica:} Características del conjunto de datos, estrategias de validación y disponibilidad de código o datos para la reproducibilidad.
+% \end{itemize}
+% La información extraída fue posteriormente sintetizada para identificar patrones, tendencias, brechas de investigación y explicar la variabilidad en los resultados reportados.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resultados}
 
-El análisis de los 80 estudios seleccionados revela un panorama detallado sobre el uso de la IA en la agricultura hortícola, destacando tanto los avances significativos como las brechas persistentes.
+% El análisis de los 80 estudios seleccionados revela un panorama detallado sobre el uso de la IA en la agricultura hortícola, destacando tanto los avances significativos como las brechas persistentes.
 
-\subsection{Características Generales de los Estudios}
-La investigación se centró predominantemente en la \textbf{detección de enfermedades} (n=68), con una atención considerablemente menor a la \textbf{evaluación de la calidad} (n=5), la \textbf{predicción del rendimiento} (n=3) y la \textbf{detección de plagas} (n=2). El \textbf{tomate} fue el cultivo más estudiado (n=15), seguido del mango (n=8), la manzana (n=6) y la uva (n=6). El uso de \textbf{imágenes RGB} fue la modalidad de datos dominante, presente en 72 de los 80 estudios, mientras que solo seis trabajos emplearon imagenología hiperespectral y ocho integraron datos de sensores IoT, lo que subraya la dependencia de los datos visuales estándar.
+% \subsection{Características Generales de los Estudios}
+% La investigación se centró predominantemente en la \textbf{detección de enfermedades} (n=68), con una atención considerablemente menor a la \textbf{evaluación de la calidad} (n=5), la \textbf{predicción del rendimiento} (n=3) y la \textbf{detección de plagas} (n=2). El \textbf{tomate} fue el cultivo más estudiado (n=15), seguido del mango (n=8), la manzana (n=6) y la uva (n=6). El uso de \textbf{imágenes RGB} fue la modalidad de datos dominante, presente en 72 de los 80 estudios, mientras que solo seis trabajos emplearon imagenología hiperespectral y ocho integraron datos de sensores IoT, lo que subraya la dependencia de los datos visuales estándar.
 
-\subsection{Análisis de Técnicas de Inteligencia Artificial}
-\subsubsection{Dominio del Aprendizaje Profundo y Evolución Arquitectónica}
-Las Redes Neuronales Convolucionales (CNN) fueron la arquitectura de IA predominante en los estudios analizados. El aprendizaje por transferencia (\textit{transfer learning}) con modelos pre-entrenados fue la estrategia más popular, demostrando una alta eficacia. Arquitecturas como VGG, ResNet y la familia YOLO (You Only Look Once) fueron las más implementadas. La Tabla~\ref{tab:ia_architectures} resume la frecuencia y el rango de precisión típico para las principales categorías de arquitecturas identificadas.
+% \subsection{Análisis de Técnicas de Inteligencia Artificial}
+% \subsubsection{Dominio del Aprendizaje Profundo y Evolución Arquitectónica}
+% Las Redes Neuronales Convolucionales (CNN) fueron la arquitectura de IA predominante en los estudios analizados. El aprendizaje por transferencia (\textit{transfer learning}) con modelos pre-entrenados fue la estrategia más popular, demostrando una alta eficacia. Arquitecturas como VGG, ResNet y la familia YOLO (You Only Look Once) fueron las más implementadas. La Tabla~\ref{tab:ia_architectures} resume la frecuencia y el rango de precisión típico para las principales categorías de arquitecturas identificadas.
 
-\begin{table}[H]
-\caption{Frecuencia y rendimiento de las principales categorías de arquitecturas de IA.\label{tab:ia_architectures}}
-\centering
-\begin{tabularx}{\textwidth}{lXcR}
-\toprule
-\textbf{Categoría de Arquitectura} & \textbf{Modelos Representativos} & \textbf{Frecuencia} & \textbf{Rango de Precisión Típico} \\
-\midrule
-CNN Estándar & Arquitecturas personalizadas, SqueezeNet & 28 & 86-98\% \\
-CNN Pre-entrenada (Transfer Learning) & VGG16/19, ResNet50, MobileNet & 35 & 90-99\% \\
-Basadas en YOLO & YOLOv5, YOLOv8, YOLOv9 & 9 & 93-99\% \\
-Ensambles/Híbridos & CNN+SVM, CNN+Random Forest & 15 & 77-99\% \\
-ML Tradicional & SVM, KNN, ANN & 12 & 76-93\% \\
-Transformers & ViT, Transformer-based & 2 & 100\% \\
-Redes Recurrentes & GRU, LSTM & 1 & R²=0.99 \\
-\bottomrule
-\end{tabularx}
-\end{table}
+% \begin{table}[H]
+% \caption{Frecuencia y rendimiento de las principales categorías de arquitecturas de IA.\label{tab:ia_architectures}}
+% \centering
+% \begin{tabularx}{\textwidth}{lXcR}
+% \toprule
+% \textbf{Categoría de Arquitectura} & \textbf{Modelos Representativos} & \textbf{Frecuencia} & \textbf{Rango de Precisión Típico} \\
+% \midrule
+% CNN Estándar & Arquitecturas personalizadas, SqueezeNet & 28 & 86-98\% \\
+% CNN Pre-entrenada (Transfer Learning) & VGG16/19, ResNet50, MobileNet & 35 & 90-99\% \\
+% Basadas en YOLO & YOLOv5, YOLOv8, YOLOv9 & 9 & 93-99\% \\
+% Ensambles/Híbridos & CNN+SVM, CNN+Random Forest & 15 & 77-99\% \\
+% ML Tradicional & SVM, KNN, ANN & 12 & 76-93\% \\
+% Transformers & ViT, Transformer-based & 2 & 100\% \\
+% Redes Recurrentes & GRU, LSTM & 1 & $R^2=0.99$ \\
+% \bottomrule
+% \end{tabularx}
+% \end{table}
 
-Arquitecturas emergentes también demostraron un rendimiento notable. Por ejemplo, un modelo Vision Transformer (ViT) alcanzó una precisión de clasificación del 100% en un conjunto de datos de hojas de mango \citep{Eshmam2023}, mientras que los mecanismos de atención integrados con arquitecturas DenseNet lograron un 98.7% de precisión para la detección de enfermedades en patatas \citep{Tamilselvan2025}.
+% Arquitecturas emergentes también demostraron un rendimiento notable. Por ejemplo, un modelo Vision Transformer (ViT) alcanzó una precisión de clasificación del 100\% en un conjunto de datos de hojas de mango, mientras que los mecanismos de atención integrados con arquitecturas DenseNet lograron un 98.7\% de precisión para la detección de enfermedades en patatas.
 
-\subsubsection{Enfoques Híbridos y de Ensamble}
-La combinación de diferentes modelos o la fusión de características a menudo condujo a resultados robustos. Modelos híbridos como CNN-SVM alcanzaron una precisión del 95.93% para la clasificación de la severidad de la sarna del mango \citep{Chitkara2024a}, y la combinación de CNN con Random Forest obtuvo un 86.97% de precisión para la detección de la madurez en bananas \citep{Chitkara2024}. Estos enfoques de ensamble demuestran ser una estrategia efectiva para mejorar el rendimiento sobre modelos individuales.
+% \subsubsection{Enfoques Híbridos y de Ensamble}
+% La combinación de diferentes modelos o la fusión de características a menudo condujo a resultados robustos. Modelos híbridos como CNN-SVM alcanzaron una precisión del 95.93\% para la clasificación de la severidad de la sarna del mango, y la combinación de CNN con Random Forest obtuvo un 86.97\% de precisión para la detección de la madurez en bananas . Estos enfoques de ensamble demuestran ser una estrategia efectiva para mejorar el rendimiento sobre modelos individuales.
 
-\subsection{Resultados de Rendimiento por Tarea y Cultivo}
-El rendimiento de los modelos de IA varió considerablemente dependiendo del cultivo, la tarea específica y la complejidad del conjunto de datos. Se reportaron precisiones que van desde el 77.2% hasta el 100%. Generalmente, los modelos con mayor rendimiento utilizaron aprendizaje por transferencia sobre conjuntos de datos bien curados y en condiciones de laboratorio controladas. Las Tablas~\ref{tab:performance_part1} y \ref{tab:performance_part2} resumen los mejores resultados de rendimiento reportados para una selección de cultivos y tareas clave.
+% \subsection{Resultados de Rendimiento por Tarea y Cultivo}
+% El rendimiento de los modelos de IA varió considerablemente dependiendo del cultivo, la tarea específica y la complejidad del conjunto de datos. Se reportaron precisiones que van desde el 77.2\% hasta el 100\%. Generalmente, los modelos con mayor rendimiento utilizaron aprendizaje por transferencia sobre conjuntos de datos bien curados y en condiciones de laboratorio controladas. Las Tablas~\ref{tab:performance_part1} y \ref{tab:performance_part2} resumen los mejores resultados de rendimiento reportados para una selección de cultivos y tareas clave.
 
-\begin{table}[H]
-\caption{Resultados de rendimiento de modelos de IA para diversos cultivos y tareas (Parte 1).\label{tab:performance_part1}}
-\centering
-\begin{tabularx}{\textwidth}{XllRRR}
-\toprule
-\textbf{Cultivo} & \textbf{Tarea} & \textbf{Mejor Modelo} & \textbf{Precisión} & \textbf{Precisión (P)} & \textbf{Recall (R)} \\
-\midrule
-Tomate & Detección de enfermedad & CNN & 98.49\% & - & - \\
-Tomate & Detección de enfermedad & EfficientNetV2B0 & 97.58\% & - & - \\
-Tomate & Severidad de enfermedad & EfficientDet D1 & 66.03\% (mAP) & - & - \\
-Mango & Detección de enfermedad & ViT & 100\% & 100\% & 100\% \\
-Mango & Detección de enfermedad & Ensamble CNN & 99.21\% & 97\% & 97\% \\
-Manzana & Detección de enfermedad & AppleNet (ResNet50) & 96.99\% & - & 97\% \\
-Manzana & Detección de enfermedad & DenseNet121 & 94\% & - & - \\
-Uva & Detección de enfermedad & CNN+LBP & 98.8\% & - & - \\
-Fresa & Detección de enfermedad & FFIR & 99.34\% & 99.69\% & 99.05\% \\
-Pimiento & Detección de enfermedad & IMNM & 98.55\% & >98\% & >98\% \\
-Cítricos & Detección de enfermedad & EfficientNetB0 & 99.88\% & 99.88\% & 99.89\% \\
-Granada & Detección de enfermedad & CNN & 98\% & - & - \\
-Banana & Detección de enfermedad & CNN+Random Forest & 86.97\% & - & - \\
-Patata & Detección de enfermedad & AttDenseNet & 98.7\% & 85\% & 83\% \\
-\bottomrule
-\end{tabularx}
-\end{table}
+% \begin{table}[H]
+% \caption{Resultados de rendimiento de modelos de IA para diversos cultivos y tareas (Parte 1).\label{tab:performance_part1}}
+% \centering
+% \begin{tabularx}{\textwidth}{XllRRR}
+% \toprule
+% \textbf{Cultivo} & \textbf{Tarea} & \textbf{Mejor Modelo} & \textbf{Precisión} & \textbf{Precisión (P)} & \textbf{Recall (R)} \\
+% \midrule
+% Tomate & Detección de enfermedad & CNN & 98.49\% & - & - \\
+% Tomate & Detección de enfermedad & EfficientNetV2B0 & 97.58\% & - & - \\
+% Tomate & Severidad de enfermedad & EfficientDet D1 & 66.03\% (mAP) & - & - \\
+% Mango & Detección de enfermedad & ViT & 100\% & 100\% & 100\% \\
+% Mango & Detección de enfermedad & Ensamble CNN & 99.21\% & 97\% & 97\% \\
+% Manzana & Detección de enfermedad & AppleNet (ResNet50) & 96.99\% & - & 97\% \\
+% Manzana & Detección de enfermedad & DenseNet121 & 94\% & - & - \\
+% Uva & Detección de enfermedad & CNN+LBP & 98.8\% & - & - \\
+% Fresa & Detección de enfermedad & FFIR & 99.34\% & 99.69\% & 99.05\% \\
+% Pimiento & Detección de enfermedad & IMNM & 98.55\% & >98\% & >98\% \\
+% Cítricos & Detección de enfermedad & EfficientNetB0 & 99.88\% & 99.88\% & 99.89\% \\
+% Granada & Detección de enfermedad & CNN & 98\% & - & - \\
+% Banana & Detección de enfermedad & CNN+Random Forest & 86.97\% & - & - \\
+% Patata & Detección de enfermedad & AttDenseNet & 98.7\% & 85\% & 83\% \\
+% \bottomrule
+% \end{tabularx}
+% \end{table}
 
-\begin{table}[H]
-\caption{Resultados de rendimiento de modelos de IA para diversos cultivos y tareas (Parte 2).\label{tab:performance_part2}}
-\centering
-\begin{tabularx}{\textwidth}{XllRRR}
-\toprule
-\textbf{Cultivo} & \textbf{Tarea} & \textbf{Mejor Modelo} & \textbf{Precisión} & \textbf{Precisión (P)} & \textbf{Recall (R)} \\
-\midrule
-Pepino & Detección de enfermedad & BP NN + Multispectral & 90-100\% & - & - \\
-Rosa & Detección de plagas & VGG16 & 90.11\% & - & - \\
-Berenjena & Detección de deficiencia & YOLOv9+GA & 94.52\% & 95.9\% & 92.8\% \\
-Maracuyá & Detección de enfermedad & YOLOv8-MDN-Tiny & 94.8\% (mAP) & 91.5\% & 91.6\% \\
-Vid & Monitoreo de salud & PLSR & R²=0.7 & - & - \\
-Repollo & Detección de enfermedad & Spectral+ML & - & - & - \\
-Cacao & Predicción de rendimiento & Neural Boosted & R²=0.9985 & - & - \\
-\bottomrule
-\end{tabularx}
-\end{table}
+% \begin{table}[H]
+% \caption{Resultados de rendimiento de modelos de IA para diversos cultivos y tareas (Parte 2).\label{tab:performance_part2}}
+% \centering
+% \begin{tabularx}{\textwidth}{XllRRR}
+% \toprule
+% \textbf{Cultivo} & \textbf{Tarea} & \textbf{Mejor Modelo} & \textbf{Precisión} & \textbf{Precisión (P)} & \textbf{Recall (R)} \\
+% \midrule
+% Pepino & Detección de enfermedad & BP NN + Multispectral & 90-100\% & - & - \\
+% Rosa & Detección de plagas & VGG16 & 90.11\% & - & - \\
+% Berenjena & Detección de deficiencia & YOLOv9+GA & 94.52\% & 95.9\% & 92.8\% \\
+% Maracuyá & Detección de enfermedad & YOLOv8-MDN-Tiny & 94.8\% (mAP) & 91.5\% & 91.6\% \\
+% Vid & Monitoreo de salud & PLSR & $R^2=0.7$ & - & - \\
+% Repollo & Detección de enfermedad & Spectral+ML & - & - & - \\
+% Cacao & Predicción de rendimiento & Neural Boosted & $R^2=0.9985$ & - & - \\
+% \bottomrule
+% \end{tabularx}
+% \end{table}
 
-Es importante notar que los estudios que reportan precisiones perfectas o casi perfectas a menudo utilizan conjuntos de datos relativamente pequeños y homogéneos, lo que plantea interrogantes sobre la generalización de los modelos a condiciones de campo más variables.
+% Es importante notar que los estudios que reportan precisiones perfectas o casi perfectas a menudo utilizan conjuntos de datos relativamente pequeños y homogéneos, lo que plantea interrogantes sobre la generalización de los modelos a condiciones de campo más variables.
 
-\subsection{Rendimiento del Análisis Espectral}
-Los estudios que emplearon imagenología hiperespectral y multiespectral demostraron ventajas claras para la detección temprana y la estimación de parámetros fisiológicos. Por ejemplo, la imagenología hiperespectral permitió la detección de cambios fisiológicos en plantas de repollo antes de la aparición de síntomas visibles, con alteraciones espectrales significativas observadas en las regiones de 400-520 nm (moho gris) y 700-722 nm (alternaria) \citep{Szechynska-Hebda2025}. En vid, los modelos de Regresión de Mínimos Cuadrados Parciales (PLSR) lograron coeficientes de determinación (R²) de 0.6-0.7 para predecir parámetros fisiológicos como la conductancia estomática y la tasa de fotosíntesis \citep{Maimaitiyiming2020}.
+% \subsection{Rendimiento del Análisis Espectral}
+% Los estudios que emplearon imagenología hiperespectral y multiespectral demostraron ventajas claras para la detección temprana y la estimación de parámetros fisiológicos. Por ejemplo, la imagenología hiperespectral permitió la detección de cambios fisiológicos en plantas de repollo antes de la aparición de síntomas visibles, con alteraciones espectrales significativas observadas en las regiones de 400-520 nm (moho gris) y 700-722 nm (alternaria) \citep{Szechynska-Hebda2025}. En vid, los modelos de Regresión de Mínimos Cuadrados Parciales (PLSR) lograron coeficientes de determinación ($R^2$) de 0.6-0.7 para predecir parámetros fisiológicos como la conductancia estomática y la tasa de fotosíntesis \citep{Maimaitiyiming2020}.
 
-\subsection{Comparación con Métodos Tradicionales}
-La mayoría de los estudios concluyeron que los métodos basados en IA superan a la inspección visual tradicional, la cual se describe consistentemente como laboriosa, costosa y propensa a errores subjetivos. Los enfoques de IA ofrecen una alternativa automatizada, consistente y rápida. En comparaciones directas, los modelos de IA mostraron mejoras significativas, como un aumento del 21.54% en la precisión media sobre la línea de base en un estudio \citep{Bhat2023} y una mejora de hasta el 13.18% sobre métodos como SVM y ANN en otro \citep{Kaur2024}. A pesar de estas ventajas, la inspección manual sigue siendo relevante para validar los resultados de los modelos, establecer la verdad de campo (\textit{ground truth}) y detectar síntomas sutiles o en etapas muy tempranas donde los modelos visuales pueden fallar.
+% \subsection{Comparación con Métodos Tradicionales}
+% La mayoría de los estudios concluyeron que los métodos basados en IA superan a la inspección visual tradicional, la cual se describe consistentemente como laboriosa, costosa y propensa a errores subjetivos. Los enfoques de IA ofrecen una alternativa automatizada, consistente y rápida. En comparaciones directas, los modelos de IA mostraron mejoras significativas, como un aumento del 21.54\% en la precisión media sobre la línea de base en un estudio \citep{Bhat2023} y una mejora de hasta el 13.18\% sobre métodos como SVM y ANN en otro \citep{Kaur2024}. A pesar de estas ventajas, la inspección manual sigue siendo relevante para validar los resultados de los modelos, establecer la verdad de campo (\textit{ground truth}) y detectar síntomas sutiles o en etapas muy tempranas donde los modelos visuales pueden fallar.
 
-\subsection{Cuantificación de la Severidad de la Enfermedad y la Calidad Interna}
-\subsubsection{Clasificación de la Severidad}
-Solo 12 de los 80 estudios abordaron la cuantificación de la severidad de la enfermedad más allá de una simple clasificación binaria. Los enfoques incluyeron la clasificación en múltiples etapas (e.g., tres a cinco niveles de severidad) y la segmentación de imágenes para calcular el área foliar afectada. Un enfoque novedoso fue la clasificación por etapas del tizón tardío en tomates, análogo a la estadificación del cáncer, que alcanzó una precisión del 95.56% \citep{Deepak2025}. Sin embargo, la precisión en esta tarea a menudo fue menor que en la detección binaria, como lo demuestra el 66.03% de mAP (mean Average Precision) obtenido por un modelo EfficientDet para clasificar la severidad del Begomovirus, debido a la alta similitud de los síntomas entre los diferentes niveles \citep{Mubarokah2024}.
+% \subsection{Cuantificación de la Severidad de la Enfermedad y la Calidad Interna}
+% \subsubsection{Clasificación de la Severidad}
+% Solo 12 de los 80 estudios abordaron la cuantificación de la severidad de la enfermedad más allá de una simple clasificación binaria. Los enfoques incluyeron la clasificación en múltiples etapas (e.g., tres a cinco niveles de severidad) y la segmentación de imágenes para calcular el área foliar afectada. Un enfoque novedoso fue la clasificación por etapas del tizón tardío en tomates, análogo a la estadificación del cáncer, que alcanzó una precisión del 95.56\%. Sin embargo, la precisión en esta tarea a menudo fue menor que en la detección binaria, como lo demuestra el 66.03\% de mAP (mean Average Precision) obtenido por un modelo EfficientDet para clasificar la severidad del Begomovirus, debido a la alta similitud de los síntomas entre los diferentes niveles.
 
-\subsubsection{Predicción de la Calidad Interna}
-La investigación sobre la predicción de parámetros de calidad interna fue notablemente escasa, representando una de las brechas más críticas identificadas en esta revisión. Solo tres estudios abordaron directamente este objetivo. Entre ellos, se destaca el uso de imagenología hiperespectral (HSI) para predecir el contenido de licopeno en tomates con un R² de 0.9652 \citep{Zhang2025}. Otro estudio utilizó una combinación de CNN y Random Forest para clasificar los estados de madurez de la banana con un 86.97% de precisión \citep{Chitkara2024}. La correlación entre la detección externa de enfermedades y su impacto real en la calidad nutricional interna sigue siendo un área en gran parte inexplorada.
+% \subsubsection{Predicción de la Calidad Interna}
+% La investigación sobre la predicción de parámetros de calidad interna fue notablemente escasa, representando una de las brechas más críticas identificadas en esta revisión. Solo tres estudios abordaron directamente este objetivo. Entre ellos, se destaca el uso de imagenología hiperespectral (HSI) para predecir el contenido de licopeno en tomates con un $R^2$ de 0.9652 \citep{Zhang2025}. Otro estudio utilizó una combinación de CNN y Random Forest para clasificar los estados de madurez de la banana con un 86.97\% de precisión. La correlación entre la detección externa de enfermedades y su impacto real en la calidad nutricional interna sigue siendo un área en gran parte inexplorada.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discusión}
 
-Esta revisión sistemática confirma que la Inteligencia Artificial, y en particular las técnicas de aprendizaje profundo, han alcanzado una madurez notable para la tarea de detección de enfermedades en cultivos hortícolas. Los resultados demuestran de manera consistente que los modelos de IA pueden clasificar enfermedades a partir de imágenes RGB con una precisión muy alta, superando a los métodos de inspección visual tradicionales en velocidad, consistencia y, a menudo, en exactitud. Sin embargo, este éxito en la clasificación binaria enmascara brechas críticas que limitan severamente la aplicabilidad agronómica de estas tecnologías en el mundo real.
+% Los resultados de esta revisión sistemática confirman una tendencia clara: la investigación en la aplicación de IA en agricultura ha alcanzado una notable madurez en la detección de enfermedades, pero permanece en una fase exploratoria en cuanto a la evaluación de la calidad del producto. La alta precisión reportada en la clasificación de "sano vs. enfermo" es un logro significativo, pero su valor práctico se ve limitado si no se traduce en una cuantificación del impacto agronómico \citep{Bhat2023, Sharma2024}.
 
-El hallazgo más significativo de este estudio es la profunda desconexión entre la detección de síntomas y la cuantificación de su impacto real. La gran mayoría de la investigación se detiene en la identificación de la enfermedad (una pregunta de "¿está presente?"), sin avanzar hacia la cuantificación de su severidad (una pregunta de "¿cuánto?") o la predicción de sus consecuencias en la calidad nutricional y el rendimiento (la pregunta fundamental de "¿y qué?"). Para un agricultor, saber que una planta tiene una enfermedad es solo el primer paso; la decisión crítica sobre si aplicar un tratamiento, cuándo y cómo, depende de la severidad de la infección y su impacto económico proyectado. La escasez de estudios que abordan la clasificación de la severidad (menos del 15\%) y, de manera aún más drástica, la predicción de la calidad interna (solo tres estudios), revela que la investigación actual está resolviendo un problema académico más que uno práctico y agronómico.
+% La principal brecha identificada es la desconexión entre el análisis de imágenes externas y la evaluación de la calidad nutricional interna. Mientras que modelos como U-Net pueden segmentar con éxito una lesión \citep{Zhang2025}, la literatura carece de estudios que correlacionen el área de esa lesión con una disminución medible en, por ejemplo, el contenido de ácido ascórbico o azúcares en el fruto. Los pocos estudios que intentan abordar la calidad interna a menudo dependen de datos hiperespectrales o de fusión de sensores, reconociendo implícitamente que las imágenes RGB por sí solas son insuficientes para esta tarea compleja \citep{garg2023}. Esta dependencia de hardware más costoso y datos más complejos presenta una barrera para su adopción a gran escala.
 
-Asimismo, se evidencia un potencial en gran medida desaprovechado en el uso de datos multimodales y, especialmente, en la imagenología hiperespectral. Los pocos estudios que integran estas tecnologías demuestran capacidades que van mucho más allá de la visión RGB, como la detección de estrés patogénico antes de la aparición de síntomas visibles \citep{Szechynska-Hebda2025} o la predicción directa de compuestos nutricionales como el licopeno con alta precisión \citep{Zhang2025}. La baja adopción de estas técnicas (solo 8 estudios con fusión multimodal y 6 con hiperespectral) sugiere que barreras significativas, como el alto costo del hardware, la complejidad en el procesamiento de datos y la falta de modelos estandarizados, están frenando su implementación. Superar estos obstáculos es crucial para pasar de una agricultura que solo "ve" a una que "entiende" el estado fisiológico del cultivo.
+% Además, la mayoría de los estudios se realizan en condiciones de laboratorio altamente controladas, utilizando conjuntos de datos homogéneos. Esto plantea dudas sobre la generalización y robustez de los modelos en condiciones de campo reales, donde la variabilidad en la iluminación, el fondo y la presentación del objeto es inmensa \citep{wakhare2023, Hosny2023}. La falta de conjuntos de datos públicos y estandarizados que incluyan tanto imágenes como mediciones de calidad interna es un obstáculo fundamental que frena el progreso en esta área.
 
-Las limitaciones metodológicas identificadas a lo largo de esta revisión también son motivo de preocupación y socavan la confianza en muchos de los resultados publicados. La prevalencia de conjuntos de datos pequeños y homogéneos, a menudo recopilados en condiciones de laboratorio controladas, pone en duda la capacidad de generalización de los modelos a la variabilidad inherente de un entorno de campo real (iluminación variable, fondos complejos, diferentes etapas de crecimiento). La falta casi total de validación externa (reportada en solo 8 de 80 estudios) y la escasa disponibilidad de código y datos (menos del 10\%) impiden la reproducibilidad y la comparación justa entre diferentes enfoques, ralentizando el progreso colectivo del campo.
+% Finalmente, el enfoque en la clasificación de la severidad, aunque creciente, todavía es minoritario. La capacidad de un modelo para no solo detectar una enfermedad, sino también para clasificarla como "leve", "moderada" o "severa", es un paso intermedio esencial para predecir el rendimiento y la calidad. Los estudios que avanzan en esta dirección son cruciales para desarrollar herramientas de apoyo a la decisión que sean verdaderamente útiles para los agricultores \citep{ Cai2025, Bezabh2024}.
 
-A partir de este análisis, emergen varias direcciones claras para la investigación futura. Es imperativo que la comunidad científica se mueva más allá de la simple clasificación de enfermedades. La investigación futura debe priorizar:
-\begin{itemize}
-    \item \textbf{El desarrollo de modelos que cuantifiquen la severidad de la enfermedad} y, de manera ideal, la correlacionen con la pérdida de rendimiento esperada.
-    \item \textbf{La conexión entre la detección externa y la calidad nutricional interna}, utilizando técnicas como la imagenología hiperespectral para desarrollar indicadores no destructivos de la calidad del producto.
-    \item \textbf{La creación de conjuntos de datos públicos, a gran escala y multimodales}, que incluyan datos de campo de múltiples temporadas, regiones y condiciones de cultivo para entrenar modelos verdaderamente robustos.
-    \item \textbf{La adopción de prácticas de ciencia abierta}, incluyendo la publicación de código, modelos y conjuntos de datos, para fomentar la reproducibilidad y la colaboración.
-\end{itemize}
-
-Solo abordando estas brechas podrá la Inteligencia Artificial cumplir su promesa de transformar la agricultura, pasando de ser una herramienta de diagnóstico a convertirse en un pilar fundamental para una producción de alimentos más precisa, sostenible y de mayor calidad.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusiones}
 
-Esta revisión sistemática de la literatura ha permitido constatar que, si bien las técnicas de Inteligencia Artificial han demostrado un éxito rotundo en la tarea de identificar enfermedades en cultivos hortícolas, su aplicación práctica en la agronomía moderna se ve limitada por una brecha fundamental: la falta de conexión entre la detección de síntomas y la cuantificación de su impacto real en la calidad y el rendimiento. La investigación actual se ha concentrado en la clasificación binaria, dejando en un segundo plano la evaluación de la severidad y, de forma casi total, la predicción de la calidad nutricional interna. El futuro de la agricultura de precisión no reside únicamente en saber si una planta está enferma, sino en poder cuantificar el impacto de dicha enfermedad para tomar decisiones informadas. Por lo tanto, se concluye que la próxima frontera para la IA en la agricultura debe ser la transición desde modelos de simple detección hacia sistemas integrales que puedan predecir el impacto agronómico y nutricional, un objetivo que requerirá un esfuerzo concertado en el desarrollo de metodologías más robustas, la creación de conjuntos de datos más ricos y la adopción de prácticas de ciencia abierta.
+% Esta revisión sistemática de la literatura evidencia que, si bien la aplicación de la inteligencia artificial ha logrado avances significativos en la identificación de enfermedades en cultivos hortícolas, el campo se encuentra en un punto de inflexión. La investigación futura debe trascender la simple clasificación binaria y centrarse en los desafíos más complejos y de mayor impacto agronómico: la cuantificación de la severidad de la enfermedad y, fundamentalmente, la predicción de la calidad nutricional interna del producto.
+
+% La brecha entre el análisis visual externo y la comprensión de los parámetros de calidad internos sigue siendo el principal obstáculo. Para cerrar esta brecha, es imperativo el desarrollo de nuevos enfoques que integren datos multimodales, como imágenes hiperespectrales y térmicas, con mediciones bioquímicas. Asimismo, la creación de conjuntos de datos públicos, diversos y estandarizados, que incluyan estas múltiples capas de información, es crucial para entrenar y validar modelos más robustos y generalizables.
+
+% En resumen, el próximo gran avance en esta área no provendrá de mejorar en un pequeño porcentaje la precisión de la detección, sino de la capacidad de los modelos de IA para proporcionar una evaluación holística de la salud del cultivo que correlacione los síntomas visibles con el impacto real en la calidad y el rendimiento, un paso esencial para materializar la promesa de una agricultura de precisión verdaderamente inteligente y sostenible \citep{garg2023}.
+
+% \vspace{6pt} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Patentes}
+% \section{Patentes}
 
-Esta sección no es obligatoria, pero puede agregarse si hay patentes resultantes del trabajo reportado en este manuscrito.
+% Esta sección no es obligatoria, pero puede agregarse si hay patentes resultantes del trabajo reportado en este manuscrito.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\vspace{6pt} 
+% \vspace{6pt} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% opcional
@@ -380,17 +574,17 @@ Esta sección no es obligatoria, pero puede agregarse si hay patentes resultante
 %}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\authorcontributions{Para artículos de investigación con varios autores, se debe proporcionar un breve párrafo que especifique sus contribuciones individuales. Se deben usar las siguientes declaraciones ``Conceptualización, X.X. e Y.Y.; metodología, X.X.; software, X.X.; validación, X.X., Y.Y. y Z.Z.; análisis formal, X.X.; investigación, X.X.; recursos, X.X.; curación de datos, X.X.; redacción---preparación del borrador original, X.X.; redacción---revisión y edición, X.X.; visualización, X.X.; supervisión, X.X.; administración del proyecto, X.X.; adquisición de fondos, Y.Y. Todos los autores han leído y aceptado la versión publicada del manuscrito.'', consulte la \href{http://img.mdpi.org/data/contributor-role-instruction.pdf}{taxonomía CRediT} para la explicación del término. La autoría debe limitarse a quienes han contribuido sustancialmente al trabajo~reportado.}
+% \authorcontributions{Para artículos de investigación con varios autores, se debe proporcionar un breve párrafo que especifique sus contribuciones individuales. Se deben usar las siguientes declaraciones ``Conceptualización, X.X. e Y.Y.; metodología, X.X.; software, X.X.; validación, X.X., Y.Y. y Z.Z.; análisis formal, X.X.; investigación, X.X.; recursos, X.X.; curación de datos, X.X.; redacción---preparación del borrador original, X.X.; redacción---revisión y edición, X.X.; visualización, X.X.; supervisión, X.X.; administración del proyecto, X.X.; adquisición de fondos, Y.Y. Todos los autores han leído y aceptado la versión publicada del manuscrito.'', consulte la \href{http://img.mdpi.org/data/contributor-role-instruction.pdf}{taxonomía CRediT} para la explicación del término. La autoría debe limitarse a quienes han contribuido sustancialmente al trabajo~reportado.}
 
-\funding{Por favor agregue: ``Esta investigación no recibió financiamiento externo'' o ``Esta investigación fue financiada por NOMBRE DEL FINANCIADOR número de subvención XXX.'' y ``El APC fue financiado por XXX''. Verifique cuidadosamente que los detalles proporcionados sean precisos y use la ortografía estándar de los nombres de las agencias financiadoras en \url{https://search.crossref.org/funding}, cualquier error puede afectar su financiamiento futuro.}
+% \funding{Por favor agregue: ``Esta investigación no recibió financiamiento externo'' o ``Esta investigación fue financiada por NOMBRE DEL FINANCIADOR número de subvención XXX.'' y ``El APC fue financiado por XXX''. Verifique cuidadosamente que los detalles proporcionados sean precisos y use la ortografía estándar de los nombres de las agencias financiadoras en \url{https://search.crossref.org/funding}, cualquier error puede afectar su financiamiento futuro.}
 
-\institutionalreview{En esta sección, debe agregar la Declaración de la Junta de Revisión Institucional y el número de aprobación, si es relevante para su estudio. Puede optar por excluir esta declaración si el estudio no requirió aprobación ética. Tenga en cuenta que la Oficina Editorial puede solicitarle más información. Agregue "El estudio se realizó de acuerdo con la Declaración de Helsinki y fue aprobado por la Junta de Revisión Institucional (o Comité de Ética) de NOMBRE DEL INSTITUTO (código de protocolo XXX y fecha de aprobación)." para estudios que involucran humanos. O "El protocolo de estudio animal fue aprobado por la Junta de Revisión Institucional (o Comité de Ética) de NOMBRE DEL INSTITUTO (código de protocolo XXX y fecha de aprobación)." para estudios que involucran animales. O "Se renunció a la revisión y aprobación éticas para este estudio debido a RAZÓN (proporcione una justificación detallada)." O "No aplicable" para estudios que no involucran humanos o animales.}
+% \institutionalreview{En esta sección, debe agregar la Declaración de la Junta de Revisión Institucional y el número de aprobación, si es relevante para su estudio. Puede optar por excluir esta declaración si el estudio no requirió aprobación ética. Tenga en cuenta que la Oficina Editorial puede solicitarle más información. Agregue "El estudio se realizó de acuerdo con la Declaración de Helsinki y fue aprobado por la Junta de Revisión Institucional (o Comité de Ética) de NOMBRE DEL INSTITUTO (código de protocolo XXX y fecha de aprobación)." para estudios que involucran humanos. O "El protocolo de estudio animal fue aprobado por la Junta de Revisión Institucional (o Comité de Ética) de NOMBRE DEL INSTITUTO (código de protocolo XXX y fecha de aprobación)." para estudios que involucran animales. O "Se renunció a la revisión y aprobación éticas para este estudio debido a RAZÓN (proporcione una justificación detallada)." O "No aplicable" para estudios que no involucran humanos o animales.}
 
-\informedconsent{Cualquier artículo de investigación que describa un estudio que involucre humanos debe contener esta declaración. Agregue ``Se obtuvo el consentimiento informado de todos los sujetos involucrados en el estudio.'' O ``Se renunció al consentimiento del paciente debido a RAZÓN (proporcione una justificación detallada).'' O ``No aplicable'' para estudios que no involucran humanos. También puede optar por excluir esta declaración si el estudio no involucró humanos.
+% \informedconsent{Cualquier artículo de investigación que describa un estudio que involucre humanos debe contener esta declaración. Agregue ``Se obtuvo el consentimiento informado de todos los sujetos involucrados en el estudio.'' O ``Se renunció al consentimiento del paciente debido a RAZÓN (proporcione una justificación detallada).'' O ``No aplicable'' para estudios que no involucran humanos. También puede optar por excluir esta declaración si el estudio no involucró humanos.
 
-Se debe obtener el consentimiento informado por escrito para la publicación de los pacientes participantes que puedan ser identificados (incluso por los propios pacientes). Indique ``Se ha obtenido el consentimiento informado por escrito del/de los paciente(s) para publicar este artículo'' si es aplicable.}
+% Se debe obtener el consentimiento informado por escrito para la publicación de los pacientes participantes que puedan ser identificados (incluso por los propios pacientes). Indique ``Se ha obtenido el consentimiento informado por escrito del/de los paciente(s) para publicar este artículo'' si es aplicable.}
 
-\dataavailability{Alentamos a todos los autores de artículos publicados en revistas MDPI a compartir sus datos de investigación. En esta sección, proporcione detalles sobre dónde se pueden encontrar los datos que respaldan los resultados reportados, incluidos enlaces a conjuntos de datos archivados públicamente analizados o generados durante el estudio. Cuando no se crearon nuevos datos, o cuando los datos no están disponibles debido a restricciones de privacidad o éticas, aún se requiere una declaración. Las Declaraciones de Disponibilidad de Datos sugeridas están disponibles en la sección ``Políticas de Datos de Investigación de MDPI'' en \url{https://www.mdpi.com/ethics}.} 
+% \dataavailability{Alentamos a todos los autores de artículos publicados en revistas MDPI a compartir sus datos de investigación. En esta sección, proporcione detalles sobre dónde se pueden encontrar los datos que respaldan los resultados reportados, incluidos enlaces a conjuntos de datos archivados públicamente analizados o generados durante el estudio. Cuando no se crearon nuevos datos, o cuando los datos no están disponibles debido a restricciones de privacidad o éticas, aún se requiere una declaración. Las Declaraciones de Disponibilidad de Datos sugeridas están disponibles en la sección ``Políticas de Datos de Investigación de MDPI'' en \url{https://www.mdpi.com/ethics}.} 
 
 %\durcstatement{La investigación actual se limita al [inserte un campo académico específico, por ejemplo, XXX], que es beneficiosa [comparta beneficios y/o uso primario] y no representa una amenaza para la salud pública o la seguridad nacional. Los autores reconocen el potencial de doble uso de la investigación que involucra xxx y confirman que se han tomado todas las precauciones necesarias para prevenir el posible mal uso. Como responsabilidad ética, los autores se adhieren estrictamente a las leyes nacionales e internacionales relevantes sobre DURC. Los autores abogan por un despliegue responsable, consideraciones éticas, cumplimiento regulatorio e informes transparentes para mitigar los riesgos de mal uso y fomentar resultados beneficiosos.}
 
@@ -403,9 +597,9 @@ Se debe obtener el consentimiento informado por escrito para la publicación de 
 %% Solo para la revista Nursing Reports
 %\useofartificialintelligence{Describa en detalle cualquier y todos los usos de inteligencia artificial (IA) o herramientas asistidas por IA utilizadas en la preparación del manuscrito. Esto puede incluir, pero no se limita a, traducción de idiomas, edición de idiomas y gramática, o generación de texto. Alternativamente, indique que "No se usaron herramientas de IA o asistidas por IA en la redacción de ningún aspecto de este manuscrito".}
 
-\acknowledgments{En esta sección puede reconocer cualquier apoyo dado que no esté cubierto por las secciones de contribución de autor o financiamiento. Esto puede incluir apoyo administrativo y técnico, o donaciones en especie (por ejemplo, materiales usados para experimentos). Donde se haya usado GenAI para propósitos como generar texto, datos o gráficos, o para diseño de estudio, recopilación de datos, análisis o interpretación de datos, agregue "Durante la preparación de este manuscrito/estudio, el/los autor(es) usó/usaron [nombre de la herramienta, información de versión] con el propósito de [descripción del uso]. Los autores han revisado y editado la salida y asumen la responsabilidad total del contenido de esta publicación."}
+% \acknowledgments{En esta sección puede reconocer cualquier apoyo dado que no esté cubierto por las secciones de contribución de autor o financiamiento. Esto puede incluir apoyo administrativo y técnico, o donaciones en especie (por ejemplo, materiales usados para experimentos). Donde se haya usado GenAI para propósitos como generar texto, datos o gráficos, o para diseño de estudio, recopilación de datos, análisis o interpretación de datos, agregue "Durante la preparación de este manuscrito/estudio, el/los autor(es) usó/usaron [nombre de la herramienta, información de versión] con el propósito de [descripción del uso]. Los autores han revisado y editado la salida y asumen la responsabilidad total del contenido de esta publicación."}
 
-\conflictsofinterest{Declare conflictos de interés o indique ``Los autores declaran no tener conflictos de interés.'' Los autores deben identificar y declarar cualquier circunstancia personal o interés que pueda percibirse como que influye inapropiadamente en la representación o interpretación de los resultados de investigación reportados. Cualquier papel de los financiadores en el diseño del estudio; en la recopilación, análisis o interpretación de datos; en la redacción del manuscrito; o en la decisión de publicar los resultados debe declararse en esta sección. Si no hay papel, indique ``Los financiadores no tuvieron ningún papel en el diseño del estudio; en la recopilación, análisis o interpretación de datos; en la redacción del manuscrito; o en la decisión de publicar los resultados''.} 
+% \conflictsofinterest{Declare conflictos de interés o indique ``Los autores declaran no tener conflictos de interés.'' Los autores deben identificar y declarar cualquier circunstancia personal o interés que pueda percibirse como que influye inapropiadamente en la representación o interpretación de los resultados de investigación reportados. Cualquier papel de los financiadores en el diseño del estudio; en la recopilación, análisis o interpretación de datos; en la redacción del manuscrito; o en la decisión de publicar los resultados debe declararse en esta sección. Si no hay papel, indique ``Los financiadores no tuvieron ningún papel en el diseño del estudio; en la recopilación, análisis o interpretación de datos; en la redacción del manuscrito; o en la decisión de publicar los resultados''.} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Opcional
@@ -413,47 +607,47 @@ Se debe obtener el consentimiento informado por escrito para la publicación de 
 %% Solo para la revista Encyclopedia
 %\entrylink{El enlace a esta entrada publicada en la plataforma de enciclopedia.}
 
-\abbreviations{Abreviaturas}{
-Las siguientes abreviaturas se usan en este manuscrito:
-\\
+% \abbreviations{Abreviaturas}{
+% Las siguientes abreviaturas se usan en este manuscrito:
+% \\
 
-\noindent 
-\begin{tabular}{@{}ll}
-MDPI & Multidisciplinary Digital Publishing Institute\\
-DOAJ & Directory of open access journals\\
-TLA & Acrónimo de tres letras\\
-LD & Dicroísmo lineal
-\end{tabular}
-}
+% \noindent 
+% \begin{tabular}{@{}ll}
+% MDPI & Multidisciplinary Digital Publishing Institute\\
+% DOAJ & Directory of open access journals\\
+% TLA & Acrónimo de tres letras\\
+% LD & Dicroísmo lineal
+% \end{tabular}
+% }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Opcional
-\appendixtitles{no} % Deje el argumento "no" si todos los encabezados de apéndice permanecen VACÍOS (entonces no se imprime ningún punto después de "Apéndice A"). Si las secciones de apéndice contienen un encabezado, cambie el argumento a "yes".
-\appendixstart
-\appendix
-\section[\appendixname~\thesection]{}
-\subsection[\appendixname~\thesubsection]{}
-El apéndice es una sección opcional que puede contener detalles y datos complementarios al texto principal---por ejemplo, explicaciones de detalles experimentales que interrumpirían el flujo del texto principal pero que siguen siendo cruciales para comprender y reproducir la investigación mostrada; las figuras de réplicas para experimentos de los cuales se muestran datos representativos en el texto principal pueden agregarse aquí si son breves, o como Datos Suplementarios. Las pruebas matemáticas de resultados no centrales al artículo pueden agregarse como apéndice.
+% \appendixtitles{no} % Deje el argumento "no" si todos los encabezados de apéndice permanecen VACÍOS (entonces no se imprime ningún punto después de "Apéndice A"). Si las secciones de apéndice contienen un encabezado, cambie el argumento a "yes".
+% \appendixstart
+% \appendix
+% \section[\appendixname~\thesection]{}
+% \subsection[\appendixname~\thesubsection]{}
+% El apéndice es una sección opcional que puede contener detalles y datos complementarios al texto principal---por ejemplo, explicaciones de detalles experimentales que interrumpirían el flujo del texto principal pero que siguen siendo cruciales para comprender y reproducir la investigación mostrada; las figuras de réplicas para experimentos de los cuales se muestran datos representativos en el texto principal pueden agregarse aquí si son breves, o como Datos Suplementarios. Las pruebas matemáticas de resultados no centrales al artículo pueden agregarse como apéndice.
 
-\begin{table}[H] 
-\caption{Este es un título de tabla.\label{tab5}}
+% \begin{table}[H] 
+% \caption{Este es un título de tabla.\label{tab5}}
 %\newcolumntype{C}{>{\centering\arraybackslash}X}
-\begin{tabularx}{\textwidth}{CCC}
-\toprule
-\textbf{Título 1}	& \textbf{Título 2}	& \textbf{Título 3}\\
-\midrule
-Entrada 1		& Datos			& Datos\\
-Entrada 2		& Datos			& Datos\\
-\bottomrule
-\end{tabularx}
-\end{table}
+% \begin{tabularx}{\textwidth}{CCC}
+% \toprule
+% \textbf{Título 1}	& \textbf{Título 2}	& \textbf{Título 3}\\
+% \midrule
+% Entrada 1		& Datos			& Datos\\
+% Entrada 2		& Datos			& Datos\\
+% \bottomrule
+% \end{tabularx}
+% \end{table}
 
-\section[\appendixname~\thesection]{}
-Todas las secciones de apéndice deben citarse en el texto principal. En los apéndices, las Figuras, Tablas, etc. deben etiquetarse, comenzando con ``A''---por ejemplo, Figura A1, Figura A2, etc.
+% \section[\appendixname~\thesection]{}
+% Todas las secciones de apéndice deben citarse en el texto principal. En los apéndices, las Figuras, Tablas, etc. deben etiquetarse, comenzando con ``A''---por ejemplo, Figura A1, Figura A2, etc.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\isPreprints{}{% Este comando solo se usa para ``preprints''.
-\begin{adjustwidth}{-\extralength}{0cm}
+% \begin{adjustwidth}{-\extralength}{0cm}
 %} % Si el artículo es ``preprints'', descomente este paréntesis.
 %\printendnotes[custom] % Descomente para imprimir una lista de notas finales
 
@@ -465,7 +659,7 @@ Todas las secciones de apéndice deben citarse en el texto principal. En los ap�
 %=====================================
 % Referencias, variante A: bibliografía externa
 %=====================================
-\bibliography{../referencias/zotero/mcic_export, referencias}
+\bibliography{../referencias/referencias_generales, ../referencias/zotero/mcic_export}
 
 %=====================================
 % Referencias, variante B: bibliografía interna
@@ -577,7 +771,7 @@ Todas las secciones de apéndice deben citarse en el texto principal. En los ap�
 %Comentarios del revisor 3 y respuesta de los autores
 %}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\PublishersNote{}
+% \PublishersNote{}
 %\isPreprints{}{% Este comando solo se usa para ``preprints''.
 \end{adjustwidth}
 %} % Si el artículo es ``preprints'', descomente este paréntesis.

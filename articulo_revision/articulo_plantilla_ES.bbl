@@ -1,0 +1,127 @@
+\begin{thebibliography}{999}
+
+\bibitem[Mansoor et~al.(2025)Mansoor, Karunathilake, Tuan, and
+  Chung]{Mansoor2025a}
+Mansoor, S.; Karunathilake, E.M.B.M.; Tuan, T.T.; Chung, Y.S.
+\newblock Genomics, phenomics, and machine learning in transforming plant
+  research: Advancements and challenges,  2025.
+\newblock {\url{https://doi.org/10.1016/j.hpj.2023.09.005}}.
+
+\bibitem[Mushtaq et~al.(2025)Mushtaq, Ateeq, Ikram, Alam, Kaleem, Ashraf, Asim,
+  Almutairi, Seleiman, and Shireen]{Mushtaq2025}
+Mushtaq, M.A.; Ateeq, M.; Ikram, M.; Alam, S.M.; Kaleem, M.M.; Ashraf, M.A.;
+  Asim, M.; Almutairi, K.F.; Seleiman, M.F.; Shireen, F.
+\newblock Securing fruit trees future: AI-driven early warning and predictive
+  systems for abiotic stress in changing climate,  2025.
+\newblock {\url{https://doi.org/10.1016/j.stress.2025.100953}}.
+
+\bibitem[Yang et~al.(2025)Yang, Mali, Arthur, Molaei, Atsyo, Geng, He, and
+  Ghatrehsamani]{Yang2025}
+Yang, Y.; Mali, P.; Arthur, L.; Molaei, F.; Atsyo, S.; Geng, J.; He, L.;
+  Ghatrehsamani, S.
+\newblock Advanced technologies for precision tree fruit disease management: A
+  review,  2025.
+\newblock {\url{https://doi.org/10.1016/j.compag.2024.109704}}.
+
+\bibitem[Devora-Guadarrama et~al.(2025)Devora-Guadarrama, Luna-Benoso,
+  Alarcón-Paredes, Martínez-Perales, and Úrsula Samantha
+  Morales-Rodríguez]{Devora-Guadarrama2025}
+Devora-Guadarrama, M.; Luna-Benoso, B.; Alarcón-Paredes, A.;
+  Martínez-Perales, J.C.; Úrsula Samantha Morales-Rodríguez.
+\newblock Deep Learning-Based Citrus Canker and Huanglongbing Disease Detection
+  Using Leaf Images.
+\newblock {\em Computers} {\bf 2025}, {\em 14},~500.
+\newblock {\url{https://doi.org/10.3390/computers14110500}}.
+
+\bibitem[Rayed et~al.(2023)Rayed, Abdullah-Al-Akib, Alfaz, Niha, and
+  Islam]{Rayed2023}
+Rayed, M.E.; Abdullah-Al-Akib.; Alfaz, N.; Niha, S.I.; Islam, S.M.
+\newblock A vision transformer-based approach for recognizing seven prevalent
+  mango leaf diseases.
+\newblock In Proceedings of the 2023 26th International Conference on Computer
+  and Information Technology, ICCIT 2023. IEEE,  2023, pp. 1--6.
+\newblock {\url{https://doi.org/10.1109/ICCIT60459.2023.10441449}}.
+
+\bibitem[Zhang et~al.(2025)Zhang, Zhang, Tan, Wang, Zhang, Li, Zhao, and
+  Yu]{Zhang2025}
+Zhang, J.; Zhang, Q.; Tan, Y.; Wang, M.; Zhang, X.; Li, H.; Zhao, R.; Yu, J.
+\newblock Advances in hyperspectral imaging-based non-destructive assessment of
+  tomato quality attributes,  2025.
+\newblock {\url{https://doi.org/10.1016/j.atech.2025.101534}}.
+
+\bibitem[Szechyńska-Hebda et~al.(2025)Szechyńska-Hebda, Hołownicki,
+  Doruchowski, Sas, Puławska, Jarecka-Boncela, Ptaszek, and
+  Włodarek]{Szechynska-Hebda2025}
+Szechyńska-Hebda, M.; Hołownicki, R.; Doruchowski, G.; Sas, K.; Puławska,
+  J.; Jarecka-Boncela, A.; Ptaszek, M.; Włodarek, A.
+\newblock Application of Hyperspectral Imaging for Early Detection of
+  Pathogen-Induced Stress in Cabbage as Case Study,  2025.
+\newblock {\url{https://doi.org/10.3390/agronomy15071516}}.
+
+\bibitem[Zaludin et~al.(2025)Zaludin, Khalid, Danial, Ayob, Hasan, and
+  Ibrahim]{Zaludin2025}
+Zaludin, Z.; Khalid, N.S.; Danial, N.D.B.N.; Ayob, M.N.; Hasan, M.Z.; Ibrahim,
+  I.I.
+\newblock Machine Learning (ML) and Deep Learning (DL) Based Detection of
+  Bacterial Heart Rot (BHR) in Pineapple Leaves.
+\newblock In Proceedings of the 2025 IEEE 15th International Conference on
+  System Engineering and Technology (ICSET). IEEE,  10 2025, pp. 318--323.
+\newblock {\url{https://doi.org/10.1109/ICSET65917.2025.11283911}}.
+
+\bibitem[Safari et~al.(2024)Safari, Nakatumba-Nabende, Nakasi, and
+  Nakibuule]{Safari2024}
+Safari, Y.; Nakatumba-Nabende, J.; Nakasi, R.; Nakibuule, R.
+\newblock A Review on Automated Detection and Assessment of Fruit Damage Using
+  Machine Learning.
+\newblock {\em IEEE Access} {\bf 2024}, {\em 12},~21358--21381.
+\newblock {\url{https://doi.org/10.1109/ACCESS.2024.3362230}}.
+
+\bibitem[Raut and Kasat(2024)]{Raut2024}
+Raut, S.C.; Kasat, N.N.
+\newblock A Review: Citrus Disease Detection Using Machine Learning Approach.
+\newblock In Proceedings of the 2024 2nd DMIHER International Conference on
+  Artificial Intelligence in Healthcare, Education and Industry, IDICAIEI 2024.
+  IEEE,  11 2024, pp. 1--5.
+\newblock {\url{https://doi.org/10.1109/IDICAIEI61867.2024.10842864}}.
+
+\bibitem[Sharma and Nagpal(2024)]{Sharma2024}
+Sharma, R.; Nagpal, M.
+\newblock Branching Out: A Simple 5-Level Classification of Magnolia Scale
+  Diseases Using a Combination of CNN and DT Models.
+\newblock In Proceedings of the 2024 5th IEEE Global Conference for Advancement
+  in Technology, GCAT 2024. IEEE,  10 2024, pp. 1--5.
+\newblock {\url{https://doi.org/10.1109/GCAT62922.2024.10923907}}.
+
+\bibitem[Joshi et~al.(2025)Joshi, Hooda, Yadav, Singh, Nehra, Tuteja, Gill, and
+  Gill]{Joshi2025}
+Joshi, K.; Hooda, S.; Yadav, Y.; Singh, G.; Nehra, A.; Tuteja, N.; Gill, R.;
+  Gill, S.S.
+\newblock Genetic algorithm enhanced deep learning with data augmentation for
+  nitrogen and potassium deficiency detection in eggplant.
+\newblock {\em Current Plant Biology} {\bf 2025}, {\em 44},~100546.
+\newblock {\url{https://doi.org/10.1016/j.cpb.2025.100546}}.
+
+\bibitem[{Institute of Electrical and Electronics Engineers
+  (IEEE)}(2024)]{IEEEThesaurus2024}
+{Institute of Electrical and Electronics Engineers (IEEE)}.
+\newblock {IEEE} Thesaurus.
+\newblock \url{https://www.ieee.org/publications/services/thesaurus.html},
+  2024.
+\newblock Accessed: 30 January 2026.
+
+\bibitem[{Food and Agriculture Organization of the United Nations
+  (FAO)}(2024)]{Agrovoc2024}
+{Food and Agriculture Organization of the United Nations (FAO)}.
+\newblock {AGROVOC} Multilingual Thesaurus.
+\newblock \url{https://agrovoc.fao.org/},  2024.
+\newblock Accessed: 30 January 2026.
+
+\bibitem[{United States Department of Agriculture (USDA), National Agricultural
+  Library}(2024)]{NALT2024}
+{United States Department of Agriculture (USDA), National Agricultural
+  Library}.
+\newblock {NAL} Agricultural Thesaurus and Glossary.
+\newblock \url{https://lod.nal.usda.gov/nalt/},  2024.
+\newblock Accessed: 30 January 2026.
+
+\end{thebibliography}
