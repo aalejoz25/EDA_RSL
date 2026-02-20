@@ -71,6 +71,12 @@
 % Agregue paquetes y comandos aquí. Los siguientes paquetes se cargan en nuestro archivo de clase: fontenc, inputenc, calc, indentfirst, fancyhdr, graphicx, epstopdf, lastpage, ifthen, float, amsmath, amssymb, lineno, setspace, enumitem, mathpazo, booktabs, titlesec, etoolbox, tabto, xcolor, colortbl, soul, multirow, microtype, tikz, totcount, changepage, attrib, upgreek, array, tabularx, pbox, ragged2e, tocloft, marginnote, marginfix, enotez, amsthm, natbib, hyperref, cleveref, scrextend, url, geometry, newfloat, caption, draftwatermark, seqsplit
 % cleveref: cargar definiciones \crefname después de \begin{document}
 
+% Configuración de idioma español
+\usepackage[spanish,es-tabla]{babel}
+
+% Paquete para tablas largas que se extienden en varias páginas
+\usepackage{longtable}
+
 % Bibliotecas adicionales de TikZ (el paquete tikz ya está cargado por la clase MDPI)
 \usetikzlibrary{positioning, shapes.geometric, arrows.meta}
 
@@ -279,7 +285,7 @@ Se empleó una matriz de cinco facetas basada en vocabularios controlados de los
 \end{quote}
 
 \subsection{Fase 2: Evaluación (Appraisal)}
-El proceso de valoración de calidad y elegibilidad se ejecutó en un "embudo" de dos niveles para asegurar el rigor científico.
+El proceso de valoración de calidad y elegibilidad se ejecutó en un ``embudo'' de dos niveles para asegurar el rigor científico.
 
 \subsubsection{Deduplicación y Normalización (Nivel I)}
 Se utilizó un script en Python para consolidar los registros de las bases de datos. Se eliminaron 64 registros duplicados mediante el análisis de DOI y EID, resultando en un conjunto unificado de 135 artículos únicos.
@@ -294,20 +300,6 @@ La extracción de datos se automatizó mediante modelos de lenguaje (LLM) integr
 
 \subsection{Fase 4: Análisis (Analysis)}
 Se realizó una síntesis mixta de la evidencia. El análisis bibliométrico reveló una tendencia creciente con 38 estudios proyectados para 2025 y una alta calidad editorial con 33 artículos en cuartil Q1. El análisis de conocimiento se profundizó mediante técnicas de procesamiento de lenguaje natural (NLP) en Python, incluyendo el modelado de tópicos (LDA) para identificar las fronteras tecnológicas en la predicción de calidad nutricional y rendimiento agrícola.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{assets/cantxanio.png}
-\caption{Evolución temporal de las publicaciones sobre IA en agricultura hortícola (2015-2025), mostrando una tendencia creciente sostenida con 38 estudios proyectados para 2025.}
-\label{fig:publicaciones_anio}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{assets/cuartiles.png}
-\caption{Distribución de artículos por cuartiles de calidad editorial. El 41.3\% de los estudios (n=33) se publicó en revistas del cuartil Q1, evidenciando alta calidad académica.}
-\label{fig:cuartiles}
-\end{figure}
 
 
 \begin{figure}[h!]
@@ -388,41 +380,194 @@ Se realizó una síntesis mixta de la evidencia. El análisis bibliométrico rev
 \caption{Diagrama de flujo PRISMA detallando el proceso de selección de estudios asistido por herramientas computacionales (Python e IA Elicit).}
 \label{fig:prisma_flow}
 \end{figure}
-
-% Esta revisión sistemática se adhiere a un protocolo predefinido para garantizar un análisis exhaustivo y objetivo de la literatura. El proceso abarcó desde la formulación de preguntas de investigación hasta la extracción y síntesis de datos de los estudios seleccionados.
-
-% \subsection{Preguntas de Investigación}
-% El estudio fue guiado por una pregunta de investigación principal y cuatro preguntas secundarias, diseñadas para explorar en profundidad el estado del arte de la IA en la agricultura hortícola.
-
-% \textbf{Pregunta Principal (PI-P):} ¿En qué medida los modelos avanzados de Inteligencia Artificial y la fusión de datos multimodales (RGB, hiperespectral, IoT) están superando las limitaciones de los métodos de detección visual tradicionales para cuantificar la severidad de las enfermedades y predecir su impacto en la calidad interna y el rendimiento en cultivos hortícolas?
-
-% \textbf{Preguntas Secundarias (PI-S):}
-% \begin{itemize}
-%     \item \textbf{PI-S1:} ¿Cuáles son las técnicas de IA más efectivas para diferentes tareas agrícolas (detección de enfermedades, estimación de rendimiento, monitoreo de calidad) y cómo han evolucionado en el tiempo?
-%     \item \textbf{PI-S2:} ¿Cuáles son las métricas de evaluación más apropiadas para valorar estos modelos en el contexto agrícola?
-%     \item \textbf{PI-S3:} ¿Qué técnicas de análisis espectral combinadas con IA muestran la correlación más fuerte con parámetros nutricionales reales en frutas y verduras, y cuál es su viabilidad para la implementación en campo frente a entornos de laboratorio?
-%     \item \textbf{PI-S4:} ¿Cuáles son las principales limitaciones metodológicas reportadas en los estudios de IA agrícola (tamaño de los conjuntos de datos, estrategias de validación cruzada, reproducibilidad) y qué estándares están emergiendo para una evaluación robusta?
-% \end{itemize}
-
-% \subsection{Estrategia de Búsqueda y Selección de Estudios}
-% Se realizó una búsqueda bibliográfica exhaustiva en bases de datos académicas de primer nivel, incluyendo \textit{Scopus}, \textit{IEEE Xplore}, \textit{Web of Science} y \textit{ScienceDirect}. Para garantizar una cobertura completa y sistemática de la terminología, las ecuaciones de búsqueda se construyeron utilizando un enfoque basado en tesauros. Se consultaron vocabularios controlados de referencia en los campos de la ingeniería y la agricultura, como el \textbf{Tesauro de IEEE} para términos técnicos y de ingeniería \citep{IEEEThesaurus2024}, y el tesauro \textbf{AGROVOC} de la Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO) para conceptos agrícolas \citep{Agrovoc2024}. Esta estrategia permitió definir un conjunto robusto de palabras clave y sinónimos relacionados con inteligencia artificial, visión por computador, cultivos hortícolas, detección de enfermedades y evaluación de calidad, asegurando la recuperación de la literatura más relevante.
-
-% De un conjunto inicial de 113 fuentes, se aplicaron criterios de selección rigurosos para filtrar los estudios más relevantes. Se incluyeron artículos que cumplieran con los siguientes criterios: (1) enfoque en cultivos hortícolas; (2) implementación de técnicas avanzadas de IA/ML; (3) uso de datos para evaluar resultados agrícolas como la detección de enfermedades, la calidad o el rendimiento; (4) publicación en una revista o conferencia revisada por pares con resultados empíricos; y (5) provisión de métricas de rendimiento cuantitativas. Se excluyeron estudios puramente teóricos o aquellos centrados exclusivamente en cultivos extensivos (como trigo o maíz). Este proceso resultó en una selección final de 80 artículos que fueron sometidos a un análisis detallado.
-
-% \subsection{Extracción y Síntesis de Datos}
-% Para cada uno de los 80 estudios incluidos, se extrajo información sistemáticamente utilizando un protocolo definido. Los datos extraídos se organizaron en las siguientes categorías principales:
-% \begin{itemize}
-%     \item \textbf{Métodos de IA y Fusión de Datos:} Técnicas específicas de IA/ML, arquitecturas de modelos y métodos de integración de datos (e.g., RGB, hiperespectral, IoT).
-%     \item \textbf{Aplicación Agrícola:} Tarea principal (detección, cuantificación, predicción), tipo de cultivo y parámetros específicos evaluados.
-%     \item \textbf{Resultados de Rendimiento:} Métricas cuantitativas reportadas, como exactitud, precisión, F1-score, y coeficientes de correlación ($R^2$).
-%     \item \textbf{Cuantificación de Severidad y Calidad:} Métodos para medir la severidad de la enfermedad (escalas, etapas) y predecir parámetros de calidad interna (contenido nutricional, madurez).
-%     \item \textbf{Contexto de Implementación:} Entorno del estudio (laboratorio vs. campo), requisitos computacionales y consideraciones de escalabilidad.
-%     \item \textbf{Calidad Metodológica:} Características del conjunto de datos, estrategias de validación y disponibilidad de código o datos para la reproducibilidad.
-% \end{itemize}
-% La información extraída fue posteriormente sintetizada para identificar patrones, tendencias, brechas de investigación y explicar la variabilidad en los resultados reportados.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resultados}
+
+La revisión sistemática, tras un riguroso proceso de selección que culminó con la inclusión de 80 estudios de alta relevancia, permite trazar un panorama claro de la aplicación de la inteligencia artificial en cultivos hortícolas. A continuación, se presentan los hallazgos principales, desde la dinámica de publicación hasta las tendencias temáticas y tecnológicas.
+
+\subsection{Panorama Bibliométrico y Fuentes de Publicación}
+El análisis de la producción científica revela un crecimiento exponencial en el interés por esta área de investigación. La actividad investigativa se ha intensificado notablemente a partir de 2021, alcanzando su máximo histórico en el periodo 2023-2025, el cual concentra más del 64\% de los artículos analizados, con un pico de 38 publicaciones proyectadas para 2025.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{assets/cantxanio.png}
+\caption{Evolución temporal de las publicaciones sobre IA en agricultura hortícola (2015-2025), mostrando una tendencia creciente sostenida con 38 estudios proyectados para 2025.}
+\label{fig:publicaciones_anio}
+\end{figure}
+
+Este dinamismo cuantitativo se acompaña de una alta calidad editorial. Un total de 33 estudios fueron publicados en revistas del primer cuartil (Q1) (\autoref{fig:cuartiles}), con un impacto académico reflejado en un promedio de 15.46 citaciones por artículo. Entre las fuentes de publicación más relevantes se destacan revistas líderes en agronomía y tecnología, que sirven como foros principales para la diseminación de estos avances interdisciplinarios.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{assets/cuartiles.png}
+\caption{Evolución temporal de las publicaciones sobre IA en agricultura hortícola (2015-2025), mostrando una tendencia creciente sostenida con 38 estudios proyectados para 2025.}
+\label{fig:cuartiles}
+\end{figure}
+
+
+\subsection{Análisis de Tópicos y Nube de Palabras}
+El análisis de contenido, apoyado por técnicas de minería de texto como la generación de nubes de palabras y el modelado de tópicos, permitió identificar los núcleos temáticos predominantes. La visualización de la nube de palabras clave confirma la centralidad de términos como ``Deep Learning'', ``Convolutional Neural Networks (CNN)'', ``Disease Detection'', ``Image Processing'' y cultivos específicos como ``Frutas y Vegetales'' y contextos especificos como ``Leaf Disease'' (\autoref{fig:nube_palabras}).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{assets/nube_rsl.png}
+\caption{Nube de palabras clave evidenciando la centralidad de términos relacionados con técnicas de IA (CNN, ViT), aplicaciones (Disease Detection, Image Processing) y cultivos específicos (Tomato, Leaf Disease).}
+\label{fig:nube_palabras}
+\end{figure}
+
+Por otra parte, el modelado de tópicos mediante Latent Dirichlet Allocation (LDA) \textbf{antes de la etapa de cribado} $n=135$ reveló una estructura temática \textbf{diversificada y equilibrada}, identificando ocho grupos principales de investigación con distribución relativamente homogénea (\autoref{fig:lda_distribucion}). Los tópicos más representados corresponden a \textbf{sistemas de agricultura de precisión y gestión de suelos} (Tópico 5, $n=30$, 22.1\%) y \textbf{métodos de detección temprana en áreas afectadas} (Tópico 3, $n=29$, 21.5\%), seguidos por aplicaciones específicas en \textbf{frutas de alto valor económico} como mango y cítricos (Tópico 1, $n=21$, 15.6\%) y \textbf{cultivos modelo} como el tomate (Tópico 4, $n=19$, 14.1\%). Esta distribución heterogénea evidencia la amplitud de aplicaciones de IA en horticultura, abarcando desde el monitoreo edáfico hasta la evaluación fitosanitaria, con tópicos especializados emergentes en enfoques metodológicos avanzados (Tópico 2: ``approach, data, grape'') y plataformas tecnológicas (Tópico 8: ``horticultural, review, platform'').
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{assets/documentosXtopico.png}
+\caption{Distribución de documentos por tópico dominante identificado mediante LDA ($k=8$ tópicos). Se observa una estructura temática equilibrada con dos grupos principales: sistemas agrícolas/gestión de suelos (Tópico 5, $n=30$) y métodos de detección temprana (Tópico 3, $n=29$), seguidos por aplicaciones específicas en frutas económicamente importantes y cultivos modelo. La diversidad temática refleja la madurez multifacética del campo.}
+\label{fig:lda_distribucion}
+\end{figure}
+
+\subsection{Enfoque Agronómico y Tareas Predominantes}
+La síntesis de los estudios incluidos posterior a la inclusión realizada por la herramient Elicit AI confirma un marcado desequilibrio en los objetivos de investigación. La tarea de detección y clasificación de enfermedades es, con gran diferencia, la más abordada, siendo el foco del 85\% de los trabajos ($n=68$). En contraste, aplicaciones de alto valor para la cadena productiva, como la evaluación de calidad nutricional ($n=5$) y la predicción de rendimiento ($n=3$), permanecen como áreas de investigación incipientes.
+
+El tomate (\textit{Solanum lycopersicum}) se posiciona como el cultivo modelo por excelencia ($n=15$), seguido por otros cultivos de importancia económica como el mango ($n=8$), la manzana ($n=6$) y la uva ($n=6$).
+
+\begin{footnotesize}
+\begin{longtable}{p{3cm} p{2cm} p{2cm} p{2.8cm} p{2cm}}
+\caption{Características de los 80 estudios incluidos en la revisión sistemática.} \label{tab:80_estudios} \\
+\toprule
+\textbf{Estudio} & \textbf{Tarea Principal} & \textbf{Cultivo} & \textbf{Técnica de IA} & \textbf{Tipo de Dato} \\ \midrule
+\endfirsthead
+
+\multicolumn{5}{c}%
+{{\bfseries \tablename\ \thetable{} -- Continuación de la página anterior}} \\
+\toprule
+\textbf{Estudio} & \textbf{Tarea Principal} & \textbf{Cultivo} & \textbf{Técnica de IA} & \textbf{Tipo de Dato} \\ \midrule
+\endhead
+
+\midrule
+\multicolumn{5}{r}{{Continúa en la siguiente página...}} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+Krishna et al. (2023) & Predicción de enfermedades & Nuez de Areca & GRU, LSTM & Meteorológico \\
+Bezabh et al. (2024) & Detección de enfermedades & Mango & Ensemble CNN & RGB \\
+Chang et al. (2019) & Detección de enfermedades & Fresa & ANN, SVM, kNN & RGB \\
+Cai et al. (2025) & Detección de enfermedades & Pimiento & ResNet, DCN, PPN & RGB \\
+Ahn et al. (s.f.) & Predicción de rendimiento & Cacao & Ensemble, SVM, KNN & Fenotípico \\
+Chen et al. (2024) & Detección de enfermedades & Maracuyá & YOLOv8-MDN-Tiny & RGB \\
+Chitkara et al. (2024) & Detección de enfermedades & Fresa & FFIR (Inception-ResNet) & RGB \\
+Eshmam et al. (2023) & Detección de enfermedades & Mango & Vision Transformer & RGB \\
+Khannum et al. (2024) & Detección de enfermedades & Sandía & VGG-16 CNN & RGB \\
+Rawat et al. (s.f.) & Detección de enfermedades & Okra & Custom CNN + U-Net & RGB \\
+Liu et al. (s.f.) & Detección de objetos & Berenjena & YOLO-RDM & RGB \\
+Joshi et al. (2025) & Detección deficiencia & Berenjena & YOLOv9 con GA & RGB \\
+Deepak et al. (2025) & Detección de enfermedades & Tomate & InceptionV3 & RGB \\
+Hidayatuloh et al. (2018) & Detección de enfermedades & Tomate & SqueezeNet CNN & RGB \\
+Mathew et al. (s.f.) & Detección de enfermedades & Banano & DOST, LBP, ANN & RGB \\
+Phaneendra et al. (2022) & Detección de enfermedades & Tomate & CNN & RGB \\
+Sajitha et al. (2025) & Detección de enfermedades & Granada & YOLOv5, ResNet-152 & RGB \\
+Julian et al. (2024) & Detección de enfermedades & Pimiento morrón & CNN (Tuned) & RGB \\
+Hosny et al. (2023) & Detección de enfermedades & Manzana, Tomate & CNN + LBP & RGB \\
+Chougule et al. (2022) & Detección de enfermedades & Tomate & EfficientNetV2B0 & RGB \\
+Mubarokah et al. (s.f.) & Detección de enfermedades & Tomate & SSD, EfficientDet & RGB \\
+Tadesse et al. (2025) & Detección de enfermedades & Mango & MobileNetV3-XGBoost & RGB \\
+Narayana et al. (2025) & Detección de enfermedades & Granada & SVM, KNN, CNN & RGB \\
+Kumar et al. (2023) & Detección de enfermedades & Tomate & LDA, XGBoost, SVM & Hiperespectral \\
+Chitkara et al. (2024) & Evaluación de calidad & Banano & CNN + Random Forest & RGB \\
+Vishnoi et al. (2025) & Detección de enfermedades & Cítricos & ResNet50 + SVM & RGB \\
+Bajpai et al. (2023) & Detección de enfermedades & Tomate & ES-CNN, ResNet-50 & RGB \\
+Feng et al. (s.f.) & Detección de enfermedades & Pepino & BP Neural Network & Multiespectral \\
+Bhat et al. (2023) & Detección de enfermedades & Manzana & ResNet50 (AppleNet) & RGB \\
+Devi et al. (s.f.) & Detección de enfermedades & Manzana, Tomate & YOLO + RAG & RGB \\
+Gladson et al. (s.f.) & Detección de enfermedades & Mango & YOLOv8 & RGB \\
+Praba et al. (2021) & Detección de enfermedades & Manzana & VGG16, ResNet18 & RGB \\
+El Massi et al. (s.f.) & Detección de enfermedades & Hortalizas & NN + SVM & RGB \\
+Chitkara et al. (s.f.) & Detección de enfermedades & Mango & CNN + SVM & RGB \\
+Rajamanickam et al. (2025) & Detección de enfermedades & Pimiento dulce & Decision trees & RGB \\
+Parisae et al. (s.f.) & Detección de enfermedades & Manzana & CNN, YOLO & RGB \\
+Tamilselvan et al. (2025) & Detección de enfermedades & Papa & AttDenseNet & RGB \\
+Sharma et al. (2024) & Detección de enfermedades & Magnolia & CNN + Decision Tree & RGB \\
+Zhang et al. (2025) & Evaluación de calidad & Tomate & CNNs, Transformers & Hiperesp. + IoT \\
+Szechyńska-Hebda et al. (2025) & Detección de enfermedades & Repollo & ML + Spectral img & Hiperespectral \\
+Zaludin et al. (2025) & Detección de enfermedades & Piña & CNN, KNN & RGB \\
+Wakhare et al. (2023) & Detección de enfermedades & Granada & CNN + SVM & RGB \\
+Chitkara et al. (s.f.) & Detección de enfermedades & Pera & CNN + Rand. Forest & RGB \\
+Zhang et al. (2025) & Detección de plagas & Rosa & AlexNet, VGG16 & RGB \\
+Valtierra-Rodriguez et al. (2025) & Detección de enfermedades & Cítricos & EfficientNetB0 & RGB \\
+Gurunathan et al. (2023) & Evaluación de calidad & Frutas variadas & AlexNet & RGB \\
+Intelligent Recognition (s.f.) & Detección de enfermedades & Pimiento, Papa & DNN & RGB \\
+Garg et al. (2023) & Detección de enfermedades & Cultivos varios & MobileNetV2 & RGB \\
+Chavan et al. (2024) & Predicción rendimiento & Hortalizas & CNN, Rand. Forest & Multimodal \\
+Padol et al. (2016) & Detección de enfermedades & Uva & SVM + ANN & RGB \\
+Seetharam et al. (2022) & Detección de enfermedades & Tomate & VGG16 CNN & RGB \\
+Pushpa et al. (2024) & Detección de enfermedades & Tomate & CNN & RGB \\
+Kaur et al. (s.f.) & Detección de enfermedades & Mango & ANN & RGB \\
+Wijendra et al. (s.f.) & Gestión enfermedades & Orquídea & YOLOv5, ANN & IoT + Imagen \\
+Goraksha et al. (s.f.) & Detección de enfermedades & Uva & CNN, híbridos & RGB \\
+Hepzibah et al. (2021) & Detección de enfermedades & Tomate & CNN, R-CNN & No especificado \\
+Baquero et al. (s.f.) & Detección de enfermedades & Tomate & Nearest-neighbor & RGB \\
+Fusion Approach (2020) & Detección de enfermedades & Tomate & KNN, PNN, SVM & RGB \\
+Li et al. (2008) & Predicción de plagas & Vegetales & Semi-supervised & Histórico \\
+Packialatha et al. (2024) & Detección de enfermedades & Mango & CNN, SVM & RGB + IoT \\
+Kiani et al. (s.f.) & Detección de enfermedades & Fresa & Lógica borrosa & RGB \\
+Padol et al. (2016a) & Detección de enfermedades & Uva & SVM & RGB \\
+Palei et al. (2023) & Detección de enfermedades & Cítricos & CNNs, SVMs & RGB + Hiperesp. \\
+Kolvekar et al. (s.f.) & Detección de enfermedades & Tomate & ANN & RGB + IoT \\
+Joshi et al. (s.f.) & Detección de enfermedades & Manzana, Uva & EfficientNet & RGB \\
+Patel et al. (2021) & Detección de enfermedades & Uva & GLCM + KNN & RGB \\
+Sangeevan et al. (2021) & Detección de enfermedades & Pimiento, Papa & CNN (AlexNet) & RGB \\
+Raut et al. (2024) & Detección de enfermedades & Cítricos & CNNs varias & RGB + Hiperesp. \\
+Suthar et al. (2023) & Detección de enfermedades & Plantas varias & CNNs, SVMs & RGB \\
+Verma et al. (2022) & Detección de enfermedades & Trigo & KNN, Dec. Tree & RGB + IoT \\
+Chaudhari et al. (s.f.) & Detección de enfermedades & Rosa & DenseNet121 & RGB \\
+PlantMed (2024) & Detección de enfermedades & Tomate, Pimiento & K-means, CNN & RGB + Clima \\
+Hakimi et al. (2024) & Evaluación de calidad & Manzana, Papa & CNN & RGB \\
+Maimaitiyiming et al. (2020) & Monitoreo de salud & Viñedo & PLSR & Hiperespectral \\
+Pawar et al. (s.f.) & Detección de enfermedades & Granada & BP Neural Networks & RGB \\
+Prasad et al. (s.f.) & Detección de enfermedades & Cultivos varios & CNN & RGB \\
+Suresh et al. (2020) & Detección de enfermedades & Frutales varios & CNN & RGB \\
+Mathew et al. (2023) & Detección de enfermedades & Banano & CNNs pre-entrenadas & RGB \\
+Aravind et al. (2016) & Detección de enfermedades & Hortícolas & Texture analysis & RGB \\
+Padma et al. (s.f.) & Detección de enfermedades & Tomate & CNN, DRL & RGB + IoT \\
+\end{longtable}
+\end{footnotesize}
+
+\subsection{Evolución de Arquitecturas de Inteligencia Artificial}
+El paradigma del aprendizaje profundo (\textit{Deep Learning}) es hegemónico. Las Redes Neuronales Convolucionales (CNN) constituyen la base metodológica de la mayoría de los estudios. Se observa una tendencia consolidada hacia el uso de \textbf{Transfer Learning} con modelos pre-entrenados como \textbf{VGG} ($n=12$), \textbf{ResNet} ($n=8$) y variantes de \textbf{YOLO} para detección de objetos ($n=9$), lo que permite obtener altos desempeños incluso con datasets limitados. Además, arquitecturas de vanguardia como los \textbf{Vision Transformers (ViT)} y los enfoques híbridos (ej. CNN + SVM) están emergiendo con resultados prometedores.
+
+\begin{small}
+\begin{longtable}{p{4cm} c p{4.5cm} c}
+\caption{Evolución y categorías de arquitecturas de IA identificadas en el corpus analizado.} \label{tab:evolucion_ia_long} \\
+\toprule
+\textbf{Categoría de Arquitectura} & \textbf{Frecuencia} & \textbf{Modelos Representativos} & \textbf{Rango de Precisión} \\ \midrule
+\endfirsthead
+
+\multicolumn{4}{c}%
+{{\bfseries \tablename\ \thetable{} -- Continuación de la página anterior}} \\
+\toprule
+\textbf{Categoría de Arquitectura} & \textbf{Frecuencia} & \textbf{Modelos Representativos} & \textbf{Rango de Precisión} \\ \midrule
+\endhead
+
+\midrule
+\multicolumn{4}{r}{{Continúa en la siguiente página...}} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+CNN Estándar & 28 & Arquitecturas personalizadas, SqueezeNet & 86--98\% \\
+CNN Pre-entrenadas (Transfer Learning) & 35 & VGG16/19, ResNet50, MobileNet & 90--99\% \\
+Modelos basados en YOLO & 9 & YOLOv5, YOLOv8, YOLOv9 & 93--99\% \\
+Enfoques Ensemble/Híbridos & 15 & CNN+SVM, CNN+RF & 77--99\% \\
+Machine Learning Tradicional & 12 & SVM, KNN, ANN & 76--93\% \\
+Transformers & 2 & Vision Transformer (ViT) & 100\% \\
+Redes Recurrentes & 1 & GRU, LSTM & $R^2 = 0.99$ \\
+\end{longtable}
+\end{small}
+
+\subsection{Modalidades de Sensores y Desempeño}
+Las imágenes en el espectro visible (\textbf{RGB}) son la fuente de datos dominante, empleada en el 90\% de los estudios ($n=72$) por su accesibilidad y efectividad en la detección de síntomas externos. No obstante, para desafíos como la detección temprana asintomática o la estimación de parámetros internos, las imágenes \textbf{hiperespectrales} ($n=6$) han demostrado ser superiores, logrando correlaciones significativas ($R^2 \approx 0.7$) con indicadores fisiológicos. La integración de múltiples fuentes de datos (fusión multimodal) es aún poco frecuente, presente en solo 8 estudios.
+
+Si bien las métricas de precisión en tareas de clasificación son generalmente altas (77-100\%), el análisis revela limitaciones importantes: la mayoría de los modelos no cuantifican la \textbf{severidad} de la enfermedad, no establecen vínculos con la \textbf{calidad interna} del producto y carecen de validación robusta en condiciones de \textbf{campo} reales.
 
 % El análisis de los 80 estudios seleccionados revela un panorama detallado sobre el uso de la IA en la agricultura hortícola, destacando tanto los avances significativos como las brechas persistentes.
 
@@ -520,13 +665,13 @@ Se realizó una síntesis mixta de la evidencia. El análisis bibliométrico rev
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discusión}
 
-% Los resultados de esta revisión sistemática confirman una tendencia clara: la investigación en la aplicación de IA en agricultura ha alcanzado una notable madurez en la detección de enfermedades, pero permanece en una fase exploratoria en cuanto a la evaluación de la calidad del producto. La alta precisión reportada en la clasificación de "sano vs. enfermo" es un logro significativo, pero su valor práctico se ve limitado si no se traduce en una cuantificación del impacto agronómico \citep{Bhat2023, Sharma2024}.
+% Los resultados de esta revisión sistemática confirman una tendencia clara: la investigación en la aplicación de IA en agricultura ha alcanzado una notable madurez en la detección de enfermedades, pero permanece en una fase exploratoria en cuanto a la evaluación de la calidad del producto. La alta precisión reportada en la clasificación de ``sano vs. enfermo'' es un logro significativo, pero su valor práctico se ve limitado si no se traduce en una cuantificación del impacto agronómico \citep{Bhat2023, Sharma2024}.
 
 % La principal brecha identificada es la desconexión entre el análisis de imágenes externas y la evaluación de la calidad nutricional interna. Mientras que modelos como U-Net pueden segmentar con éxito una lesión \citep{Zhang2025}, la literatura carece de estudios que correlacionen el área de esa lesión con una disminución medible en, por ejemplo, el contenido de ácido ascórbico o azúcares en el fruto. Los pocos estudios que intentan abordar la calidad interna a menudo dependen de datos hiperespectrales o de fusión de sensores, reconociendo implícitamente que las imágenes RGB por sí solas son insuficientes para esta tarea compleja \citep{garg2023}. Esta dependencia de hardware más costoso y datos más complejos presenta una barrera para su adopción a gran escala.
 
 % Además, la mayoría de los estudios se realizan en condiciones de laboratorio altamente controladas, utilizando conjuntos de datos homogéneos. Esto plantea dudas sobre la generalización y robustez de los modelos en condiciones de campo reales, donde la variabilidad en la iluminación, el fondo y la presentación del objeto es inmensa \citep{wakhare2023, Hosny2023}. La falta de conjuntos de datos públicos y estandarizados que incluyan tanto imágenes como mediciones de calidad interna es un obstáculo fundamental que frena el progreso en esta área.
 
-% Finalmente, el enfoque en la clasificación de la severidad, aunque creciente, todavía es minoritario. La capacidad de un modelo para no solo detectar una enfermedad, sino también para clasificarla como "leve", "moderada" o "severa", es un paso intermedio esencial para predecir el rendimiento y la calidad. Los estudios que avanzan en esta dirección son cruciales para desarrollar herramientas de apoyo a la decisión que sean verdaderamente útiles para los agricultores \citep{ Cai2025, Bezabh2024}.
+% Finalmente, el enfoque en la clasificación de la severidad, aunque creciente, todavía es minoritario. La capacidad de un modelo para no solo detectar una enfermedad, sino también para clasificarla como ``leve'', ``moderada'' o ``severa'', es un paso intermedio esencial para predecir el rendimiento y la calidad. Los estudios que avanzan en esta dirección son cruciales para desarrollar herramientas de apoyo a la decisión que sean verdaderamente útiles para los agricultores \citep{ Cai2025, Bezabh2024}.
 
 \section{Conclusiones}
 
